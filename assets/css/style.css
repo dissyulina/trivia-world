@@ -128,6 +128,30 @@ li {
     letter-spacing: 5px;
 }
 
+/*-- How To Play page --*/
+  
+.full-container {
+    min-height: 100vh;
+}
+  
+.background-blue {
+    background-color: #EAF3FA;
+    height: inherit;
+    /*min-height: 100vh;*/
+}
+  
+section h2 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+  
+section ol {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+  
 /* Media Queries */
 
 @media screen and (min-width: 1300px) {
