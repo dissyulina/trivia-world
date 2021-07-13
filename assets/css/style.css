@@ -71,3 +71,59 @@ li {
 .content-hero {
     position: absolute;
 }
+
+.star-container {
+    /*height: calc(10rem + 7vh);*/
+    height: 100px;
+    /*padding-top: 5rem;
+    padding-bottom: 2rem;
+    padding-bottom: calc(3rem + 5vh);*/
+}
+  
+.star {
+    height: calc(60px + 1vh);
+    width: auto;
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+}
+  
+.overlay {
+    padding: 1rem;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 40px;
+}
+  
+/*-- Buttons --*/
+  
+.btn {
+    border-width: 1px;
+    border-radius: 40px;
+    font-size: 1rem;
+    padding: 0.75rem 1.75rem;
+    font-weight: 600;
+    min-width: 12.5rem;
+    margin-bottom: 0.5rem;
+}
+  
+.btn-main {
+    background-color: #E0295D;
+    color: #fff;
+}
+  
+.btn-second {
+    color: #E0295D;
+    background-color: #fff;
+    border: 1px solid #E0295D;
+}
+  
+.btn-form {
+    color: #E0295D;
+    background-color: #fff;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+  
+.btn-wheel {
+    border: 0.5rem dotted yellow;
+    letter-spacing: 5px;
+}
