@@ -1,0 +1,73 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #30343F;
+    line-height: 1.5;
+}
+  
+header h1 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 64px;
+    /*font-size: calc(42px + 3vw);*/
+    color: #7696F3;
+    text-align: center;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: #456DB6;
+    letter-spacing: 3px;
+}
+  
+h2, h3, h4, h5 {
+    font-family: Pacifico, cursive;
+}
+  
+.header-container {
+    height: 100vh;
+    width: 100vw;
+}
+  
+.col {
+    padding: 0;
+  }
+  
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+  
+.row {
+    margin-left: 0;
+    margin-right: 0;
+    height: inherit;
+}
+  
+ul, ol {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+  
+li {
+    list-style: none;
+}
+  
+.background-hero {
+    background-image: linear-gradient(to right, #C0DFDF, #fff, #fff, #C0DFDF);
+    /*background-color: #FFC25D;*/
+    height: 100vh;
+    width: 100vw;
+}
+  
+.hero {
+    height: inherit;
+    width: auto;
+    background: url(../images/hero.jpg) no-repeat center center;
+    background-attachment: scroll; 
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+  
+.content-hero {
+    position: absolute;
+}
