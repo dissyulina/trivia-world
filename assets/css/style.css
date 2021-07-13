@@ -49,7 +49,7 @@ li {
 }
   
 .background-hero {
-    background-image: linear-gradient(to right, #C0DFDF, #fff, #fff, #C0DFDF);
+    background-image: linear-gradient(to right, #C6D4FA, #fff, #fff, #C6D4FA);
     /*background-color: #FFC25D;*/
     height: 100vh;
     width: 100vw;
@@ -127,3 +127,19 @@ li {
     border: 0.5rem dotted yellow;
     letter-spacing: 5px;
 }
+
+/* Media Queries */
+
+@media screen and (min-width: 1300px) {
+    .hero {
+      background-size: contain;
+    }
+}
+/*
+@media screen and (min-width: 1000px) {
+  .star-container {
+    height: calc(10rem + 12vh);
+    padding-bottom: calc(4rem + 10vh);
+  }
+}
+*/
