@@ -128,7 +128,7 @@ li {
     letter-spacing: 5px;
 }
 
-/*-- How To Play page --*/
+/*-- How To Play Page --*/
   
 .full-container {
     min-height: 100vh;
@@ -151,6 +151,19 @@ section ol {
     padding-bottom: 3rem;
 }
 
+/* Contact Page */
+
+form {
+    background: rgba( 255, 255, 255, 0.20 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 6.5px );
+    -webkit-backdrop-filter: blur( 6.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 ); 
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-bottom: 3rem;
+  }
   
 /* Media Queries */
 
