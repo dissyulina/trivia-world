@@ -164,7 +164,31 @@ form {
     padding-left: 1rem;
     margin-bottom: 3rem;
   }
-  
+
+/* Wheel Page */
+
+.background-blueray {
+    min-height: 100vh;
+    width: auto;
+    background: url(../images/blueray.jpg) no-repeat center center;
+    background-attachment: scroll; 
+    background-size: cover;
+}
+
+#picker {
+    height: 12vh;
+    width: 10vw;
+    max-width: 5rem;
+    margin-bottom: -8vh;
+    z-index: 2;
+}
+
+#wheel {
+    width: 90vw;
+    max-width: 35rem;
+    height: auto;
+}
+
 /* Media Queries */
 
 @media screen and (min-width: 1300px) {
