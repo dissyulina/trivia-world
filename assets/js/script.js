@@ -1,23 +1,28 @@
-//The script for spinning wheel was adapted and changed from youtube Weibenfalk - Vanilla Javascript Wheel of Fortune
+//The script for spinning the wheel was adapted and changed from youtube: Weibenfalk - Vanilla Javascript Wheel of Fortune
 // Immediately invoked function expression
 (function () {
 	let deg = 0;
 	let sectionDeg = 30;
-
-	const sectionNames = {
+/*
+	const displayTopics = {
 		1: "Science",
 		2: "History",
-		3: "Music",
-		4: "Art",
-		5: "Geography",
-		6: "Sports",
-		7: "Science",
-		8: "History",
-		9: "Music",
-		10: "Art",
-		11: "Geography",
-		12: "Sports",
+		3: "Music", 
+		4: "Art", 
+		5: "Geography", 
+		6: "Sports", 
 	}
+*/
+
+	const displayTopics = {
+		1: ["Science", "assets/images/science.jpg"],
+		2: ["History", "assets/images/history.jpg"],
+		3: ["Music", "assets/images/music.jpg"],
+		4: ["Art", "assets/images/art.jpg"],
+		5: ["Geography", "assets/images/geography.jpg"],
+		6: ["Sports", "assets/images/sports.jpg"],
+	}
+
 
 	// Create a spin between 3000 - 6000 degree
 	$("#btn-wheel").click(function() {
@@ -51,8 +56,18 @@
 
 		// Calculate and display the result
 		$("#modal-topic").modal("show");
-		const result = Math.ceil(actualDeg / sectionDeg);
-		$("#topic-title").text("You got: " + sectionNames[result]);
+		let result = Math.ceil(actualDeg / sectionDeg);
+		if (result > 6) {
+			result = result - 6;
+		}
+		$("#topic-title").text("You got: " + displayTopics[result][0] + "!");
+
+		// Display the complete content to the modal
+		$(".topic-explanation").text("You’ll get 10 questions related to" + displayTopics[result][0] + ". For each question you answered correctly, you’ll get between 50 - 200 points. But watch out for the timer! You only have 10 seconds to answer each question.");
+		$(".topic-explanation").append("<p>Are you ready?</p>");
+
+		$(".topic-image").append('<img src="' + displayTopics[result][1] + '">"');
+		$(".topic-image").children("img").addClass("img-fluid");
 
 	});
 })();
