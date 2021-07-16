@@ -128,6 +128,12 @@ li {
     letter-spacing: 5px;
 }
 
+.btn:hover {
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(224, 41, 93, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
 /*-- How To Play Page --*/
   
 .full-container {
@@ -203,6 +209,33 @@ form {
     100% {
         filter: blur(0px);
     }
+}
+
+/* Question page */
+
+.background-gradient {
+    height: 100vh;
+    width: 100vw;
+    background: url(../images/bg-gradient.jpg) no-repeat center center;
+    background-attachment: scroll; 
+    background-size: cover;
+}
+
+.choice-container {
+    width: 100%;
+}
+
+.choice-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem rgba(118, 150, 243, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
+.choice-text {
+    margin-bottom: 2rem;
+    border: 0.1rem solid #fff;
+    background-color: #fff;
 }
 
 /* Media Queries */

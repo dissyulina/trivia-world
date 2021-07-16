@@ -65,9 +65,12 @@
 		// Display the complete content to the modal
 		$(".topic-explanation").text("You’ll get 10 questions related to" + displayTopics[result][0] + ". For each question you answered correctly, you’ll get between 50 - 200 points. But watch out for the timer! You only have 10 seconds to answer each question.");
 		$(".topic-explanation").append("<p>Are you ready?</p>");
-
-		$(".topic-image").append('<img src="' + displayTopics[result][1] + '">"');
+		
+		$(".topic-image").empty();
+		$(".topic-image").append('<img src="' + displayTopics[result][1] + '">');
 		$(".topic-image").children("img").addClass("img-fluid");
 
 	});
 })();
+
+
