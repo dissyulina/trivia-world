@@ -236,6 +236,7 @@ form {
     margin-bottom: 2rem;
     border: 0.1rem solid #fff;
     background-color: #fff;
+    width: 100%;
 }
 
 /* Media Queries */

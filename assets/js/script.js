@@ -10,7 +10,7 @@ const displayTopics = {
 
 let deg = 0;
 
-// if wheel = true
+// if wheel = true (to prevent error in other pages)
 let wheel = document.getElementById('wheel');
 if(wheel) {
 	// Create a spin between 3000 - 6000 degree (code adapted and changed to jQuery, from youtube video: Weibenfalk - Vanilla Javascript Wheel of Fortune)
@@ -149,7 +149,7 @@ const question = document.getElementById("question-text");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 
 let currentQuestion = {};
-let acceptingAnswers = true; //let the user submitting answer
+let acceptingAnswers = false; //let the user submitting answer
 let score = 0; //score starts from 0
 let questionCounter = 0; //what number of question are the user on
 let availableQuestions =[]; // an array of our question set
@@ -158,28 +158,58 @@ const correctPoints = 200;
 const maxQuestion = 5;
 console.log(question);
 
-startGame = () => {
-	accumulativePoints = 0;
-	availableQuestions = [...quizData]; //spread the quizData array and put it into the availableQuestion array
-	console.log(availableQuestions);
-	getNewQuestion();
-}
+// if there's question element (if statement to prevent error in other html pages)
+if (question) {
+	startGame = () => {
+		accumulativePoints = 0;
+		availableQuestions = [...quizData]; //spread the quizData array and put it into the availableQuestion array
+		console.log(availableQuestions);
+		getNewQuestion();
+	};
+	
+	getNewQuestion = () => {
+		if (availableQuestions.length === 0) {
+			console.log("The end");
+			return window.location.assign("/index.html");
+		};
+		questionCounter++;
+		const questionIndex = Math.floor(Math.random() * availableQuestions.length); //set a random number to get a random question from the available questions left
+		currentQuestion = availableQuestions[questionIndex];
+		console.log(questionIndex);
+		console.log(availableQuestions[questionIndex]);
+		console.log(question);
+		question.innerHTML = currentQuestion.question;
 
-getNewQuestion = () => {
-	questionCounter++;
-	const questionIndex = Math.floor(Math.random() * availableQuestions.length); //set a random number to get a random question from the available questions left
-	currentQuestion = availableQuestions[questionIndex];
-	console.log(questionIndex);
-	console.log(availableQuestions[questionIndex]);
-	console.log(question);
-	question.innerHTML = currentQuestion.question;
-
+		// display each of the choices into the html content
+		choices.forEach(choice => {
+			const number = choice.dataset['number'];
+			choice.innerHTML = currentQuestion["choice" + number];
+		});
+	
+		//take out the question that has been used
+		availableQuestions.splice(questionIndex, 1);
+		acceptingAnswers = true;
+	
+	};
+	
+	//when a choice is clicked, record the choice and move on to next question
+	choices.forEach(choice => {
+		choice.addEventListener("click", e => {
+			if (!acceptingAnswers) return;
+			acceptingAnswers = false;
+			const selectedChoice = e.target;
+			const selectedAnswer = selectedChoice.dataset["number"];
+			console.log(selectedAnswer);
+			getNewQuestion();
+	
+		});
+	});
+	
+	startGame();
 };
 
-startGame();
 
-// })();
-/*
+
 
 	
 	
@@ -200,6 +230,3 @@ startGame();
 	//let choices = jQuery.makeArray(document.getElementsByClassName("choice-text"));
 	//$(".choice-text").makeArray();
 	//console.log($(".choice-text").makeArray());
-
-})();
-*/
