@@ -156,8 +156,10 @@ let availableQuestions =[]; // an array of our question set
 
 const correctPoints = [50, 100, 150, 200];
 let points;
-const maxQuestion = 5;
-console.log(question);
+const maxQuestion = 10;
+let count;
+let counter;
+
 
 // if there's question element (if statement to prevent error in other html pages)
 if (question) {
@@ -169,6 +171,7 @@ if (question) {
 	};
 	
 	getNewQuestion = () => {
+		console.log(count);
 		if (availableQuestions.length === 0) {
 			console.log("The end");
 			return window.location.assign("/index.html");
@@ -188,22 +191,42 @@ if (question) {
 			const number = choice.dataset['number'];
 			choice.innerHTML = currentQuestion["choice" + number];
 		});
-	
+
+		// call function countdown timer
+		countdown();
+		
 		//take out the question that has been used
 		availableQuestions.splice(questionIndex, 1);
 		acceptingAnswers = true;
 	
 	};
+
+	// set 10 seconds timer
+	function countdown () {
+		count = 20;
+		counter = setInterval(timer, 1000);
+		function timer() {
+			count--;
+			if (count === 0) {
+				//counter ended, stop timer and move on to the next question
+				clearInterval(counter);
+				getNewQuestion();
+				return;
+			};
+			// dispay the number of seconds	
+			$("#timer").text(count);
+		};
+	};
 	
-	// after a choice is clicked, record the choice and move on to next question
+	// after a choice is clicked, record the choice, stop the countdown, and move on to next question, 
 	choices.forEach(choice => {
 		choice.addEventListener("click", e => {
 			if (!acceptingAnswers) return;
 			acceptingAnswers = false;
 			const selectedChoice = e.target;
 			const selectedAnswer = selectedChoice.dataset["number"];
-			//let points;
-			//if the answer is correct, assign randomly a points from the correctPoints array, otherwise 0 points
+			clearInterval(counter);
+			//if the answer is correct, add points into score
 			if(selectedAnswer == currentQuestion.answer) {
 				points = points;
 			} else {
