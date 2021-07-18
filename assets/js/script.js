@@ -11,8 +11,8 @@ const displayTopics = {
 let deg = 0;
 
 // if wheel = true (to prevent error in other pages)
-let wheel = document.getElementById('wheel');
-if(wheel) {
+//let wheel = document.getElementById('wheel');
+if(document.getElementById('wheel')) {
 	// Create a spin between 3000 - 6000 degree (code adapted and changed to jQuery, from youtube video: Weibenfalk - Vanilla Javascript Wheel of Fortune)
 	$("#btn-wheel").click(function() {
 		$("#btn-wheel").css('pointer-events','none');
@@ -23,7 +23,7 @@ if(wheel) {
 	});
 
 	// As soon as the transition ends (code adapted and changed to jQuery, from youtube video: Weibenfalk - Vanilla Javascript Wheel of Fortune)
-	wheel.addEventListener('transitionend', () => {
+	document.getElementById("wheel").addEventListener("transitionend", function() {
 		$("#btn-wheel").css('pointer-events','auto');
 		$("#wheel").removeClass("blur");
 		// Calculate the actual deg (0-360deg), because we want the next spin to start from that degree, and transform the wheel instantly without the user seeing it
@@ -145,7 +145,7 @@ let quizData = [
 	},
 ];
 
-const question = document.getElementById("question-text");
+//const question = document.getElementById("question-text");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 
 let currentQuestion = {};
@@ -159,10 +159,11 @@ let points;
 const maxQuestion = 10;
 let count;
 let counter;
+const fullPoints = 1000;
 
 
 // if there's question element (if statement to prevent error in other html pages)
-if (question) {
+if ($("#question-text")) {
 	startGame = () => {
 		accumulativePoints = 0;
 		availableQuestions = [...quizData]; //spread the quizData array and put it into the availableQuestion array
@@ -181,10 +182,10 @@ if (question) {
 		const questionIndex = Math.floor(Math.random() * availableQuestions.length); //set a random number to get a random question from the available questions left
 		currentQuestion = availableQuestions[questionIndex];
 
-		//display points, question number, and the question to html
+		//display points, question number, and the question to the html
 		$("#question-number").text("Question " + questionCounter);
 		$("#question-points").text("Your question worth: " + points);
-		question.innerHTML = currentQuestion.question;
+		$("#question-text").text(currentQuestion.question);
 
 		// display each of the choices into the html content
 		choices.forEach(choice => {
@@ -192,7 +193,7 @@ if (question) {
 			choice.innerHTML = currentQuestion["choice" + number];
 		});
 
-		// call function countdown timer
+		// call function countdown for the timer
 		countdown();
 		
 		//take out the question that has been used
@@ -235,7 +236,12 @@ if (question) {
 			score = score + points;
 			console.log("You got: " + points + "points");
 			console.log("Your total points are :" + score);
-			
+			console.log(fullPoints);
+			// display the accumulative score in the progress bar
+			let progressBarPoint = (score / fullPoints * 100);
+			console.log("your progress bar : " + progressBarPoint);
+			$("#progress-bar-yellow").css("width",progressBarPoint + "%");
+
 			getNewQuestion();
 	
 		});

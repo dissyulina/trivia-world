@@ -221,6 +221,27 @@ form {
     background-size: cover;
 }
 
+#progress-bar-grey {
+    height: 1rem;
+    width: 100%;
+    background-color: lightslategray;
+    border-radius: 5px;
+    margin-top: 4rem;
+}
+
+#progress-bar-yellow {
+    height: 100%;
+    background-color: yellow;
+    width: 0px;
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 4rem;
+}
+
+#question-points {
+    margin-top: 3rem;
+}
+
 .choice-container {
     width: 100%;
 }
