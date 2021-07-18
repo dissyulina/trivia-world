@@ -154,7 +154,8 @@ let score = 0; //score starts from 0
 let questionCounter = 0; //what number of question are the user on
 let availableQuestions =[]; // an array of our question set
 
-const correctPoints = 200;
+const correctPoints = [50, 100, 150, 200];
+let points;
 const maxQuestion = 5;
 console.log(question);
 
@@ -173,11 +174,13 @@ if (question) {
 			return window.location.assign("/index.html");
 		};
 		questionCounter++;
+		points = correctPoints[Math.floor(Math.random() * correctPoints.length)]; // assign one of the points randomly from the correctPoints array 
 		const questionIndex = Math.floor(Math.random() * availableQuestions.length); //set a random number to get a random question from the available questions left
 		currentQuestion = availableQuestions[questionIndex];
-		console.log(questionIndex);
-		console.log(availableQuestions[questionIndex]);
-		console.log(question);
+
+		//display points, question number, and the question to html
+		$("#question-number").text("Question " + questionCounter);
+		$("#question-points").text("Your question worth: " + points);
 		question.innerHTML = currentQuestion.question;
 
 		// display each of the choices into the html content
@@ -192,14 +195,24 @@ if (question) {
 	
 	};
 	
-	//when a choice is clicked, record the choice and move on to next question
+	// after a choice is clicked, record the choice and move on to next question
 	choices.forEach(choice => {
 		choice.addEventListener("click", e => {
 			if (!acceptingAnswers) return;
 			acceptingAnswers = false;
 			const selectedChoice = e.target;
 			const selectedAnswer = selectedChoice.dataset["number"];
-			console.log(selectedAnswer);
+			//let points;
+			//if the answer is correct, assign randomly a points from the correctPoints array, otherwise 0 points
+			if(selectedAnswer == currentQuestion.answer) {
+				points = points;
+			} else {
+				points = 0;
+			};
+			score = score + points;
+			console.log("You got: " + points + "points");
+			console.log("Your total points are :" + score);
+			
 			getNewQuestion();
 	
 		});
