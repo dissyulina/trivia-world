@@ -9,6 +9,7 @@ const displayTopics = {
 }
 
 let deg = 0;
+var result;
 
 // if wheel = true (to prevent error in other pages)
 //let wheel = document.getElementById('wheel');
@@ -26,33 +27,51 @@ if(document.getElementById('wheel')) {
 	document.getElementById("wheel").addEventListener("transitionend", function() {
 		$("#btn-wheel").css('pointer-events','auto');
 		$("#wheel").removeClass("blur");
+
 		// Calculate the actual deg (0-360deg), because we want the next spin to start from that degree, and transform the wheel instantly without the user seeing it
 		const actualDeg = deg % 360;
 		$("#wheel").css("transition","none");
 		$("#wheel").css("transform","rotate(" + actualDeg + "deg)");
 
-
 		// Calculate and display the result
-		$("#modal-topic").modal("show");
-		let sectionDeg = 30;
-		let result = Math.ceil(actualDeg / sectionDeg);
+		const sectionDeg = 30;
+		result = Math.ceil(actualDeg / sectionDeg);
 		if (result > 6) {
 			result = result - 6;
 		}
+
+		// Show the modal pop up
+		$("#modal-topic").modal("show");
 		$("#topic-title").text("You got: " + displayTopics[result][0] + "!");
 
 		// Display the complete content to the modal
 		$(".topic-explanation").text("You’ll get 10 questions related to" + displayTopics[result][0] + ". For each question you answered correctly, you’ll get between 50 - 200 points. But watch out for the timer! You only have 10 seconds to answer each question.");
 		$(".topic-explanation").append("<p>Are you ready?</p>");
+
 		// Empty the div (delete the image from previous spin), then add the new image according to the topic
 		$(".topic-image").empty();
 		$(".topic-image").append('<img src="' + displayTopics[result][1] + '">');
 		$(".topic-image").children("img").addClass("img-fluid");
+		$("#question-topic").text("Topic : " + displayTopics[result][0]);
 
+		console.log(result === undefined);
+		topic = result;
+	
 	});
+	console.log(result === undefined);
+
 };
-
-
+/*
+const sectionDeg = 30;
+function calculateTopic(spin) {
+	
+	result = Math.ceil(spin / sectionDeg);
+	if (result > 6) {
+		result = result - 6;
+	}
+	return result;
+}
+*/
 // Script for the Quiz
 
 //const question = document.getElementById("question-text");
@@ -67,17 +86,16 @@ let availableQuestions =[]; // an array of our question set
 const correctPoints = [50, 100, 150, 200];
 let points;
 const maxQuestion = 10;
-let count;
-let counter;
-const fullPoints = 1000;
 
+const fullPoints = 1000;
+console.log(result === undefined);
 
 // this only applies to the Question.html page (if statement to prevent error in other html pages)
 
 if ($("body").data("title") === "question-page") {
-	
+
 	//Fetch API for quiz data
-	fetch(displayTopics[result][2])
+	fetch("https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple")
 		.then(res => {
 			return res.json();
 		})
@@ -116,7 +134,6 @@ if ($("body").data("title") === "question-page") {
 		});
 
 
-
 	startGame = () => {
 		accumulativePoints = 0;
 		availableQuestions = [...quizDatas]; //spread the quizDatas array and put it into the availableQuestion array
@@ -125,7 +142,7 @@ if ($("body").data("title") === "question-page") {
 	};
 	
 	getNewQuestion = () => {
-		console.log(count);
+	
 		if (availableQuestions.length === 0) {
 			console.log("The end");
 			return window.location.assign("/index.html");
@@ -138,6 +155,7 @@ if ($("body").data("title") === "question-page") {
 		//display points, question number, and the question to the html
 		$("#question-number").text("Question " + questionCounter);
 		$("#question-points").text("Your question worth: " + points);
+		$("#question-topic").text("Topic : " + result);
 		$("#question-text").text(currentQuestion.question);
 		//replace error string &#039; and &quot; with a single quote and a double quote
 		$('#question-text').text(function(index,text){
@@ -161,10 +179,10 @@ if ($("body").data("title") === "question-page") {
 		acceptingAnswers = true;
 	
 	};
-
+	let counter;
 	// set 10 seconds timer
 	function countdown () {
-		count = 20;
+		let count = 20;
 		counter = setInterval(timer, 1000);
 		function timer() {
 			count--;
