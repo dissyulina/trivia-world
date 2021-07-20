@@ -4,12 +4,13 @@ const choices = Array.from(document.getElementsByClassName("choice-text"));
 let quizDatas = []; // an array of objects of the quiz data
 let currentQuestion = {};
 let acceptingAnswers = false; //let the user submitting answer
-let score = 0; //score starts from 0
 let questionCounter = 0; //what number of question are the user on
 let availableQuestions =[]; // an array of our question set
 
 const correctPoints = [50, 100, 150, 200];
 let points;
+let score = 0; //score starts from 0
+let stars;
 
 const fullPoints = 1000;
 
@@ -152,6 +153,16 @@ choices.forEach(choice => {
 		console.log("You got: " + points + "points");
 		console.log("Your total points are :" + score);
 		console.log(fullPoints);
+		let savedScore;
+		if (localStorage.getItem(topic + "_score") !== null) {
+			savedScore = score + parseInt(localStorage.getItem(topic + "_score", savedScore));
+			localStorage.setItem(topic + "_score", savedScore);
+		} else {
+			localStorage.setItem(topic + "_score", savedScore);
+		}
+		
+		stars = Math.floor(score / fullPoints);
+		localStorage.setItem(topic + "_stars", stars);
 
 		// display the accumulative score in the progress bar
 		let progressBarPoint = (score / fullPoints * 100);
@@ -161,19 +172,30 @@ choices.forEach(choice => {
 		// After 10 questions, a modal pops up
 		const maxQuestion = 10;
 		console.log(questionCounter === maxQuestion);
-		if (questionCounter === maxQuestion) {
+		if (stars == 1 || stars == 2 || stars == 3) {
 			showModalStars(e);
 			return;
+		} else if (questionCounter === maxQuestion) {
+			showModalTenQuestions(e);
+			return;
+		} else {
+			getNewQuestion();
 		}
-		
-		getNewQuestion();
 
 	});
 });
 
-function showModalStars(e) {
+function showModalTenQuestions(e) {
 	e.preventDefault();
 	$("#modal-stars").modal("show");
 	$("#stars-title").text("You’ve answered 10 questions and you’ve got " + score + " points!");
 	$("#stars-text").text("Not bad! What do you want to do next? You can choose ‘play again’ to challenge yourself and increase your points to get stars. You can see your stars achievement by choosing ‘See my stars’. Or if you wish to quit the game, click the ‘Quit’ button.")
+}
+
+function showModalStars(e) {
+	e.preventDefault();
+	$("#modal-stars").modal("show");
+	$("#stars-title").text("Woohooo! You’ve made it to " + score + " points in " + topic + ". You get " + stars + " star!");
+	$("#stars-img").append('<img src="star.png">');
+	$("#stars-text").text("Yeah! You know basic knowlegde of " + topic + ". Challenge yourself and increase your points to get more stars! What do you want to do next?")
 }
