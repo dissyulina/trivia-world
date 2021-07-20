@@ -10,7 +10,7 @@ let availableQuestions =[]; // an array of our question set
 
 const correctPoints = [50, 100, 150, 200];
 let points;
-const maxQuestion = 10;
+
 const fullPoints = 1000;
 
 // Get the topicResult from local storage
@@ -141,6 +141,7 @@ choices.forEach(choice => {
 		const selectedChoice = e.target;
 		const selectedAnswer = selectedChoice.dataset["number"];
 		clearInterval(counter);
+
 		// If the answer is correct, add points into score
 		if(selectedAnswer == currentQuestion.answer) {
 			points = points;
@@ -151,13 +152,28 @@ choices.forEach(choice => {
 		console.log("You got: " + points + "points");
 		console.log("Your total points are :" + score);
 		console.log(fullPoints);
+
 		// display the accumulative score in the progress bar
 		let progressBarPoint = (score / fullPoints * 100);
 		console.log("your progress bar : " + progressBarPoint);
 		$("#progress-bar-yellow").css("width",progressBarPoint + "%");
 
+		// After 10 questions, a modal pops up
+		const maxQuestion = 10;
+		console.log(questionCounter === maxQuestion);
+		if (questionCounter === maxQuestion) {
+			showModalStars(e);
+			return;
+		}
+		
 		getNewQuestion();
 
 	});
 });
 
+function showModalStars(e) {
+	e.preventDefault();
+	$("#modal-stars").modal("show");
+	$("#stars-title").text("You’ve answered 10 questions and you’ve got " + score + " points!");
+	$("#stars-text").text("Not bad! What do you want to do next? You can choose ‘play again’ to challenge yourself and increase your points to get stars. You can see your stars achievement by choosing ‘See my stars’. Or if you wish to quit the game, click the ‘Quit’ button.")
+}
