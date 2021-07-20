@@ -6,7 +6,7 @@ const displayTopics = {
 	4: ["Art", "assets/images/art.jpg","https://opentdb.com/api.php?amount=10&category=25&difficulty=easy&type=multiple"],
 	5: ["Geography", "assets/images/geography.jpg","https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple"],
 	6: ["Sports", "assets/images/sports.jpg","https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple"],
-}
+};
 
 let deg = 0;
 var result;
@@ -54,13 +54,15 @@ if(document.getElementById('wheel')) {
 		$(".topic-image").children("img").addClass("img-fluid");
 		$("#question-topic").text("Topic : " + displayTopics[result][0]);
 
-		console.log(result === undefined);
-		topic = result;
+		console.log(displayTopics[result][2]);
+		fetchData(displayTopics[result][2]);
+		console.log(result);
+		
 	
 	});
-	console.log(result === undefined);
+	console.log(result);
 
-};
+}
 /*
 const sectionDeg = 30;
 function calculateTopic(spin) {
@@ -88,14 +90,18 @@ let points;
 const maxQuestion = 10;
 
 const fullPoints = 1000;
-console.log(result === undefined);
 
 // this only applies to the Question.html page (if statement to prevent error in other html pages)
 
-if ($("body").data("title") === "question-page") {
+//if ($("body").data("title") === "question-page") {
+//$("#btn-start-quiz").click(function() {
+	//location.href("question.html");
 
-	//Fetch API for quiz data
-	fetch("https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple")
+//Fetch API for quiz data
+function fetchData(urlTopic) {
+
+	$("#btn-start-quiz").click(function() {
+		fetch(urlTopic)
 		.then(res => {
 			return res.json();
 		})
@@ -117,7 +123,7 @@ if ($("body").data("title") === "question-page") {
 					0,
 					loadedQuestion.correct_answer
 				);
-				
+
 				answerChoices.forEach((choice, index) => {
 					formattedQuestion["choice" + (index + 1)] = choice;
 				});
@@ -125,13 +131,16 @@ if ($("body").data("title") === "question-page") {
 				return formattedQuestion;
 
 			});
-			
+
 			startGame();
 		})
 		// handle error scenario
 		.catch(err => {
 			console.error(err);
 		});
+	})
+	
+}
 
 
 	startGame = () => {
@@ -146,7 +155,7 @@ if ($("body").data("title") === "question-page") {
 		if (availableQuestions.length === 0) {
 			console.log("The end");
 			return window.location.assign("/index.html");
-		};
+		}
 		questionCounter++;
 		points = correctPoints[Math.floor(Math.random() * correctPoints.length)]; // assign one of the points randomly from the correctPoints array 
 		const questionIndex = Math.floor(Math.random() * availableQuestions.length); //set a random number to get a random question from the available questions left
@@ -191,11 +200,11 @@ if ($("body").data("title") === "question-page") {
 				clearInterval(counter);
 				getNewQuestion();
 				return;
-			};
+			}
 			// dispay the number of seconds	
 			$("#timer").text(count);
-		};
-	};
+		}
+	}
 	
 	// after a choice is clicked, record the choice, stop the countdown, and move on to next question, 
 	choices.forEach(choice => {
@@ -210,7 +219,7 @@ if ($("body").data("title") === "question-page") {
 				points = points;
 			} else {
 				points = 0;
-			};
+			}
 			score = score + points;
 			console.log("You got: " + points + "points");
 			console.log("Your total points are :" + score);
@@ -224,8 +233,9 @@ if ($("body").data("title") === "question-page") {
 	
 		});
 	});
-	
-};
+
+//});
+//}
 
 
 
@@ -248,4 +258,4 @@ if ($("body").data("title") === "question-page") {
 //var arr = jQuery.makeArray( elems );
 	//let choices = jQuery.makeArray(document.getElementsByClassName("choice-text"));
 	//$(".choice-text").makeArray();
-	//console.log($(".choice-text").makeArray());
+	//console.log($(".choice-text").makeArray())
