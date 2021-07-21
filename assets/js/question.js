@@ -11,6 +11,7 @@ const correctPoints = [50, 100, 150, 200];
 let points;
 let score = 0; //score starts from 0
 let stars;
+let savedScore;
 
 const fullPoints = 1000;
 
@@ -23,7 +24,7 @@ const getUrl = {
 	Science: "https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple",
 	History: "https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple",
 	Music: "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple",
-	Art: "https://opentdb.com/api.php?amount=10&category=25&difficulty=easy&type=multiple",
+	Art: "https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple",
 	Geography: "https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple",
 	Sports: "https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple",
 }
@@ -107,6 +108,13 @@ getNewQuestion = () => {
 		choice.innerHTML = currentQuestion["choice" + number];
 	});
 
+	// Display progress bar from previous score
+	if (localStorage.getItem(topic + "_score") !== null) {
+		progressBar(parseInt(localStorage.getItem(topic + "_score", savedScore)));
+		console.log("your progress bar : " + progressBarPoint);
+		$("#progress-bar-yellow").css("width",progressBarPoint + "%");
+	}
+
 	// Call function countdown for the timer
 	countdown();
 	
@@ -134,6 +142,20 @@ function countdown () {
 	};
 };
 
+// Display progress bar
+let progressBarPoint;
+function progressBar(s) {
+	if (s > 3000) {
+		progressBarPoint = ((s - 3000) / fullPoints * 100);
+	} else if (s > 2000) {
+		progressBarPoint = ((s - 2000) / fullPoints * 100);
+	} else if (s > 1000) {
+		progressBarPoint = ((s - 1000) / fullPoints * 100);
+	} else {
+		progressBarPoint = (s / fullPoints * 100);
+	}
+}
+
 // After a choice is clicked, record the choice, stop the countdown, and move on to next question, 
 choices.forEach(choice => {
 	choice.addEventListener("click", e => {
@@ -153,13 +175,8 @@ choices.forEach(choice => {
 		console.log("You got: " + points + "points");
 		console.log("Your total points are :" + score);
 
-		// display the accumulative score in the progress bar
-		let progressBarPoint = (score / fullPoints * 100);
-		console.log("your progress bar : " + progressBarPoint);
-		$("#progress-bar-yellow").css("width",progressBarPoint + "%");
-
-		// Save score to local storage
-		let savedScore;
+		// Save score to local storage, accumulate score from previous one
+		
 		console.log(localStorage.getItem(topic + "_score") !== null);
 		console.log(parseInt(localStorage.getItem(topic + "_score", savedScore)));
 		if (localStorage.getItem(topic + "_score") !== null) {
@@ -169,8 +186,14 @@ choices.forEach(choice => {
 			savedScore = score;
 			localStorage.setItem(topic + "_score", savedScore);
 		}
+
+		// display the accumulative score in the progress bar 
+		progressBar(savedScore);
 		
-		// Assign stars
+		console.log("your progress bar : " + progressBarPoint);
+		$("#progress-bar-yellow").css("width",progressBarPoint + "%");
+
+		// Assign stars if score reach each 1000 points
 		stars = Math.floor(savedScore / fullPoints);
 		console.log("You have now " + stars + " stars");
 		localStorage.setItem(topic + "_stars", stars);
@@ -222,7 +245,7 @@ function showModalTenQuestions(e) {
 function showModalStars(e) {
 	e.preventDefault();
 	$("#modal-stars").modal("show");
-	$("#stars-title").text("Woohooo! You’ve made it to " + score + " points in " + topic + ". You get " + stars + " star!");
-	$("#stars-img").append('<img src="star.png">');
+	$("#stars-title").text("Woohooo! You’ve made it to " + savedScore + " points in " + topic + ". You get " + stars + " star!");
+	$("#stars-img").append('<img src="assets/images/star.png">');
 	$("#stars-text").text("Yeah! You know basic knowlegde of " + topic + ". Challenge yourself and increase your points to get more stars! What do you want to do next?")
 }
