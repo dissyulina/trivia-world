@@ -134,6 +134,13 @@ li {
     transition: transform 150ms;
 }
 
+/* Modals */
+.star-modal {
+    align-self: center;
+    width: 80px;
+    height: 80px;
+}
+
 /*-- How To Play Page --*/
   
 .full-container {

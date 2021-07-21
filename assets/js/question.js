@@ -176,7 +176,6 @@ choices.forEach(choice => {
 		console.log("Your total points are :" + score);
 
 		// Save score to local storage, accumulate score from previous one
-		
 		console.log(localStorage.getItem(topic + "_score") !== null);
 		console.log(parseInt(localStorage.getItem(topic + "_score", savedScore)));
 		if (localStorage.getItem(topic + "_score") !== null) {
@@ -187,9 +186,9 @@ choices.forEach(choice => {
 			localStorage.setItem(topic + "_score", savedScore);
 		}
 
-		// display the accumulative score in the progress bar 
-		progressBar(savedScore);
-		
+		// call function progressBar to display the accumulative score in the progress bar 
+		//progressBar(savedScore);
+		progressBar(parseInt(localStorage.getItem(topic + "_score", savedScore)));
 		console.log("your progress bar : " + progressBarPoint);
 		$("#progress-bar-yellow").css("width",progressBarPoint + "%");
 
@@ -238,7 +237,7 @@ choices.forEach(choice => {
 function showModalTenQuestions(e) {
 	e.preventDefault();
 	$("#modal-stars").modal("show");
-	$("#stars-title").text("You’ve answered 10 questions and you’ve got " + score + " points!");
+	$("#stars-title").text("You’ve answered 10 questions and you’ve got " + score + " points in this round. Your total points are " + savedScore);
 	$("#stars-text").text("Not bad! What do you want to do next? You can choose ‘play again’ to challenge yourself and increase your points to get stars. You can see your stars achievement by choosing ‘See my stars’. Or if you wish to quit the game, click the ‘Quit’ button.")
 }
 
@@ -247,5 +246,6 @@ function showModalStars(e) {
 	$("#modal-stars").modal("show");
 	$("#stars-title").text("Woohooo! You’ve made it to " + savedScore + " points in " + topic + ". You get " + stars + " star!");
 	$("#stars-img").append('<img src="assets/images/star.png">');
+	$("#stars-img").children("img").addClass("star-modal");
 	$("#stars-text").text("Yeah! You know basic knowlegde of " + topic + ". Challenge yourself and increase your points to get more stars! What do you want to do next?")
 }
