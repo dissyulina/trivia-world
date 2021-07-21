@@ -22,7 +22,7 @@ console.log(topic);
 const getUrl = {
 	Science: "https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple",
 	History: "https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple",
-	Music: "https://opentdb.com/api.php?amount=10&category=12&difficulty=easy&type=multiple",
+	Music: "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple",
 	Art: "https://opentdb.com/api.php?amount=10&category=25&difficulty=easy&type=multiple",
 	Geography: "https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple",
 	Sports: "https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple",
@@ -152,22 +152,49 @@ choices.forEach(choice => {
 		score = score + points;
 		console.log("You got: " + points + "points");
 		console.log("Your total points are :" + score);
-		console.log(fullPoints);
-		let savedScore;
-		if (localStorage.getItem(topic + "_score") !== null) {
-			savedScore = score + parseInt(localStorage.getItem(topic + "_score", savedScore));
-			localStorage.setItem(topic + "_score", savedScore);
-		} else {
-			localStorage.setItem(topic + "_score", savedScore);
-		}
-		
-		stars = Math.floor(score / fullPoints);
-		localStorage.setItem(topic + "_stars", stars);
 
 		// display the accumulative score in the progress bar
 		let progressBarPoint = (score / fullPoints * 100);
 		console.log("your progress bar : " + progressBarPoint);
 		$("#progress-bar-yellow").css("width",progressBarPoint + "%");
+
+		// Save score to local storage
+		let savedScore;
+		console.log(localStorage.getItem(topic + "_score") !== null);
+		console.log(parseInt(localStorage.getItem(topic + "_score", savedScore)));
+		if (localStorage.getItem(topic + "_score") !== null) {
+			savedScore = points + parseInt(localStorage.getItem(topic + "_score", savedScore));
+			localStorage.setItem(topic + "_score", savedScore);
+		} else {
+			savedScore = score;
+			localStorage.setItem(topic + "_score", savedScore);
+		}
+		
+		// Assign stars
+		stars = Math.floor(savedScore / fullPoints);
+		console.log("You have now " + stars + " stars");
+		localStorage.setItem(topic + "_stars", stars);
+
+		// listen for changes in stars value (ie. from 0 to 1 star, from 1 to 2 stars, and from 2 to 3 stars)
+		starChanges = {
+			aInternal: stars,
+			aListener: function(val) {},
+			set a(val) {
+			  this.aInternal = val;
+			  this.aListener(val);
+			},
+			get a() {
+			  return this.aInternal;
+			},
+			registerListener: function(listener) {
+			  this.aListener = listener;
+			}
+		}
+
+		starChanges.registerListener(function(val) {
+			alert("Stars changes to " + val);
+			console.log("Stars changes to " + val)
+		});
 
 		// After 10 questions, a modal pops up
 		const maxQuestion = 10;
