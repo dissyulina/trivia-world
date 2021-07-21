@@ -202,6 +202,7 @@ choices.forEach(choice => {
 		console.log("The stars you have before: " + localStorage.getItem(topic + "_stars", stars));
 		let diffStars = stars - parseInt(localStorage.getItem(topic + "_stars", stars));
 		if (diffStars === 1) { 
+			console.log(stars);
 			console.log("CONGRATS!!");
 			showModalStars(e);
 			return;
@@ -233,16 +234,16 @@ function showModalStars(e) {
 	e.preventDefault();
 	$("#modal-stars").modal("show");
 	$("#stars-title").text("Woohooo! You’ve made it to " + savedScore + " points in " + topic + ". You get " + stars + " star!");
-	if (stars = 1) {
+	if (stars === 1) {
 		$("#stars-img").append('<img src="assets/images/star.png">');
 		$("#stars-img").children("img").addClass("star-modal");
 		$("#stars-text").text("Yeah! You know basic knowlegde of " + topic + ". Challenge yourself and increase your points to get more stars! What do you want to do next?")
-	} else if (stars = 2) {
+	} else if (stars === 2) {
 		$("#stars-img").append('<img src="assets/images/star.png">');
 		$("#stars-img").append('<img src="assets/images/star.png">');
 		$("#stars-img").children("img").addClass("star-modal");
 		$("#stars-text").text("Amazing! You’re a " + topic + " fan and you're quite knowledgable in this. You earn your two stars achievement! Play another trivia and see if you’re as amazing in another topics as well.")		
-	} else if (stars = 3) {
+	} else if (stars === 3) {
 		$("#stars-img").append('<img src="assets/images/star.png">');
 		$("#stars-img").append('<img src="assets/images/star.png">');
 		$("#stars-img").append('<img src="assets/images/star.png">');
