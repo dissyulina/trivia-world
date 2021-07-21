@@ -7,10 +7,11 @@ let acceptingAnswers = false; //let the user submitting answer
 let questionCounter = 0; //what number of question are the user on
 let availableQuestions =[]; // an array of our question set
 
-const correctPoints = [50, 100, 150, 200];
+//const correctPoints = [50, 100, 150, 200];
+const correctPoints = [400, 500, 600];
 let points;
 let score = 0; //score starts from 0
-let stars;
+let stars = 0;
 let savedScore;
 
 const fullPoints = 1000;
@@ -84,6 +85,7 @@ getNewQuestion = () => {
 		return window.location.assign("/index.html");
 	};
 	questionCounter++;
+	// localStorage.clear();
 	// Assign one of the points randomly from the correctPoints array 
 	points = correctPoints[Math.floor(Math.random() * correctPoints.length)];
 	const questionIndex = Math.floor(Math.random() * availableQuestions.length); //set a random number to get a random question from the available questions left
@@ -124,7 +126,7 @@ getNewQuestion = () => {
 
 };
 
-// Set 20 seconds timer
+// Function countdown to set 20 seconds timer
 let counter;
 function countdown () {
 	let count = 20;
@@ -195,36 +197,22 @@ choices.forEach(choice => {
 		// Assign stars if score reach each 1000 points
 		stars = Math.floor(savedScore / fullPoints);
 		console.log("You have now " + stars + " stars");
-		localStorage.setItem(topic + "_stars", stars);
 
-		// listen for changes in stars value (ie. from 0 to 1 star, from 1 to 2 stars, and from 2 to 3 stars)
-		starChanges = {
-			aInternal: stars,
-			aListener: function(val) {},
-			set a(val) {
-			  this.aInternal = val;
-			  this.aListener(val);
-			},
-			get a() {
-			  return this.aInternal;
-			},
-			registerListener: function(listener) {
-			  this.aListener = listener;
-			}
-		}
-
-		starChanges.registerListener(function(val) {
-			alert("Stars changes to " + val);
-			console.log("Stars changes to " + val)
-		});
-
-		// After 10 questions, a modal pops up
-		const maxQuestion = 10;
-		console.log(questionCounter === maxQuestion);
-		if (stars == 1 || stars == 2 || stars == 3) {
+		// Listen for changes in stars value (ie. from 0 to 1 star, from 1 to 2 stars, and from 2 to 3 stars) by getting previous stars value, and comparing it to the newest stars value
+		console.log("The stars you have before: " + localStorage.getItem(topic + "_stars", stars));
+		let diffStars = stars - parseInt(localStorage.getItem(topic + "_stars", stars));
+		if (diffStars === 1) { 
+			console.log("CONGRATS!!");
 			showModalStars(e);
 			return;
-		} else if (questionCounter === maxQuestion) {
+		}
+		// Save the stars value into local storage
+		localStorage.setItem(topic + "_stars", stars);
+
+		// After 10 questions are up, a modal pops up
+		const maxQuestion = 10;
+		console.log(questionCounter === maxQuestion);
+		if (questionCounter === maxQuestion) {
 			showModalTenQuestions(e);
 			return;
 		} else {
@@ -245,7 +233,22 @@ function showModalStars(e) {
 	e.preventDefault();
 	$("#modal-stars").modal("show");
 	$("#stars-title").text("Woohooo! You’ve made it to " + savedScore + " points in " + topic + ". You get " + stars + " star!");
-	$("#stars-img").append('<img src="assets/images/star.png">');
-	$("#stars-img").children("img").addClass("star-modal");
-	$("#stars-text").text("Yeah! You know basic knowlegde of " + topic + ". Challenge yourself and increase your points to get more stars! What do you want to do next?")
+	if (stars = 1) {
+		$("#stars-img").append('<img src="assets/images/star.png">');
+		$("#stars-img").children("img").addClass("star-modal");
+		$("#stars-text").text("Yeah! You know basic knowlegde of " + topic + ". Challenge yourself and increase your points to get more stars! What do you want to do next?")
+	} else if (stars = 2) {
+		$("#stars-img").append('<img src="assets/images/star.png">');
+		$("#stars-img").append('<img src="assets/images/star.png">');
+		$("#stars-img").children("img").addClass("star-modal");
+		$("#stars-text").text("Amazing! You’re a " + topic + " fan and you're quite knowledgable in this. You earn your two stars achievement! Play another trivia and see if you’re as amazing in another topics as well.")		
+	} else if (stars = 3) {
+		$("#stars-img").append('<img src="assets/images/star.png">');
+		$("#stars-img").append('<img src="assets/images/star.png">');
+		$("#stars-img").append('<img src="assets/images/star.png">');
+		$("#stars-img").children("img").addClass("star-modal");
+		$("#stars-text").text("Congratulations! You’re now officially a " + topic + " professor! You know all about this topic. You read relevant articles about it and always keep up with the news. Play another trivia and see if you’re as amazing in another topics as well.")	
+	}
+
+	
 }

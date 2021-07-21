@@ -14,7 +14,7 @@ let result;
 // Create a spin between 3000 - 6000 degree (code adapted and changed to jQuery, from youtube video: Weibenfalk - Vanilla Javascript Wheel of Fortune)
 $("#btn-wheel").click(function() {
 	$("#btn-wheel").css('pointer-events','none');
-	deg = Math.floor(3000 + Math.random() * 3000);
+	deg = Math.floor(3000 + Math.random() * 5000);
 	$("#wheel").css("transition","all 7s ease-out");
 	$("#wheel").css("transform","rotate(" + deg + "deg)");
 	$("#wheel").addClass("blur");

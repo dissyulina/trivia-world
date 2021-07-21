@@ -139,6 +139,7 @@ li {
     align-self: center;
     width: 80px;
     height: 80px;
+    display: inline-block;
 }
 
 /*-- How To Play Page --*/
