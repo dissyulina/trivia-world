@@ -85,7 +85,7 @@ getNewQuestion = () => {
 		return window.location.assign("/index.html");
 	};
 	questionCounter++;
-	// localStorage.clear();
+	//localStorage.clear();
 	// Assign one of the points randomly from the correctPoints array 
 	points = correctPoints[Math.floor(Math.random() * correctPoints.length)];
 	const questionIndex = Math.floor(Math.random() * availableQuestions.length); //set a random number to get a random question from the available questions left
@@ -97,12 +97,10 @@ getNewQuestion = () => {
 	$("#question-topic").text("Topic : " + topic);
 	$("#question-text").text(currentQuestion.question);
 	// Replace error string &#039; and &quot; with a single quote and a double quote
-	$('#question-text').text(function(index,text){
-		return text.replace("&#039;","'");
-	});
-	$('#question-text').text(function(index,text){
-		return text.replace('&quot;','""');
-	});
+	$('p:contains("dogsss")').text('dollsss');
+	$('#question-text:contains("&#039;")').text("'");
+	$('#question-text:contains("&quot;")').text('""');
+	$('#question-text:contains("&rsquo;")').text('""');
 
 	// Display each of the choices into the html content
 	choices.forEach(choice => {

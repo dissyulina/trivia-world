@@ -223,7 +223,7 @@ form {
 .background-gradient {
     height: 100vh;
     width: 100vw;
-    background: url(../images/bg-gradient.jpg) no-repeat center center;
+    background: url(../images/bg-question.jpg) no-repeat center center;
     background-attachment: scroll; 
     background-size: cover;
 }
@@ -253,19 +253,21 @@ form {
     width: 100%;
 }
 
-.choice-container:hover {
-    cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem rgba(118, 150, 243, 0.5);
-    transform: translateY(-0.1rem);
-    transition: transform 150ms;
-}
-
 .choice-text {
     margin-bottom: 2rem;
     border: 0.1rem solid #fff;
     background-color: #fff;
     width: 100%;
+    padding: 1rem;
 }
+
+.choice-text:hover {
+    box-shadow: 0 0.4rem 1.4rem rgba(118, 150, 243, 0.5);
+    cursor: pointer;
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
 
 /* Media Queries */
 
