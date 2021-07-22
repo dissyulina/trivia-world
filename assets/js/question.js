@@ -7,8 +7,8 @@ let acceptingAnswers = false; //let the user submitting answer
 let questionCounter = 0; //what number of question are the user on
 let availableQuestions =[]; // an array of our question set
 
-//const correctPoints = [50, 100, 150, 200];
-const correctPoints = [400, 500, 600];
+const correctPoints = [50, 100, 150, 200];
+//const correctPoints = [400, 500, 600];
 let points;
 let score = 0; //score starts from 0
 let stars = 0;
@@ -97,10 +97,14 @@ getNewQuestion = () => {
 	$("#question-topic").text("Topic : " + topic);
 	$("#question-text").text(currentQuestion.question);
 	// Replace error string &#039; and &quot; with a single quote and a double quote
-	$('p:contains("dogsss")').text('dollsss');
-	$('#question-text:contains("&#039;")').text("'");
-	$('#question-text:contains("&quot;")').text('""');
-	$('#question-text:contains("&rsquo;")').text('""');
+	$('#question-text').text(function (index, text) {
+		return text.replace("&#039;", "'");
+	});
+	$("#question-text").text(function (index, text) {
+		return text.replace("&quot;", '""');
+	});
+
+	//$('#question-text:contains("&rsquo;")').text('""');
 
 	// Display each of the choices into the html content
 	choices.forEach(choice => {
@@ -203,17 +207,19 @@ choices.forEach(choice => {
 			console.log(stars);
 			console.log("CONGRATS!!");
 			showModalStars(e);
-			return;
+			localStorage.setItem(topic + "_stars", stars);
+			//return;
 		}
 		// Save the stars value into local storage
-		localStorage.setItem(topic + "_stars", stars);
+		console.log(stars);
+		
 
 		// After 10 questions are up, a modal pops up
 		const maxQuestion = 10;
 		console.log(questionCounter === maxQuestion);
 		if (questionCounter === maxQuestion) {
 			showModalTenQuestions(e);
-			return;
+			//return;
 		} else {
 			getNewQuestion();
 		}
