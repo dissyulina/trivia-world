@@ -166,15 +166,13 @@ section ol {
 
 /* Contact Page */
 
-form {
+.glass-effect {
     background: rgba( 255, 255, 255, 0.20 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 6.5px );
     -webkit-backdrop-filter: blur( 6.5px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 ); 
-    padding-right: 1rem;
-    padding-left: 1rem;
     margin-bottom: 3rem;
   }
 
@@ -269,14 +267,32 @@ form {
 }
 
 /* Achievements page */
+#achievement-page {
+    background-color: #C6D4FA;
+}
+
+.overlay-icons {
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 40px;
+    padding: 0;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
 
 .topic-icon {
-    width: 100px;
-    height: 100px;
+    width: 5rem;
+    height: 5rem;
 }
 
 .stars-achievement-wrapper {
-    width: 100px;
+    width: 5rem;
 }
 
 .stars-achievement-wrapper img {
@@ -287,7 +303,11 @@ form {
 }
 
 /* Media Queries */
-
+@media screen and (min-width: 768px) {
+    #achievement-page {
+        height: 100vh;
+    }
+}
 @media screen and (min-width: 1300px) {
     .hero {
       background-size: contain;
