@@ -79,11 +79,12 @@ startGame = () => {
 };
 
 getNewQuestion = () => {
-
+	// If 10th question is left unanswered and time's up
 	if (availableQuestions.length === 0) {
 		console.log("The end");
 		return window.location.assign("/index.html");
 	};
+	
 	questionCounter++;
 	//localStorage.clear();
 	// Assign one of the points randomly from the correctPoints array 
@@ -172,8 +173,10 @@ choices.forEach(choice => {
 		// If the answer is correct, add points into score
 		if(selectedAnswer == currentQuestion.answer) {
 			points = points;
+			console.log("Your answer is correct");
 		} else {
 			points = 0;
+			console.log("Your answer is wrong")
 		};
 		score = score + points;
 		console.log("You got: " + points + "points");
@@ -201,8 +204,8 @@ choices.forEach(choice => {
 		console.log("You have now " + stars + " stars");
 
 		// Listen for changes in stars value (ie. from 0 to 1 star, from 1 to 2 stars, and from 2 to 3 stars) by getting previous stars value, and comparing it to the newest stars value
-		console.log("The stars you have before: " + localStorage.getItem(topic + "_stars", stars));
-		let diffStars = stars - parseInt(localStorage.getItem(topic + "_stars", stars));
+		console.log("The stars you have before: " + (parseInt(localStorage.getItem(topic + "_stars", stars) + 0)));
+		let diffStars = stars - (parseInt(localStorage.getItem(topic + "_stars", stars) + 0));
 		if (diffStars === 1) { 
 			console.log(stars);
 			console.log("CONGRATS!!");
@@ -212,18 +215,17 @@ choices.forEach(choice => {
 		}
 		// Save the stars value into local storage
 		console.log(stars);
-		
 
-		// After 10 questions are up, a modal pops up
+		// After 10th question is answered, a modal pops up
 		const maxQuestion = 10;
 		console.log(questionCounter === maxQuestion);
+		console.log(availableQuestions.length === 0);
 		if (questionCounter === maxQuestion) {
 			showModalTenQuestions(e);
 			//return;
 		} else {
 			getNewQuestion();
 		}
-
 	});
 });
 
@@ -235,7 +237,7 @@ function showModalTenQuestions(e) {
 }
 
 function showModalStars(e) {
-	e.preventDefault();
+	//e.preventDefault();
 	$("#modal-stars").modal("show");
 	$("#stars-title").text("Woohooo! You’ve made it to " + savedScore + " points in " + topic + ". You get " + stars + " star!");
 	if (stars === 1) {
@@ -254,6 +256,4 @@ function showModalStars(e) {
 		$("#stars-img").children("img").addClass("star-modal");
 		$("#stars-text").text("Congratulations! You’re now officially a " + topic + " professor! You know all about this topic. You read relevant articles about it and always keep up with the news. Play another trivia and see if you’re as amazing in another topics as well.")	
 	}
-
-	
 }
