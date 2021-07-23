@@ -242,7 +242,10 @@ function showModalTenQuestions(e) {
 	e.preventDefault();
 	$("#modal-stars").modal("show");
 	$("#stars-title").text("You’ve answered 10 questions and you’ve got " + score + " points in this round. Your total points are " + savedScore);
-	$("#stars-text").text("Not bad! What do you want to do next? You can choose ‘play again’ to challenge yourself and increase your points to get stars. You can see your stars achievement by choosing ‘See my stars’. Or if you wish to quit the game, click the ‘Quit’ button.")
+	if (score === 0) {
+		$("#stars-text").text("Ooopps.. was it harder than you thought, or did you just got distracted while answering the questions? Don't worry! You can redeem yourself by choosing 'Play Again'. You can see your all of your stars achievement by choosing ‘See my stars’. Or if you wish to quit the game, click the ‘Quit’ button.")
+	}
+	$("#stars-text").text("Not bad! What do you want to do next? You can choose ‘play again’ to challenge yourself and increase your points to get stars. You can see all of your stars achievement by choosing ‘See my stars’. Or if you wish to quit the game, click the ‘Quit’ button.")
 }
 
 function showModalStars(e) {
@@ -263,6 +266,6 @@ function showModalStars(e) {
 		$("#stars-img").append('<img src="assets/images/star.png">');
 		$("#stars-img").append('<img src="assets/images/star.png">');
 		$("#stars-img").children("img").addClass("star-modal");
-		$("#stars-text").text("Congratulations! You’re now officially a " + topic + " professor! You know all about this topic. You read relevant articles about it and always keep up with the news. Play another trivia and see if you’re as amazing in another topics as well.")	
+		$("#stars-text").text("Congratulations, level's completed for " + topic + " !! You’re now unofficially a " + topic + " professor! You know all about it. You read relevant articles about it and always keep up with the news. Play another trivia and see if you’re as amazing in another topics as well.")	
 	}
 }

@@ -154,7 +154,6 @@ li {
 }
   
 section h2 {
-    padding-top: 2rem;
     padding-bottom: 2rem;
     text-align: center;
 }
@@ -184,6 +183,9 @@ form {
     background: url(../images/blueray.jpg) no-repeat center center;
     background-attachment: scroll; 
     background-size: cover;
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
 }
 
 #picker {
@@ -313,17 +315,11 @@ form {
       background-size: contain;
     }
 }
-/*
-@media screen and (min-width: 1000px) {
-  .star-container {
-    height: calc(10rem + 12vh);
-    padding-bottom: calc(4rem + 10vh);
-  }
+/* Special queries for the very small screens (iphone 5, moto G4, etc) */
+@media screen and (max-width: 400px) {
+   .modal-body,
+   .modal-footer {
+        font-size: 0.85rem;
+        padding: 0.75rem;
+   }
 }
-
-@media screen and (min-width: 768px) {
-    #achievement-page {
-        height: 100vh;
-    }
-}
-*/
