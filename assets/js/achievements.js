@@ -1,7 +1,6 @@
 //var topic = localStorage.getItem("History_stars");
 //console.log(topic)
 let topicArrays = $(".stars-achievement-wrapper");
-let numberOfStars;
 let achievementNames = {
     Sports_stars : topicArrays[0],
     Geography_stars : topicArrays[1],
@@ -10,7 +9,7 @@ let achievementNames = {
     Science_stars : topicArrays[4],
     Music_stars : topicArrays[5],
 }
-
+let numberOfStars;
 
 
 // append stars for Sports
@@ -27,42 +26,17 @@ let achievementNames = {
         console.log(achievementNames[i]);
         numberOfStars = localStorage.getItem(i);
         //let image = document.createElement("img");
-        let x=0;
-        while (x < numberOfStars) {
+        let j=0;
+        while (j < numberOfStars) {
             let image = document.createElement("img");
             image.src = "assets/images/star.png";
             image.className = "stars-achievement";
             achievementNames[i].appendChild(image);
-            x++;
+            j++;
         }
-        /*
-        if (numberOfStars == 1) {
-            document.createElement("img");
-            image.className = "stars-achievement";
-            image.src = "assets/images/star.png";
-            achievementNames[i].appendChild(image);
-        } else if (numberOfStars == 2) {
-            numberOfStars = 2;
-            displayStars();
-	
-        } else if (numberOfStars == 3) {
-            achievementNames[i].append('<img src="assets/images/star.png">');
-            achievementNames[i].append('<img src="assets/images/star.png">');
-            achievementNames[i].append('<img src="assets/images/star.png">');
-            //achievementNames[i].children("img").addClass("star-modal");
+        if (numberOfStars === null) {
+            let emptyDiv = document.createElement("div");
+            emptyDiv.className = "stars-achievement";
+            achievementNames[i].appendChild(emptyDiv);
         }
-        */
-    }
-    
-//});
 
-function displayStars() {
-    let x=0;
-    while (x < numberOfStars) {
-        document.createElement("img");
-        document.createElement("img").src = "assets/images/star.png";
-        document.createElement("img").className = "stars-achievement";
-        achievementNames[i].appendChild(image);
-        x++;
-    }
-}
