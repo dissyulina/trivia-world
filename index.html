@@ -35,9 +35,9 @@
                         </div>
                         <div>
                             <ul class="d-flex flex-column align-items-center my-4">
-                                <li><a class="btn btn-main" href="wheel.html" role="button">PLAY</a></li>
-                                <li><a class="btn btn-second" href="howtoplay.html" role="button">HOW TO PLAY</a></li>
-                                <li><a class="btn btn-second" href="contact.html" role="button">CONTACT</a></li>
+                                <li><a class="btn btn-start btn-main" href="wheel.html" role="button">PLAY</a></li>
+                                <li><a class="btn btn-start btn-second" href="howtoplay.html" role="button">HOW TO PLAY</a></li>
+                                <li><a class="btn btn-start btn-second" href="contact.html" role="button">CONTACT</a></li>
                             </ul>
                         </div>
                     </div>
@@ -46,6 +46,30 @@
         </div>
     </header>  
 
+    <!--Modal on page load-->
+    <div class="modal fade" id="username-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mx-auto" id="staticBackdropLabel">Welcome to The Trivia World!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>What's your username?</p>
+                    <div>
+
+                    </div>
+                    <div class="mx-auto">
+                        <label for="new-username" class="col-form-label">Add a new player :</label>
+                        <input type="text" placeholder="Your username" aria-label="Username" id="new-username">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-main btn-sm mt-3" id="submit-username" data-bs-dismiss="modal">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
     <script src="assets/js/script.js"></script>

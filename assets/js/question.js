@@ -1,5 +1,3 @@
-// Script for the Quiz
-
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 let quizDatas = []; // an array of objects of the quiz data
 let currentQuestion = {};
@@ -251,6 +249,9 @@ function showModalTenQuestions(e) {
 function showModalStars(e) {
 	//e.preventDefault();
 	$("#modal-stars").modal("show");
+	if(stars > 3) {
+		$("#stars-title").text("Woohooo! You’ve made it to " + savedScore + " points in " + topic + "!");
+	}
 	$("#stars-title").text("Woohooo! You’ve made it to " + savedScore + " points in " + topic + ". You get " + stars + " star!");
 	if (stars === 1) {
 		$("#stars-img").append('<img src="assets/images/star.png">');
