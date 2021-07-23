@@ -7,8 +7,8 @@ let acceptingAnswers = false; //let the user submitting answer
 let questionCounter = 0; //what number of question are the user on
 let availableQuestions =[]; // an array of our question set
 
-const correctPoints = [50, 100, 150, 200];
-//const correctPoints = [400, 500, 600];
+//const correctPoints = [50, 100, 150, 200];
+const correctPoints = [300, 400, 500, 600];
 let points;
 let score = 0; //score starts from 0
 let stars = 0;
@@ -89,6 +89,7 @@ getNewQuestion = () => {
 	//localStorage.clear();
 	// Assign one of the points randomly from the correctPoints array 
 	points = correctPoints[Math.floor(Math.random() * correctPoints.length)];
+	console.log(points);
 	const questionIndex = Math.floor(Math.random() * availableQuestions.length); //set a random number to get a random question from the available questions left
 	currentQuestion = availableQuestions[questionIndex];
 
@@ -204,9 +205,17 @@ choices.forEach(choice => {
 		console.log("You have now " + stars + " stars");
 
 		// Listen for changes in stars value (ie. from 0 to 1 star, from 1 to 2 stars, and from 2 to 3 stars) by getting previous stars value, and comparing it to the newest stars value
-		console.log("The stars you have before: " + (parseInt(localStorage.getItem(topic + "_stars", stars) + 0)));
-		let diffStars = stars - (parseInt(localStorage.getItem(topic + "_stars", stars) + 0));
-		if (diffStars === 1) { 
+		console.log("The stars you have before: " + (parseInt(localStorage.getItem(topic + "_stars", stars)) + 0));
+		console.log(localStorage.getItem(topic + "_stars", stars));
+		if (localStorage.getItem(topic + "_stars", stars) === NaN) {
+			localStorage.getItem(topic + "_stars", stars) = 0
+		} else {
+			localStorage.getItem(topic + "_stars", stars);
+		}
+		console.log(localStorage.getItem(topic + "_stars", stars));
+		let diffStars = stars - (localStorage.getItem(topic + "_stars", stars));
+		console.log(diffStars);
+		if (diffStars >= 1) { 
 			console.log(stars);
 			console.log("CONGRATS!!");
 			showModalStars(e);
