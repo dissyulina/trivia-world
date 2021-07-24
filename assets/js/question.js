@@ -185,11 +185,11 @@ choices.forEach(choice => {
 		// Save score to local storage, accumulate score from previous one
 		console.log(localStorage.getItem(topic + "_score") !== null);
 		console.log(parseInt(localStorage.getItem(topic + "_score", savedScore)));
-		if (localStorage.getItem(topic + "_score") !== null) {
-			savedScore = points + parseInt(localStorage.getItem(topic + "_score", savedScore));
+		if ((localStorage.getItem(topic + "_score") === null) || (localStorage.getItem(topic + "_score") === "null")) {
+			savedScore = score;
 			localStorage.setItem(topic + "_score", savedScore);
 		} else {
-			savedScore = score;
+			savedScore = points + parseInt(localStorage.getItem(topic + "_score", savedScore));
 			localStorage.setItem(topic + "_score", savedScore);
 		}
 
@@ -206,13 +206,15 @@ choices.forEach(choice => {
 		// Listen for changes in stars value (ie. from 0 to 1 star, from 1 to 2 stars, and from 2 to 3 stars) by getting previous stars value, and comparing it to the newest stars value
 		console.log("The stars you have before: " + (parseInt(localStorage.getItem(topic + "_stars", stars)) + 0));
 		console.log(localStorage.getItem(topic + "_stars", stars));
-		if (localStorage.getItem(topic + "_stars", stars) === NaN) {
-			localStorage.getItem(topic + "_stars", stars) = 0
+		let diffStars;
+		if ((localStorage.getItem(topic + "_stars", stars) === NaN) || (localStorage.getItem(topic + "_stars", stars) === "null")) {
+			diffStars = stars;
 		} else {
 			localStorage.getItem(topic + "_stars", stars);
+			diffStars = stars - (localStorage.getItem(topic + "_stars", stars));
 		}
 		console.log(localStorage.getItem(topic + "_stars", stars));
-		let diffStars = stars - (localStorage.getItem(topic + "_stars", stars));
+
 		console.log(diffStars);
 		if (diffStars >= 1) { 
 			console.log(stars);

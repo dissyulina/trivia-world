@@ -34,7 +34,7 @@ let numberOfStars;
             j++;
         }
         // if the numberOfStars is null, create an empty div with the same height and width
-        if (numberOfStars === null) {
+        if ((numberOfStars === null) || (numberOfStars === "null")) {
             let emptyDiv = document.createElement("div");
             emptyDiv.className = "stars-achievement";
             achievementDatas[i].appendChild(emptyDiv);
@@ -42,7 +42,7 @@ let numberOfStars;
     }
 
 $("#btn-quit").click(function(e) {
-    e.preventDefault();
+    //e.preventDefault();
 
     // All the quiz's data are put into a new object
     let datas = new Object();

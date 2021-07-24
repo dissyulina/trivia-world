@@ -1,5 +1,5 @@
 
-$(document).ready(function(){
+$(window).on('load', function() {
 	$("#username-modal").modal('show');
 });
 
@@ -17,10 +17,13 @@ $('#submit-username').on('click', function(e) {
 	} else {
 		console.log("data player exists");
 		// Retrieve the JSON string, parse it to object
+		localStorage.setItem('player',inputName);
 		data = JSON.parse(localStorage.getItem(inputName));
 		console.log(data);
 		console.log(data.sportsScore);
+		console.log(data.musicScore);
 		// Set object back as keys in local storage
+	
 		localStorage.setItem("Sports_score", data.sportsScore);
 		localStorage.setItem("Sports_stars", data.sportsStars);
 		localStorage.setItem("History_score", data.historyScore);
@@ -33,12 +36,13 @@ $('#submit-username').on('click', function(e) {
 		localStorage.setItem("Geography_stars", data.geographyStars);
 		localStorage.setItem("Science_score", data.scienceScore);
 		localStorage.setItem("Science_stars", data.scienceStars);
+		
 
 	}
 
 });
-
 /*
+
 var user = new Array();
 player1 = new Object();
 player1 = {
