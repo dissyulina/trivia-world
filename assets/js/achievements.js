@@ -40,3 +40,44 @@ let numberOfStars;
             achievementDatas[i].appendChild(emptyDiv);
         }
     }
+
+$("#btn-quit").click(function(e) {
+    e.preventDefault();
+
+    // All the quiz's data are put into a new object
+    let datas = new Object();
+    console.log(localStorage.getItem("Sports_stars"));
+    datas = {
+        sportsStars: localStorage.getItem("Sports_stars"),
+        sportsScore: localStorage.getItem("Sports_score"),
+        historyStars: localStorage.getItem("History_stars"),
+        historyScore: localStorage.getItem("History_score"),
+        musicStars: localStorage.getItem("Music_stars"),
+        musicScore: localStorage.getItem("Music_score"),
+        geographyStars: localStorage.getItem("Geography_stars"),
+        geographyScore: localStorage.getItem("Geography_score"),
+        artStars: localStorage.getItem("Art_stars"),
+        artScore: localStorage.getItem("Art_score"),
+        scienceStars: localStorage.getItem("Science_stars"),
+        scienceScore: localStorage.getItem("Science_score"),
+    }
+    console.log(localStorage.getItem("player"));
+    inputName = localStorage.getItem("player");
+    localStorage.setItem(inputName, JSON.stringify(datas));
+    console.log(JSON.stringify(datas));
+
+    //remove all keys, except the data key inputName
+    window.localStorage.removeItem('Sports_stars');
+    window.localStorage.removeItem('Sports_score');
+    window.localStorage.removeItem('History_stars');
+    window.localStorage.removeItem('History_score');
+    window.localStorage.removeItem('Music_stars');
+    window.localStorage.removeItem('Music_score');
+    window.localStorage.removeItem('Geography_stars');
+    window.localStorage.removeItem('Geography_score');
+    window.localStorage.removeItem('Art_stars');
+    window.localStorage.removeItem('Art_score');
+    window.localStorage.removeItem('Science_stars');
+    window.localStorage.removeItem('Science_score');
+
+});

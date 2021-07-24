@@ -13,6 +13,7 @@ let stars = 0;
 let savedScore;
 
 const fullPoints = 1000;
+const maxStars = 3;
 
 // Get the topicResult from local storage
 var topic = localStorage.getItem("topicResult");  
@@ -199,7 +200,7 @@ choices.forEach(choice => {
 		$("#progress-bar-yellow").css("width",progressBarPoint + "%");
 
 		// Assign stars if score reach each 1000 points
-		stars = Math.floor(savedScore / fullPoints);
+		stars = Math.min(Math.floor(savedScore / fullPoints), maxStars);
 		console.log("You have now " + stars + " stars");
 
 		// Listen for changes in stars value (ie. from 0 to 1 star, from 1 to 2 stars, and from 2 to 3 stars) by getting previous stars value, and comparing it to the newest stars value
@@ -240,7 +241,7 @@ function showModalTenQuestions(e) {
 	e.preventDefault();
 	$("#modal-stars").modal("show");
 	$("#stars-title").text("You’ve answered 10 questions and you’ve got " + score + " points in this round. Your total points are " + savedScore);
-	if (score === 0) {
+	if (score == 0) {
 		$("#stars-text").text("Ooopps.. was it harder than you thought, or did you just got distracted while answering the questions? Don't worry! You can redeem yourself by choosing 'Play Again'. You can see your all of your stars achievement by choosing ‘See my stars’. Or if you wish to quit the game, click the ‘Quit’ button.")
 	}
 	$("#stars-text").text("Not bad! What do you want to do next? You can choose ‘play again’ to challenge yourself and increase your points to get stars. You can see all of your stars achievement by choosing ‘See my stars’. Or if you wish to quit the game, click the ‘Quit’ button.")
@@ -249,10 +250,8 @@ function showModalTenQuestions(e) {
 function showModalStars(e) {
 	//e.preventDefault();
 	$("#modal-stars").modal("show");
-	if(stars > 3) {
-		$("#stars-title").text("Woohooo! You’ve made it to " + savedScore + " points in " + topic + "!");
-	}
 	$("#stars-title").text("Woohooo! You’ve made it to " + savedScore + " points in " + topic + ". You get " + stars + " star!");
+
 	if (stars === 1) {
 		$("#stars-img").append('<img src="assets/images/star.png">');
 		$("#stars-img").children("img").addClass("star-modal");
@@ -270,3 +269,29 @@ function showModalStars(e) {
 		$("#stars-text").text("Congratulations, level's completed for " + topic + " !! You’re now unofficially a " + topic + " professor! You know all about it. You read relevant articles about it and always keep up with the news. Play another trivia and see if you’re as amazing in another topics as well.")	
 	}
 }
+
+/*
+// If the user click the Quit button, save all datas to local storage
+$("#btn-quit").click(function(e) {
+	e.preventDefault();
+	let datas = new Object();
+	datas = {
+		sportStars: localStorage.getItem("Sports_stars", stars),
+		sportsScore: localStorage.getItem("Sports_score", score),
+		historyStars: localStorage.getItem("History_stars", stars),
+		historyScore: localStorage.getItem("History_score", score),
+		musicStars: localStorage.getItem("Music_stars", stars),
+		musicScore: localStorage.getItem("Music_score", score),
+		geographyStars: localStorage.getItem("Geography_stars", stars),
+		geographyScore: localStorage.getItem("Geography_score", score),
+		artStars: localStorage.getItem("Art_stars", stars),
+		artScore: localStorage.getItem("Art_score", score),
+		scienceStars: localStorage.getItem("Science_stars", stars),
+		scienceScore: localStorage.getItem("Science_score", score),
+	}
+
+	localStorage.setItem(player, JSON.stringify(datas));
+	console.log(JSON.stringify(datas));
+	location.href(index.html);
+});
+*/
