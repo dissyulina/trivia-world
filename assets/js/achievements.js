@@ -41,10 +41,8 @@ let numberOfStars;
         }
     }
 
-$("#btn-quit").click(function(e) {
-    //e.preventDefault();
-
-    // All the quiz's data are put into a new object
+function saveData() {
+    // All the quiz's datas are put into a new object
     let datas = new Object();
     console.log(localStorage.getItem("Sports_stars"));
     datas = {
@@ -79,5 +77,4 @@ $("#btn-quit").click(function(e) {
     window.localStorage.removeItem('Art_score');
     window.localStorage.removeItem('Science_stars');
     window.localStorage.removeItem('Science_score');
-
-});
+};

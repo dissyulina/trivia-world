@@ -231,8 +231,9 @@ choices.forEach(choice => {
 		console.log(questionCounter === maxQuestion);
 		console.log(availableQuestions.length === 0);
 		if (questionCounter === maxQuestion) {
-			showModalTenQuestions(e);
-			//return;
+			if(diffStars === 0) {
+				showModalTenQuestions(e);
+			}
 		} else {
 			getNewQuestion();
 		}
@@ -243,10 +244,13 @@ function showModalTenQuestions(e) {
 	e.preventDefault();
 	$("#modal-stars").modal("show");
 	$("#stars-title").text("You’ve answered 10 questions and you’ve got " + score + " points in this round. Your total points are " + savedScore);
+	console.log(score);
+	console.log(score == 0);
 	if (score == 0) {
-		$("#stars-text").text("Ooopps.. was it harder than you thought, or did you just got distracted while answering the questions? Don't worry! You can redeem yourself by choosing 'Play Again'. You can see your all of your stars achievement by choosing ‘See my stars’. Or if you wish to quit the game, click the ‘Quit’ button.")
+		$("#stars-text").text("Ooopps.. was it harder than you thought, or did you just got distracted while answering the questions? Don't worry! You can redeem yourself by choosing 'Play Again'. You can see your all of your stars achievement by choosing ‘See my stars’. Or if you wish to quit the game, click the ‘Quit’ button.");
+	} else {
+	$("#stars-text").text("Not bad! What do you want to do next? You can choose ‘play again’ to challenge yourself and increase your points to get stars. You can see all of your stars achievement by choosing ‘See my stars’. Or if you wish to quit the game, click the ‘Quit’ button.");
 	}
-	$("#stars-text").text("Not bad! What do you want to do next? You can choose ‘play again’ to challenge yourself and increase your points to get stars. You can see all of your stars achievement by choosing ‘See my stars’. Or if you wish to quit the game, click the ‘Quit’ button.")
 }
 
 function showModalStars(e) {
@@ -272,28 +276,41 @@ function showModalStars(e) {
 	}
 }
 
-/*
-// If the user click the Quit button, save all datas to local storage
-$("#btn-quit").click(function(e) {
-	e.preventDefault();
-	let datas = new Object();
-	datas = {
-		sportStars: localStorage.getItem("Sports_stars", stars),
-		sportsScore: localStorage.getItem("Sports_score", score),
-		historyStars: localStorage.getItem("History_stars", stars),
-		historyScore: localStorage.getItem("History_score", score),
-		musicStars: localStorage.getItem("Music_stars", stars),
-		musicScore: localStorage.getItem("Music_score", score),
-		geographyStars: localStorage.getItem("Geography_stars", stars),
-		geographyScore: localStorage.getItem("Geography_score", score),
-		artStars: localStorage.getItem("Art_stars", stars),
-		artScore: localStorage.getItem("Art_score", score),
-		scienceStars: localStorage.getItem("Science_stars", stars),
-		scienceScore: localStorage.getItem("Science_score", score),
-	}
 
-	localStorage.setItem(player, JSON.stringify(datas));
-	console.log(JSON.stringify(datas));
-	location.href(index.html);
-});
-*/
+function saveData() {
+    // All the quiz's datas are put into a new object
+    let datas = new Object();
+    console.log(localStorage.getItem("Sports_stars"));
+    datas = {
+        sportsStars: localStorage.getItem("Sports_stars"),
+        sportsScore: localStorage.getItem("Sports_score"),
+        historyStars: localStorage.getItem("History_stars"),
+        historyScore: localStorage.getItem("History_score"),
+        musicStars: localStorage.getItem("Music_stars"),
+        musicScore: localStorage.getItem("Music_score"),
+        geographyStars: localStorage.getItem("Geography_stars"),
+        geographyScore: localStorage.getItem("Geography_score"),
+        artStars: localStorage.getItem("Art_stars"),
+        artScore: localStorage.getItem("Art_score"),
+        scienceStars: localStorage.getItem("Science_stars"),
+        scienceScore: localStorage.getItem("Science_score"),
+    }
+    console.log(localStorage.getItem("player"));
+    inputName = localStorage.getItem("player");
+    localStorage.setItem(inputName, JSON.stringify(datas));
+    console.log(JSON.stringify(datas));
+
+    //remove all keys, except the data key inputName
+    window.localStorage.removeItem('Sports_stars');
+    window.localStorage.removeItem('Sports_score');
+    window.localStorage.removeItem('History_stars');
+    window.localStorage.removeItem('History_score');
+    window.localStorage.removeItem('Music_stars');
+    window.localStorage.removeItem('Music_score');
+    window.localStorage.removeItem('Geography_stars');
+    window.localStorage.removeItem('Geography_score');
+    window.localStorage.removeItem('Art_stars');
+    window.localStorage.removeItem('Art_score');
+    window.localStorage.removeItem('Science_stars');
+    window.localStorage.removeItem('Science_score');
+};
