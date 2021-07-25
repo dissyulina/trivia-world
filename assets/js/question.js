@@ -15,16 +15,16 @@ let savedScore;
 const fullPoints = 1000;
 const maxStars = 3;
 
-// Get the datas from local storage
+// Get the topic from local storage
 var topic = localStorage.getItem("topicResult"); 
 console.log(localStorage.getItem(topic + "_stars", stars));
-
+// Get the stars on the topic from local storage, to determine the level of difficulty of the questions
 let getStars;
 if ((localStorage.getItem(topic + "_stars", stars) === null) || (localStorage.getItem(topic + "_stars", stars) === "null")) {
 	getStars = 0;
 	console.log("it is null");
 } else {
-	getStars = localStorage.getItem(topic + "_stars", stars);
+	getStars = Number(localStorage.getItem(topic + "_stars", stars));
 }
 console.log(topic);
 console.log(getStars);
@@ -133,15 +133,6 @@ getNewQuestion = () => {
 
 };
 
-//Function decode entities
-function decodeEntities(html) {
-
-	var txt = document.createElement("textarea");
-	txt.innerHTML = html;
-	return txt.value;
-
-}
-
 // Function countdown to set 20 seconds timer
 let counter;
 function countdown () {
@@ -217,26 +208,27 @@ choices.forEach(choice => {
 		console.log("You have now " + stars + " stars");
 
 		// Listen for changes in stars value (ie. from 0 to 1 star, from 1 to 2 stars, and from 2 to 3 stars) by getting previous stars value, and comparing it to the newest stars value
-		console.log("The stars you have before: " + (parseInt(localStorage.getItem(topic + "_stars", stars)) + 0));
-		console.log(localStorage.getItem(topic + "_stars", stars));
-		let diffStars;
-		if ((localStorage.getItem(topic + "_stars", stars) === NaN) || (localStorage.getItem(topic + "_stars", stars) === "null")) {
+		console.log("The stars you have before: " + getStars);
+
+		let diffStars = stars - getStars;
+		/*
+		if (getStars === "null") {
 			diffStars = stars;
 		} else {
 			localStorage.getItem(topic + "_stars", stars);
-			diffStars = stars - (localStorage.getItem(topic + "_stars", stars));
+			diffStars = stars - getStars;
 		}
-		console.log(localStorage.getItem(topic + "_stars", stars));
-
+		*/
 		console.log(diffStars);
 		if (diffStars >= 1) { 
 			console.log(stars);
 			console.log("CONGRATS!!");
 			showModalStars(e);
+			// Save the stars value into local storage
 			localStorage.setItem(topic + "_stars", stars);
 			//return;
 		}
-		// Save the stars value into local storage
+		
 		console.log(stars);
 
 		// After 10th question is answered, a modal pops up
