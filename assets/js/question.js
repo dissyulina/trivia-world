@@ -15,22 +15,25 @@ let savedScore;
 const fullPoints = 1000;
 const maxStars = 3;
 
-// Get the topicResult from local storage
+// Get the datas from local storage
 var topic = localStorage.getItem("topicResult");  
+var getStars = localStorage.getItem(topic + "_stars", stars);
 console.log(topic);
+console.log(localStorage.getItem(topic + "_stars", stars));
 
-// Get the url for the topic
+// Create an array of URL inside object, with topic as key -> Topic: [easy, medium, hard]
 const getUrl = {
-	Science: "https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple",
-	History: "https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple",
-	Music: "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple",
-	Art: "https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple",
-	Geography: "https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple",
-	Sports: "https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple",
+	Science: ["https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=17&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=17&difficulty=hard&type=multiple"],
+	History: ["https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=18&difficulty=hard&type=multiple"],
+	Music: ["https://opentdb.com/api.php?amount=10&category=12&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=12&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=12&difficulty=hard&type=multiple"],
+	Art: ["https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=11&difficulty=hard&type=multiple"],
+	Geography: ["https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=22&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=22&difficulty=hard&type=multiple"],
+	Sports: ["https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=21&difficulty=hard&type=multiple"],
 }
+console.log(getUrl[topic][getStars-1]);
 
-// Fetch API for quiz data, use the url as parameter
-fetch(getUrl[topic])
+// Fetch API for quiz data, get the url as parameter from the nested data above
+fetch(getUrl[topic][getStars-1])
 	.then(res => {
 		return res.json();
 	})
@@ -78,10 +81,10 @@ startGame = () => {
 };
 
 getNewQuestion = () => {
-	// If 10th question is left unanswered and time's up
+	// If 10th question is left unanswered and time's up, go back to wheel page
 	if (availableQuestions.length === 0) {
 		console.log("The end");
-		return window.location.assign("/index.html");
+		return window.location.assign("/wheel.html");
 	};
 	
 	questionCounter++;
