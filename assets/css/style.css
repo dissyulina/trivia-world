@@ -48,30 +48,39 @@ li {
     list-style: none;
 }
   
-.background-hero {
-    background-image: linear-gradient(to right, #C6D4FA, #fff, #fff, #C6D4FA);
-    /*background-color: #FFC25D;*/
+.hero {
     height: 100vh;
     width: 100vw;
-}
-  
-.hero {
-    height: inherit;
-    width: auto;
     background: url(../images/hero.jpg) no-repeat center center;
-    background-attachment: scroll; 
+    /* The vendor prefixes below are from Autoprefixer CSS */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
+
+    display: -webkit-box; 
+    display: -ms-flexbox; 
     display: flex;
+
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-    position: relative;
 }
-  
+
+/*
 .content-hero {
     position: absolute;
 }
-
+*/
 .star-container {
     /*height: calc(10rem + 7vh);*/
     height: 100px;
@@ -88,8 +97,8 @@ li {
 }
   
 .overlay {
-    padding: 1rem;
-    background-color: rgba(255,255,255,0.9);
+    /*padding: 1rem;*/
+    background-color: rgba(255,255,255,0.5);
     border-radius: 40px;
 }
   
@@ -287,7 +296,7 @@ form {
 
 /* Achievements page */
 #achievement-page {
-    background-color: #C6D4FA;
+    background-color: #DCF7FE;
     min-height: 100vh;
 }
 
@@ -324,11 +333,6 @@ form {
 
 /* Media Queries */
 
-@media screen and (min-width: 1300px) {
-    .hero {
-      background-size: contain;
-    }
-}
 /* Special queries for the very small screens (iphone 5, moto G4, etc) */
 @media screen and (max-width: 400px) {
    .modal-body,
