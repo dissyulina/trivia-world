@@ -16,10 +16,18 @@ const fullPoints = 1000;
 const maxStars = 3;
 
 // Get the datas from local storage
-var topic = localStorage.getItem("topicResult");  
-var getStars = localStorage.getItem(topic + "_stars", stars);
-console.log(topic);
+var topic = localStorage.getItem("topicResult"); 
 console.log(localStorage.getItem(topic + "_stars", stars));
+
+let getStars;
+if ((localStorage.getItem(topic + "_stars", stars) === null) || (localStorage.getItem(topic + "_stars", stars) === "null")) {
+	getStars = 0;
+	console.log("it is null");
+} else {
+	getStars = localStorage.getItem(topic + "_stars", stars);
+}
+console.log(topic);
+console.log(getStars);
 
 // Create an array of URL inside object, with topic as key -> Topic: [easy, medium, hard]
 const getUrl = {
@@ -30,10 +38,10 @@ const getUrl = {
 	Geography: ["https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=22&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=22&difficulty=hard&type=multiple"],
 	Sports: ["https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=21&difficulty=hard&type=multiple"],
 }
-console.log(getUrl[topic][getStars-1]);
+console.log(getUrl[topic][getStars]);
 
 // Fetch API for quiz data, get the url as parameter from the nested data above
-fetch(getUrl[topic][getStars-1])
+fetch(getUrl[topic][getStars])
 	.then(res => {
 		return res.json();
 	})
@@ -95,20 +103,13 @@ getNewQuestion = () => {
 	const questionIndex = Math.floor(Math.random() * availableQuestions.length); //set a random number to get a random question from the available questions left
 	currentQuestion = availableQuestions[questionIndex];
 
-	// Display points, question number, and the question to the html
+	// Display points, question number, and the topic to the html
 	$("#question-number").text("Question " + questionCounter);
 	$("#question-points").text("Your question worth: " + points);
 	$("#question-topic").text("Topic : " + topic);
-	$("#question-text").text(currentQuestion.question);
-	// Replace error string &#039; and &quot; with a single quote and a double quote
-	$('#question-text').text(function (index, text) {
-		return text.replace("&#039;", "'");
-	});
-	$("#question-text").text(function (index, text) {
-		return text.replace("&quot;", '""');
-	});
-
-	//$('#question-text:contains("&rsquo;")').text('""');
+	
+	// Decode html entities and display the question
+	$("#question-text").html(currentQuestion.question).text();
 
 	// Display each of the choices into the html content
 	choices.forEach(choice => {
@@ -131,6 +132,15 @@ getNewQuestion = () => {
 	acceptingAnswers = true;
 
 };
+
+//Function decode entities
+function decodeEntities(html) {
+
+	var txt = document.createElement("textarea");
+	txt.innerHTML = html;
+	return txt.value;
+
+}
 
 // Function countdown to set 20 seconds timer
 let counter;

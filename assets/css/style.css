@@ -153,16 +153,10 @@ li {
     height: 80px;
 }
 
-.card {
-    height: 2rem;
-    max-width: 70%;
+.modal-header,
+.modal-footer {
+    border-bottom: none;
 }
-
-.card img {
-    height: 50px;
-    width: 50px;
-}
-
 
 /*-- How To Play Page --*/
   
