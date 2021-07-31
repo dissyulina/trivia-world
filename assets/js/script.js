@@ -29,8 +29,8 @@ $('#submit-username').on('click', function(e) {
 		// Set object back as keys in local storage
 		localStorage.setItem("Sports_score", data.sportsScore);
 		localStorage.setItem("Sports_stars", data.sportsStars);
-		localStorage.setItem("History_score", data.historyScore);
-		localStorage.setItem("History_stars", data.historyStars);
+		localStorage.setItem("Computer_score", data.computerScore);
+		localStorage.setItem("Computer_stars", data.computerStars);
 		localStorage.setItem("Music_score", data.musicScore);
 		localStorage.setItem("Music_stars", data.musicStars);
 		localStorage.setItem("Film_score", data.filmScore);

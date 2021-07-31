@@ -1,20 +1,29 @@
 //Script for the Spinning Wheel
 const displayTopics = {
+	1: ["Science", "assets/images/science.jpg"],
+	2: ["Computer", "assets/images/computer.jpg"],
+	3: ["Music", "assets/images/music.jpg"],
+	4: ["Film", "assets/images/film.jpg"],
+	5: ["Geography", "assets/images/geography.jpg"],
+	6: ["Sports", "assets/images/sports.jpg"],
+}
+/*
+const displayTopics = {
 	1: ["Science", "assets/images/science.jpg","https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple"],
-	2: ["History", "assets/images/history.jpg","https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple"],
+	2: ["Computer", "assets/images/computer.jpg","https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple"],
 	3: ["Music", "assets/images/music.jpg","https://opentdb.com/api.php?amount=10&category=12&difficulty=easy&type=multiple"],
 	4: ["Film", "assets/images/film.jpg","https://opentdb.com/api.php?amount=10&category=25&difficulty=easy&type=multiple"],
 	5: ["Geography", "assets/images/geography.jpg","https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple"],
 	6: ["Sports", "assets/images/sports.jpg","https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple"],
 }
-
+*/
 let deg = 0;
 let result;
 
 // Create a spin between 3000 - 6000 degree (code adapted and changed to jQuery, from youtube video: Weibenfalk - Vanilla Javascript Wheel of Fortune)
 $("#btn-wheel").click(function() {
 	$("#btn-wheel").css('pointer-events','none');
-	deg = Math.floor(3000 + Math.random() * 8000);
+	deg = Math.floor(3600 + Math.random() * 7200);
 	$("#wheel").css("transition","all 7s ease-out");
 	$("#wheel").css("transform","rotate(" + deg + "deg)");
 	$("#wheel").addClass("blur");
@@ -70,8 +79,8 @@ function saveData() {
     datas = {
         sportsStars: localStorage.getItem("Sports_stars"),
         sportsScore: localStorage.getItem("Sports_score"),
-        historyStars: localStorage.getItem("History_stars"),
-        historyScore: localStorage.getItem("History_score"),
+        computerStars: localStorage.getItem("Computer_stars"),
+        computerScore: localStorage.getItem("Computer_score"),
         musicStars: localStorage.getItem("Music_stars"),
         musicScore: localStorage.getItem("Music_score"),
         geographyStars: localStorage.getItem("Geography_stars"),
@@ -89,8 +98,8 @@ function saveData() {
     //remove all keys, except the data key inputName
     window.localStorage.removeItem('Sports_stars');
     window.localStorage.removeItem('Sports_score');
-    window.localStorage.removeItem('History_stars');
-    window.localStorage.removeItem('History_score');
+    window.localStorage.removeItem('Computer_stars');
+    window.localStorage.removeItem('Computer_score');
     window.localStorage.removeItem('Music_stars');
     window.localStorage.removeItem('Music_score');
     window.localStorage.removeItem('Geography_stars');

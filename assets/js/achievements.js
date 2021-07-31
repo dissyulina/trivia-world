@@ -5,7 +5,7 @@ let achievementDatas = {
     Sports_stars : topicArrays[0],
     Geography_stars : topicArrays[1],
     Film_stars : topicArrays[2],
-    History_stars : topicArrays[3],
+    Computer_stars : topicArrays[3],
     Science_stars : topicArrays[4],
     Music_stars : topicArrays[5],
 }
@@ -48,8 +48,8 @@ function saveData() {
     datas = {
         sportsStars: localStorage.getItem("Sports_stars"),
         sportsScore: localStorage.getItem("Sports_score"),
-        historyStars: localStorage.getItem("History_stars"),
-        historyScore: localStorage.getItem("History_score"),
+        computerStars: localStorage.getItem("Computer_stars"),
+        computerScore: localStorage.getItem("Computer_score"),
         musicStars: localStorage.getItem("Music_stars"),
         musicScore: localStorage.getItem("Music_score"),
         geographyStars: localStorage.getItem("Geography_stars"),
@@ -67,8 +67,8 @@ function saveData() {
     //remove all keys, except the data key inputName
     window.localStorage.removeItem('Sports_stars');
     window.localStorage.removeItem('Sports_score');
-    window.localStorage.removeItem('History_stars');
-    window.localStorage.removeItem('History_score');
+    window.localStorage.removeItem('Computer_stars');
+    window.localStorage.removeItem('Computer_score');
     window.localStorage.removeItem('Music_stars');
     window.localStorage.removeItem('Music_score');
     window.localStorage.removeItem('Geography_stars');

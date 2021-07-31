@@ -32,13 +32,18 @@ console.log(getStars);
 // Create an array of URL inside object, with topic as key -> Topic: [easy, medium, hard]
 const getUrl = {
 	Science: ["https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=17&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=17&difficulty=hard&type=multiple"],
-	History: ["https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=18&difficulty=hard&type=multiple"],
+	Computer: ["https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=18&difficulty=hard&type=multiple"],
 	Music: ["https://opentdb.com/api.php?amount=10&category=12&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=12&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=12&difficulty=hard&type=multiple"],
 	Film: ["https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=11&difficulty=hard&type=multiple"],
 	Geography: ["https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=22&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=22&difficulty=hard&type=multiple"],
 	Sports: ["https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=21&difficulty=hard&type=multiple"],
 }
 console.log(getUrl[topic][getStars]);
+//console.log(getUrl[Film][0]);
+//console.log(getUrl[topic][0]);
+//console.log(getUrl[Film][getStars]);
+//console.log(getUrl[Geography][0]);
+//console.log(getUrl[Sports][0]);
 
 // Fetch API for quiz data, get the url as parameter from the nested data above
 fetch(getUrl[topic][getStars])
@@ -289,8 +294,8 @@ function saveData() {
     datas = {
         sportsStars: localStorage.getItem("Sports_stars"),
         sportsScore: localStorage.getItem("Sports_score"),
-        historyStars: localStorage.getItem("History_stars"),
-        historyScore: localStorage.getItem("History_score"),
+        computerStars: localStorage.getItem("Computer_stars"),
+        computerScore: localStorage.getItem("Computer_score"),
         musicStars: localStorage.getItem("Music_stars"),
         musicScore: localStorage.getItem("Music_score"),
         geographyStars: localStorage.getItem("Geography_stars"),
@@ -308,8 +313,8 @@ function saveData() {
     //remove all keys, except the data key inputName
     window.localStorage.removeItem('Sports_stars');
     window.localStorage.removeItem('Sports_score');
-    window.localStorage.removeItem('History_stars');
-    window.localStorage.removeItem('History_score');
+    window.localStorage.removeItem('Computer_stars');
+    window.localStorage.removeItem('Computer_score');
     window.localStorage.removeItem('Music_stars');
     window.localStorage.removeItem('Music_score');
     window.localStorage.removeItem('Geography_stars');
