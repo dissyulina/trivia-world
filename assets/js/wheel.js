@@ -3,7 +3,7 @@ const displayTopics = {
 	1: ["Science", "assets/images/science.jpg","https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple"],
 	2: ["History", "assets/images/history.jpg","https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple"],
 	3: ["Music", "assets/images/music.jpg","https://opentdb.com/api.php?amount=10&category=12&difficulty=easy&type=multiple"],
-	4: ["Art", "assets/images/art.jpg","https://opentdb.com/api.php?amount=10&category=25&difficulty=easy&type=multiple"],
+	4: ["Film", "assets/images/film.jpg","https://opentdb.com/api.php?amount=10&category=25&difficulty=easy&type=multiple"],
 	5: ["Geography", "assets/images/geography.jpg","https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple"],
 	6: ["Sports", "assets/images/sports.jpg","https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple"],
 }
@@ -76,8 +76,8 @@ function saveData() {
         musicScore: localStorage.getItem("Music_score"),
         geographyStars: localStorage.getItem("Geography_stars"),
         geographyScore: localStorage.getItem("Geography_score"),
-        artStars: localStorage.getItem("Art_stars"),
-        artScore: localStorage.getItem("Art_score"),
+        filmStars: localStorage.getItem("Film_stars"),
+        filmScore: localStorage.getItem("Film_score"),
         scienceStars: localStorage.getItem("Science_stars"),
         scienceScore: localStorage.getItem("Science_score"),
     }
@@ -95,8 +95,8 @@ function saveData() {
     window.localStorage.removeItem('Music_score');
     window.localStorage.removeItem('Geography_stars');
     window.localStorage.removeItem('Geography_score');
-    window.localStorage.removeItem('Art_stars');
-    window.localStorage.removeItem('Art_score');
+    window.localStorage.removeItem('Film_stars');
+    window.localStorage.removeItem('Film_score');
     window.localStorage.removeItem('Science_stars');
     window.localStorage.removeItem('Science_score');
 };

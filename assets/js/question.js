@@ -34,7 +34,7 @@ const getUrl = {
 	Science: ["https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=17&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=17&difficulty=hard&type=multiple"],
 	History: ["https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=18&difficulty=hard&type=multiple"],
 	Music: ["https://opentdb.com/api.php?amount=10&category=12&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=12&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=12&difficulty=hard&type=multiple"],
-	Art: ["https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=11&difficulty=hard&type=multiple"],
+	Film: ["https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=11&difficulty=hard&type=multiple"],
 	Geography: ["https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=22&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=22&difficulty=hard&type=multiple"],
 	Sports: ["https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=21&difficulty=hard&type=multiple"],
 }
@@ -295,8 +295,8 @@ function saveData() {
         musicScore: localStorage.getItem("Music_score"),
         geographyStars: localStorage.getItem("Geography_stars"),
         geographyScore: localStorage.getItem("Geography_score"),
-        artStars: localStorage.getItem("Art_stars"),
-        artScore: localStorage.getItem("Art_score"),
+        filmStars: localStorage.getItem("Film_stars"),
+        filmScore: localStorage.getItem("Film_score"),
         scienceStars: localStorage.getItem("Science_stars"),
         scienceScore: localStorage.getItem("Science_score"),
     }
@@ -314,8 +314,8 @@ function saveData() {
     window.localStorage.removeItem('Music_score');
     window.localStorage.removeItem('Geography_stars');
     window.localStorage.removeItem('Geography_score');
-    window.localStorage.removeItem('Art_stars');
-    window.localStorage.removeItem('Art_score');
+    window.localStorage.removeItem('Film_stars');
+    window.localStorage.removeItem('Film_score');
     window.localStorage.removeItem('Science_stars');
     window.localStorage.removeItem('Science_score');
 };

@@ -155,7 +155,7 @@ li {
 
 .modal-header,
 .modal-footer {
-    border-bottom: none;
+    border: none;
 }
 
 /*-- How To Play Page --*/

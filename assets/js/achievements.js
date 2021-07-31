@@ -4,7 +4,7 @@ let topicArrays = $(".stars-achievement-wrapper");
 let achievementDatas = {
     Sports_stars : topicArrays[0],
     Geography_stars : topicArrays[1],
-    Art_stars : topicArrays[2],
+    Film_stars : topicArrays[2],
     History_stars : topicArrays[3],
     Science_stars : topicArrays[4],
     Music_stars : topicArrays[5],
@@ -54,8 +54,8 @@ function saveData() {
         musicScore: localStorage.getItem("Music_score"),
         geographyStars: localStorage.getItem("Geography_stars"),
         geographyScore: localStorage.getItem("Geography_score"),
-        artStars: localStorage.getItem("Art_stars"),
-        artScore: localStorage.getItem("Art_score"),
+        filmStars: localStorage.getItem("Film_stars"),
+        filmScore: localStorage.getItem("Film_score"),
         scienceStars: localStorage.getItem("Science_stars"),
         scienceScore: localStorage.getItem("Science_score"),
     }
@@ -73,8 +73,8 @@ function saveData() {
     window.localStorage.removeItem('Music_score');
     window.localStorage.removeItem('Geography_stars');
     window.localStorage.removeItem('Geography_score');
-    window.localStorage.removeItem('Art_stars');
-    window.localStorage.removeItem('Art_score');
+    window.localStorage.removeItem('Film_stars');
+    window.localStorage.removeItem('Film_score');
     window.localStorage.removeItem('Science_stars');
     window.localStorage.removeItem('Science_score');
 };
