@@ -70,8 +70,7 @@ $("#btn-start-quiz").click(function(e) {
 	$(location).attr("href","question.html");
 });
 
-
-// Function save data
+// Function save data 
 function saveData() {
     // All the quiz's datas are put into a new object
     let datas = new Object();

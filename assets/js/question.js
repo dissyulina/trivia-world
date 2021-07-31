@@ -22,12 +22,23 @@ console.log(localStorage.getItem(topic + "_stars", stars));
 let getStars;
 if ((localStorage.getItem(topic + "_stars", stars) === null) || (localStorage.getItem(topic + "_stars", stars) === "null")) {
 	getStars = 0;
-	console.log("it is null");
+	console.log("star is null");
 } else {
 	getStars = Number(localStorage.getItem(topic + "_stars", stars));
 }
 console.log(topic);
 console.log(getStars);
+
+// Get the saved score on the topic from local storage
+let getScore;
+
+if ((localStorage.getItem(topic + "_score", savedScore) === null) || (localStorage.getItem(topic + "_score", savedScore) === "null")) {
+	getScore = 0;
+	console.log("score is null");
+} else {
+	getScore = Number(localStorage.getItem(topic + "_score", savedScore));
+}
+console.log(getScore);
 
 // Create an array of URL inside object, with topic as key -> Topic: [easy, medium, hard]
 const getUrl = {
@@ -39,11 +50,6 @@ const getUrl = {
 	Sports: ["https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=21&difficulty=hard&type=multiple"],
 }
 console.log(getUrl[topic][getStars]);
-//console.log(getUrl[Film][0]);
-//console.log(getUrl[topic][0]);
-//console.log(getUrl[Film][getStars]);
-//console.log(getUrl[Geography][0]);
-//console.log(getUrl[Sports][0]);
 
 // Fetch API for quiz data, get the url as parameter from the nested data above
 fetch(getUrl[topic][getStars])
@@ -123,11 +129,16 @@ getNewQuestion = () => {
 	});
 
 	// Display progress bar from previous score
-	if (localStorage.getItem(topic + "_score") !== null) {
-		progressBar(parseInt(localStorage.getItem(topic + "_score", savedScore)));
-		console.log("your progress bar : " + progressBarPoint);
+	//if (localStorage.getItem(topic + "_score") !== null) {
+		console.log("Your score before: " + getScore);
+		progressBar(getScore);
+		console.log("your progress bar before : " + progressBarPoint);
 		$("#progress-bar-yellow").css("width",progressBarPoint + "%");
-	}
+	//}
+
+	//Display stars from previous stars
+
+	progressStars(getStars);
 
 	// Call function countdown for the timer
 	countdown();
@@ -158,16 +169,28 @@ function countdown () {
 
 // Display progress bar
 let progressBarPoint;
-function progressBar(s) {
-	if (s > 3000) {
-		progressBarPoint = ((s - 3000) / fullPoints * 100);
-	} else if (s > 2000) {
-		progressBarPoint = ((s - 2000) / fullPoints * 100);
-	} else if (s > 1000) {
-		progressBarPoint = ((s - 1000) / fullPoints * 100);
+function progressBar(sc) {
+	if (sc > 3000) {
+		progressBarPoint = ((sc - 3000) / fullPoints * 100);
+	} else if (sc > 2000) {
+		progressBarPoint = ((sc - 2000) / fullPoints * 100);
+	} else if (sc > 1000) {
+		progressBarPoint = ((sc - 1000) / fullPoints * 100);
 	} else {
-		progressBarPoint = (s / fullPoints * 100);
+		progressBarPoint = (sc / fullPoints * 100);
 	}
+}
+
+// Display stars next to progress bar
+function progressStars(st) {
+	$("#progress-bar-stars").empty();
+	let i=0;
+    while (i < st) {
+		$("#progress-bar-stars").append('<img src="assets/images/star.png">');
+		$("#progress-bar-stars img").addClass("stars-achievement");
+		i++;
+	}
+       
 }
 
 // After a choice is clicked, record the choice, stop the countdown, and move on to next question, 
@@ -187,26 +210,33 @@ choices.forEach(choice => {
 			points = 0;
 			console.log("Your answer is wrong")
 		};
-		score = score + points;
+		score = Number(getScore) + points;
 		console.log("You got: " + points + "points");
 		console.log("Your total points are :" + score);
 
 		// Save score to local storage, accumulate score from previous one
-		console.log(localStorage.getItem(topic + "_score") !== null);
-		console.log(parseInt(localStorage.getItem(topic + "_score", savedScore)));
-		if ((localStorage.getItem(topic + "_score") === null) || (localStorage.getItem(topic + "_score") === "null")) {
-			savedScore = score;
-			localStorage.setItem(topic + "_score", savedScore);
-		} else {
-			savedScore = points + parseInt(localStorage.getItem(topic + "_score", savedScore));
-			localStorage.setItem(topic + "_score", savedScore);
-		}
+		//console.log(localStorage.getItem(topic + "_score") !== null);
+		//console.log(parseInt(localStorage.getItem(topic + "_score", savedScore)));
+		//if ((localStorage.getItem(topic + "_score") === null) || (localStorage.getItem(topic + "_score") === "null")) {
+		//	savedScore = score;
+		//	localStorage.setItem(topic + "_score", savedScore);
+		//} else {
+		//	savedScore = points + parseInt(localStorage.getItem(topic + "_score", savedScore));
+		//	localStorage.setItem(topic + "_score", savedScore);
+		//}
+
+		savedScore = score;
+		localStorage.setItem(topic + "_score", savedScore);
+		console.log(savedScore);
+		console.log(localStorage.getItem(topic + "_score", savedScore));
+		getScore = localStorage.getItem(topic + "_score", savedScore);
+		console.log(getScore);
 
 		// call function progressBar to display the accumulative score in the progress bar 
-		//progressBar(savedScore);
-		progressBar(parseInt(localStorage.getItem(topic + "_score", savedScore)));
-		console.log("your progress bar : " + progressBarPoint);
-		$("#progress-bar-yellow").css("width",progressBarPoint + "%");
+		progressBar(savedScore);
+		console.log("your progress bar after: " + progressBarPoint);
+		$("#progress-bar-yellow").css("width", progressBarPoint + "%");
+		
 
 		// Assign stars if score reach each 1000 points
 		stars = Math.min(Math.floor(savedScore / fullPoints), maxStars);
@@ -231,6 +261,9 @@ choices.forEach(choice => {
 			showModalStars(e);
 			// Save the stars value into local storage
 			localStorage.setItem(topic + "_stars", stars);
+			getStars = localStorage.getItem(topic + "_stars", stars);
+			//Display stars from previous stars
+			progressStars(getStars);
 			//return;
 		}
 		

@@ -247,7 +247,7 @@ form {
 
 #progress-bar-grey {
     height: 1rem;
-    width: 100%;
+    /*width: 100%;*/
     background-color: lightslategray;
     border-radius: 5px;
 }
