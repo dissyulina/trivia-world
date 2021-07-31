@@ -11,6 +11,7 @@ let points;
 let score = 0; //score starts from 0
 let stars = 0;
 let savedScore;
+let difficultyLevel;
 
 const fullPoints = 1000;
 const maxStars = 3;
@@ -40,7 +41,7 @@ if ((localStorage.getItem(topic + "_score", savedScore) === null) || (localStora
 }
 console.log(getScore);
 
-// Create an array of URL inside object, with topic as key -> Topic: [easy, medium, hard]
+// An array of URL inside object, with topic as key -> Topic: [easy, medium, hard]
 const getUrl = {
 	Science: ["https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=17&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=17&difficulty=hard&type=multiple"],
 	Computer: ["https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=18&difficulty=hard&type=multiple"],
@@ -52,7 +53,13 @@ const getUrl = {
 console.log(getUrl[topic][getStars]);
 
 // Fetch API for quiz data, get the url as parameter from the nested data above
-fetch(getUrl[topic][getStars])
+if (getStars >= 3) {
+	difficultyLevel = 2;
+} else {
+	difficultyLevel = getStars;
+}
+
+fetch(getUrl[topic][difficultyLevel])
 	.then(res => {
 		return res.json();
 	})
@@ -137,7 +144,6 @@ getNewQuestion = () => {
 	//}
 
 	//Display stars from previous stars
-
 	progressStars(getStars);
 
 	// Call function countdown for the timer
@@ -170,11 +176,11 @@ function countdown () {
 // Display progress bar
 let progressBarPoint;
 function progressBar(sc) {
-	if (sc > 3000) {
+	if (sc >= 3000) {
 		progressBarPoint = ((sc - 3000) / fullPoints * 100);
-	} else if (sc > 2000) {
+	} else if (sc >= 2000) {
 		progressBarPoint = ((sc - 2000) / fullPoints * 100);
-	} else if (sc > 1000) {
+	} else if (sc >= 1000) {
 		progressBarPoint = ((sc - 1000) / fullPoints * 100);
 	} else {
 		progressBarPoint = (sc / fullPoints * 100);
@@ -185,12 +191,12 @@ function progressBar(sc) {
 function progressStars(st) {
 	$("#progress-bar-stars").empty();
 	let i=0;
-    while (i < st) {
+    while (i <= Math.min(st, 2)) {
 		$("#progress-bar-stars").append('<img src="assets/images/star.png">');
 		$("#progress-bar-stars img").addClass("stars-achievement");
+		$("#progress-bar-stars").css("width","auto");
 		i++;
 	}
-       
 }
 
 // After a choice is clicked, record the choice, stop the countdown, and move on to next question, 
@@ -263,7 +269,7 @@ choices.forEach(choice => {
 			localStorage.setItem(topic + "_stars", stars);
 			getStars = localStorage.getItem(topic + "_stars", stars);
 			//Display stars from previous stars
-			progressStars(getStars);
+			//progressStars(getStars);
 			//return;
 		}
 		
@@ -297,7 +303,7 @@ function showModalTenQuestions(e) {
 }
 
 function showModalStars(e) {
-	//e.preventDefault();
+	e.preventDefault();
 	$("#modal-stars").modal("show");
 	$("#stars-title").text("Woohooo! You’ve made it to " + savedScore + " points in " + topic + ". You get " + stars + " star!");
 
