@@ -58,13 +58,15 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>What's your username?</p>
+                    <p>What's your username?*</p>
                     <div>
 
                     </div>
                     <div class="mx-auto">
                         <label for="username" class="col-form-label"></label>
-                        <input type="text" placeholder="Your username" aria-label="Username" id="username" required>
+                        <input type="text" placeholder="Your username" aria-label="Username" id="username" aria-describedby="username-help" required>
+                        <br>
+                        <small id="username-help" class="form-text text-muted">*Your achievement will not be saved if you don't input a username</small>
                     </div>
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-main btn-sm mt-3" id="submit-username" data-bs-dismiss="modal">Submit</button>

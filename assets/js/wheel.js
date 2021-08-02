@@ -42,7 +42,7 @@ document.getElementById("wheel").addEventListener("transitionend", function() {
 	$("#topic-title").text("You got: " + displayTopics[result][0] + "!");
 
 	// Display the complete content to the modal
-	$(".topic-explanation").text("You’ll get 10 questions related to" + displayTopics[result][0] + ". For each question you answered correctly, you’ll get between 50 - 200 points. But watch out for the timer! You only have 10 seconds to answer each question.");
+	$(".topic-explanation").text("You’ll get 10 questions related to " + displayTopics[result][0] + ". For each question you answered correctly, you’ll get between 50 - 200 points. But watch out for the timer! You only have 20 seconds to answer each question.");
 	$(".topic-explanation").append("<p>Are you ready?</p>");
 
 	// Empty the div (delete the image from previous spin), then add the new image according to the topic

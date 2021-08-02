@@ -158,7 +158,8 @@ getNewQuestion = () => {
 // Function countdown to set 20 seconds timer
 let counter;
 function countdown () {
-	let count = 20;
+	//let count = 20;
+	let count = 10;
 	counter = setInterval(timer, 1000);
 	function timer() {
 		count--;
