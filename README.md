@@ -113,9 +113,26 @@ Players can enjoy to be challenged in the game, because as the player reach a st
 5. How to play explanation  
 The user can access a How to Play page if they need it. In the game I will use descriptive messages, buttons, and other established conventions, therefore the user can play the game intuitively without checking out the rules/instruction first.   
 6. Contact form
-The user can easily contact the developer through a contact form.
+The user can easily contact the developer through a contact form.   
 
 
+And some functionalities in the game to guarantee the user has a great user experience:
+1.	The user can toggle the sound button on and off
+2.	The user can navigate easily through the game, to quit or to play again
+
+
+### 2. Structure Plane  
+The game was organized in a Hierarchical Tree Structure that ensures the user can navigate easily and intuitively.  
+![The structure of the website/game](assets/readme/structure.jpg "The structure of the website/game")
+There are 6 pages in planning: 
+1. Landing page. 
+2. Spinning Wheel page, where the user chooses a topic.
+3. Questions page, where 10 set of questions in that topic appears one by one.
+4. Stars Achievement page, where the user can see all the stars that they have earned.
+5. How to Play page, where the user can find the instructions or rules for the game.
+6. Contact page, where the user can send a message to the developer via a contact form.
+
+ 
 
 
 
