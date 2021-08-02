@@ -118,12 +118,15 @@ The user can easily contact the developer through a contact form.
 
 And some functionalities in the game to guarantee the user has a great user experience:
 1.	The user can toggle the sound button on and off
-2.	The user can navigate easily through the game, to quit or to play again
+2.	The user can navigate easily through the game, to quit or to play again   
 
+<br/>
 
 ### 2. Structure Plane  
-The game was organized in a Hierarchical Tree Structure that ensures the user can navigate easily and intuitively.  
-![The structure of the website/game](assets/readme/structure.jpg "The structure of the website/game")
+The game was organized in a Hierarchical Tree Structure that ensures the user can navigate easily and intuitively.   
+
+![The structure of the website/game](assets/readme/structure.jpg "The structure of the website/game")   
+
 There are 6 pages in planning: 
 1. Landing page. 
 2. Spinning Wheel page, where the user chooses a topic.
@@ -132,13 +135,27 @@ There are 6 pages in planning:
 5. How to Play page, where the user can find the instructions or rules for the game.
 6. Contact page, where the user can send a message to the developer via a contact form.
 
- 
+<br/>   
 
+### 3. Skeleton Plane  
+Wireframes were created using Figma to design the navigation and interface of the website. One wireframe was created for mobile devices, according to mobile-first design approach. The wireframe was only a rough sketch design of each page plus modal pop ups. 
 
+![The wireframes - mobile](assets/readme/wireframe-mobile.jpg "The wireframes - mobile") 
 
+<br/>   
 
+### 4. Surface Plane  
+For a better and clearer visualization before coding, and also to check if the color scheme and images matches and work great together, a high-fidelity mockup for mobile, tablet, and desktop was made and can be found below.
 
+High fidelity mock-up for mobiles:
+![The mockup - mobile](assets/readme/mockup-mobile.jpg "The mockup - mobile")   
 
+High fidelity mock-up for tablets:
+![The mockup - tablet](assets/readme/mockup-tablet.jpg "The mockup - tablet") 
+
+High fidelity mock-up for desktops:
+![The mockup - desktop](assets/readme/mockup-desktop-1.jpg "The mockup - tablet") 
+![The mockup - desktop](assets/readme/mockup-desktop-2.jpg "The mockup - tablet") 
 
 
 
