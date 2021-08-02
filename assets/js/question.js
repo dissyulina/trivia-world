@@ -1,3 +1,6 @@
+//Script for all things related to Quiz
+
+//Variables for quiz data
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 let quizDatas = []; // an array of objects of the quiz data
 let currentQuestion = {};
@@ -5,22 +8,27 @@ let acceptingAnswers = false; //let the user submitting answer
 let questionCounter = 0; //what number of question are the user on
 let availableQuestions =[]; // an array of our question set
 
+//Variables for points system
 //const correctPoints = [50, 100, 150, 200];
 const correctPoints = [300, 400, 500, 600];
+const fullPoints = 1000;
+const maxStars = 3;
 let points;
 let score = 0; //score starts from 0
 let stars = 0;
 let savedScore;
 let difficultyLevel;
 
-const fullPoints = 1000;
-const maxStars = 3;
+//Variables for local storage
+let topic = localStorage.getItem("topicResult"); 
+let getStars;
+let getScore;
 
 // Get the topic from local storage
-var topic = localStorage.getItem("topicResult"); 
+//var topic = localStorage.getItem("topicResult"); 
 console.log(localStorage.getItem(topic + "_stars", stars));
+
 // Get the stars on the topic from local storage, to determine the level of difficulty of the questions
-let getStars;
 if ((localStorage.getItem(topic + "_stars", stars) === null) || (localStorage.getItem(topic + "_stars", stars) === "null")) {
 	getStars = 0;
 	console.log("star is null");
@@ -31,8 +39,6 @@ console.log(topic);
 console.log(getStars);
 
 // Get the saved score on the topic from local storage
-let getScore;
-
 if ((localStorage.getItem(topic + "_score", savedScore) === null) || (localStorage.getItem(topic + "_score", savedScore) === "null")) {
 	getScore = 0;
 	console.log("score is null");
@@ -52,13 +58,13 @@ const getUrl = {
 }
 console.log(getUrl[topic][getStars]);
 
-// Fetch API for quiz data, get the url as parameter from the nested data above
+// If there are 3 stars, get the hard difficulty level - same as when there are 2 stars
 if (getStars >= 3) {
 	difficultyLevel = 2;
 } else {
 	difficultyLevel = getStars;
 }
-
+// Fetch API for quiz data, get the url as parameter from the nested data above (code until line 125 was sourced from youtube video: James Q Quick - Build A Quiz App. Added comments as the developer understands the process)
 fetch(getUrl[topic][difficultyLevel])
 	.then(res => {
 		return res.json();
@@ -81,13 +87,10 @@ fetch(getUrl[topic][difficultyLevel])
 				0,
 				loadedQuestion.correct_answer
 			);
-			
 			answerChoices.forEach((choice, index) => {
 				formattedQuestion["choice" + (index + 1)] = choice;
 			});
-
 			return formattedQuestion;
-
 		});
 		
 		startGame();
@@ -114,7 +117,7 @@ getNewQuestion = () => {
 	};
 	
 	questionCounter++;
-	//localStorage.clear();
+
 	// Assign one of the points randomly from the correctPoints array 
 	points = correctPoints[Math.floor(Math.random() * correctPoints.length)];
 	console.log(points);
@@ -136,12 +139,10 @@ getNewQuestion = () => {
 	});
 
 	// Display progress bar from previous score
-	//if (localStorage.getItem(topic + "_score") !== null) {
-		console.log("Your score before: " + getScore);
-		progressBar(getScore);
-		console.log("your progress bar before : " + progressBarPoint);
-		$("#progress-bar-yellow").css("width",progressBarPoint + "%");
-	//}
+	console.log("Your score before: " + getScore);
+	progressBar(getScore);
+	console.log("your progress bar before : " + progressBarPoint);
+	$("#progress-bar-yellow").css("width",progressBarPoint + "%");
 
 	//Display stars from previous stars
 	progressStars(getStars);
@@ -152,7 +153,6 @@ getNewQuestion = () => {
 	// Take out the question that has been used
 	availableQuestions.splice(questionIndex, 1);
 	acceptingAnswers = true;
-
 };
 
 // Function countdown to set 20 seconds timer
@@ -173,7 +173,7 @@ function countdown () {
 	};
 };
 
-// Display progress bar
+// Function display progress bar
 let progressBarPoint;
 function progressBar(sc) {
 	if (sc >= 3000) {
@@ -187,7 +187,7 @@ function progressBar(sc) {
 	}
 }
 
-// Display stars next to progress bar
+// Function display stars next to progress bar
 function progressStars(st) {
 	$("#progress-bar-stars").empty();
 	let i=0;
@@ -221,16 +221,6 @@ choices.forEach(choice => {
 		console.log("Your total points are :" + score);
 
 		// Save score to local storage, accumulate score from previous one
-		//console.log(localStorage.getItem(topic + "_score") !== null);
-		//console.log(parseInt(localStorage.getItem(topic + "_score", savedScore)));
-		//if ((localStorage.getItem(topic + "_score") === null) || (localStorage.getItem(topic + "_score") === "null")) {
-		//	savedScore = score;
-		//	localStorage.setItem(topic + "_score", savedScore);
-		//} else {
-		//	savedScore = points + parseInt(localStorage.getItem(topic + "_score", savedScore));
-		//	localStorage.setItem(topic + "_score", savedScore);
-		//}
-
 		savedScore = score;
 		localStorage.setItem(topic + "_score", savedScore);
 		console.log(savedScore);
@@ -238,7 +228,7 @@ choices.forEach(choice => {
 		getScore = localStorage.getItem(topic + "_score", savedScore);
 		console.log(getScore);
 
-		// call function progressBar to display the accumulative score in the progress bar 
+		// Call function progressBar to display the accumulative score in the progress bar 
 		progressBar(savedScore);
 		console.log("your progress bar after: " + progressBarPoint);
 		$("#progress-bar-yellow").css("width", progressBarPoint + "%");
@@ -250,16 +240,7 @@ choices.forEach(choice => {
 
 		// Listen for changes in stars value (ie. from 0 to 1 star, from 1 to 2 stars, and from 2 to 3 stars) by getting previous stars value, and comparing it to the newest stars value
 		console.log("The stars you have before: " + getStars);
-
 		let diffStars = stars - getStars;
-		/*
-		if (getStars === "null") {
-			diffStars = stars;
-		} else {
-			localStorage.getItem(topic + "_stars", stars);
-			diffStars = stars - getStars;
-		}
-		*/
 		console.log(diffStars);
 		if (diffStars >= 1) { 
 			console.log(stars);
@@ -289,6 +270,7 @@ choices.forEach(choice => {
 	});
 });
 
+// Function to show modal after 10 set of questions end
 function showModalTenQuestions(e) {
 	e.preventDefault();
 	$("#modal-stars").modal("show");
@@ -302,6 +284,7 @@ function showModalTenQuestions(e) {
 	}
 }
 
+// Function to show modal after the user get an additional star
 function showModalStars(e) {
 	e.preventDefault();
 	$("#modal-stars").modal("show");
@@ -325,7 +308,7 @@ function showModalStars(e) {
 	}
 }
 
-
+// Function to save points and stars of a user to local storage, attached to click event of "Quit" button
 function saveData() {
     // All the quiz's datas are put into a new object
     let datas = new Object();

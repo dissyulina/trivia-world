@@ -7,20 +7,11 @@ const displayTopics = {
 	5: ["Geography", "assets/images/geography.jpg"],
 	6: ["Sports", "assets/images/sports.jpg"],
 }
-/*
-const displayTopics = {
-	1: ["Science", "assets/images/science.jpg","https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple"],
-	2: ["Computer", "assets/images/computer.jpg","https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple"],
-	3: ["Music", "assets/images/music.jpg","https://opentdb.com/api.php?amount=10&category=12&difficulty=easy&type=multiple"],
-	4: ["Film", "assets/images/film.jpg","https://opentdb.com/api.php?amount=10&category=25&difficulty=easy&type=multiple"],
-	5: ["Geography", "assets/images/geography.jpg","https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple"],
-	6: ["Sports", "assets/images/sports.jpg","https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple"],
-}
-*/
+
 let deg = 0;
 let result;
 
-// Create a spin between 3000 - 6000 degree (code adapted and changed to jQuery, from youtube video: Weibenfalk - Vanilla Javascript Wheel of Fortune)
+// Create a spin between 3000 - 6000 degree (code sourced from youtube video: Weibenfalk - Vanilla Javascript Wheel of Fortune, and changed to jQuery by the developer.)
 $("#btn-wheel").click(function() {
 	$("#btn-wheel").css('pointer-events','none');
 	deg = Math.floor(3600 + Math.random() * 7200);
@@ -29,7 +20,7 @@ $("#btn-wheel").click(function() {
 	$("#wheel").addClass("blur");
 });
 
-// As soon as the transition ends (code adapted and changed to jQuery, from youtube video: Weibenfalk - Vanilla Javascript Wheel of Fortune)
+// As soon as the transition ends (code until line 35 was sourced from youtube video: Weibenfalk - Vanilla Javascript Wheel of Fortune, and changed to jQuery by the developer. Added comments as the developer understands the process)
 document.getElementById("wheel").addEventListener("transitionend", function() {
 	$("#btn-wheel").css('pointer-events','auto');
 	$("#wheel").removeClass("blur");
@@ -70,7 +61,7 @@ $("#btn-start-quiz").click(function(e) {
 	$(location).attr("href","question.html");
 });
 
-// Function save data 
+// Function to save points and stars of a user to local storage, attached to click event of "Quit" button
 function saveData() {
     // All the quiz's datas are put into a new object
     let datas = new Object();

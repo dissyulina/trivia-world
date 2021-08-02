@@ -10,37 +10,34 @@ let achievementDatas = {
     Music_stars : topicArrays[5],
 }
 let numberOfStars;
-// append stars for Sports
-//document.addEventListener("DOMContentLoaded", function() {
 
+console.log(topicArrays);
+console.log(topicArrays[0]);
+// For every topic_stars in achievementDatas, count the number of stars, and display them in the matching achievementDatas[i] element.
+for (let i in achievementDatas) {
+    console.log(achievementDatas[i], " stars is for ", i, localStorage.getItem(i));
+    console.log(localStorage.getItem(i));
+    console.log(achievementDatas[i]);
+    numberOfStars = localStorage.getItem(i);
 
-    //let topicArrays = document.getElementsByClassName("stars-achievement-wrapper");
-    console.log(topicArrays);
-    console.log(topicArrays[0]);
-    // for every topic_stars in achievementDatas, count the number of stars, and display them in the matching achievementDatas[i] element.
-    for (let i in achievementDatas) {
-        console.log(achievementDatas[i], " stars is for ", i, localStorage.getItem(i));
-        console.log(localStorage.getItem(i));
-        console.log(achievementDatas[i]);
-        numberOfStars = localStorage.getItem(i);
-
-        // according to the how many numberOfStars, do this
-        let j=0;
-        while (j < numberOfStars) {
-            let image = document.createElement("img");
-            image.src = "assets/images/star.png";
-            image.className = "stars-achievement";
-            achievementDatas[i].appendChild(image);
-            j++;
-        }
-        // if the numberOfStars is null, create an empty div with the same height and width
-        if ((numberOfStars === null) || (numberOfStars === "null")) {
-            let emptyDiv = document.createElement("div");
-            emptyDiv.className = "stars-achievement";
-            achievementDatas[i].appendChild(emptyDiv);
-        }
+    // According to the how many numberOfStars, do this
+    let j=0;
+    while (j < numberOfStars) {
+        let image = document.createElement("img");
+        image.src = "assets/images/star.png";
+        image.className = "stars-achievement";
+        achievementDatas[i].appendChild(image);
+        j++;
     }
+    // if the numberOfStars is null, create an empty div with the same height and width
+    if ((numberOfStars === null) || (numberOfStars === "null")) {
+        let emptyDiv = document.createElement("div");
+        emptyDiv.className = "stars-achievement";
+        achievementDatas[i].appendChild(emptyDiv);
+    }
+}
 
+// Function to save points and stars of a user to local storage, attached to click event of "Quit" button
 function saveData() {
     // All the quiz's datas are put into a new object
     let datas = new Object();
