@@ -186,7 +186,7 @@ function stopTimer () {
 let progressBarPoint;
 let incrementWidth;
 function progressBar(progressBefore, scoreAfter) {
-	progressBarPoint = (scoreAfter / fullPoints * 100) % 100;
+	progressBarPoint = Math.floor((scoreAfter / fullPoints * 100) % 100);
 	/*
 	if (scoreAfter >= 3000) {
 		progressBarPoint = ((scoreAfter - 3000) / fullPoints * 100);
@@ -267,7 +267,10 @@ choices.forEach(choice => {
 			console.log(stars);
 			console.log("CONGRATS!!");
 			stopTimer();
-			showModalStars(e);
+			//$("#progress-bar-yellow").one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', showModalStars(e));
+			setTimeout(showModalStars(e), 5000);
+			console.log("after 5 seconds");
+			
 			// Save the stars value into local storage
 			localStorage.setItem(topic + "_stars", stars);
 			getStars = localStorage.getItem(topic + "_stars", stars);

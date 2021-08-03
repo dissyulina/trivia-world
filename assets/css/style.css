@@ -248,7 +248,7 @@ form {
 #progress-bar-grey {
     height: 1rem;
     /*width: 100%;*/
-    background-color: #d8d8d8;
+    background-color: gray;
     border-radius: 20px;
 }
 
@@ -342,6 +342,12 @@ form {
 @media screen and (min-width: 800px) {
     #progress-bar-grey {
         height: 1.5rem;
+    }
+    .stars-achievement {
+        width: 80px;
+        height: 80px;
+        margin-right: -20px;
+        margin-left: -20px;
     }
 }
 
