@@ -248,16 +248,18 @@ form {
 #progress-bar-grey {
     height: 1rem;
     /*width: 100%;*/
-    background-color: lightslategray;
-    border-radius: 5px;
+    background-color: #d8d8d8;
+    border-radius: 20px;
 }
 
 #progress-bar-yellow {
     height: 100%;
-    background-color: yellow;
+    background: linear-gradient(to left, yellow, orange);
+    box-shadow: 0 3px 3px -5px yellow, 0 2px 5px yellow;
     width: 0px;
     max-width: 100%;
-    border-radius: 5px;
+    border-radius: 20px;
+    transition: 1s ease;
 }
 
 #question-points {
@@ -335,5 +337,11 @@ form {
         padding: 0.75rem;
    }
 
+}
+
+@media screen and (min-width: 800px) {
+    #progress-bar-grey {
+        height: 1.5rem;
+    }
 }
 

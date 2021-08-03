@@ -140,7 +140,7 @@ getNewQuestion = () => {
 
 	// Display progress bar from previous score
 	console.log("Your score before: " + getScore);
-	progressBar(getScore);
+	progressBar(0,getScore);
 	console.log("your progress bar before : " + progressBarPoint);
 	$("#progress-bar-yellow").css("width",progressBarPoint + "%");
 
@@ -184,16 +184,29 @@ function stopTimer () {
 
 // Function display progress bar
 let progressBarPoint;
-function progressBar(sc) {
-	if (sc >= 3000) {
-		progressBarPoint = ((sc - 3000) / fullPoints * 100);
-	} else if (sc >= 2000) {
-		progressBarPoint = ((sc - 2000) / fullPoints * 100);
-	} else if (sc >= 1000) {
-		progressBarPoint = ((sc - 1000) / fullPoints * 100);
+let incrementWidth;
+function progressBar(progressBefore, scoreAfter) {
+	progressBarPoint = (scoreAfter / fullPoints * 100) % 100;
+	/*
+	if (scoreAfter >= 3000) {
+		progressBarPoint = ((scoreAfter - 3000) / fullPoints * 100);
+	} else if (scoreAfter >= 2000) {
+		progressBarPoint = ((scoreAfter - 2000) / fullPoints * 100);
+	} else if (scoreAfter >= 1000) {
+		progressBarPoint = ((scoreAfter - 1000) / fullPoints * 100);
 	} else {
-		progressBarPoint = (sc / fullPoints * 100);
+		progressBarPoint = (scoreAfter / fullPoints * 100);
 	}
+	*/
+	//progressBarPoint = Math.min(progressBarPoint, 100);
+	console.log("progress bar point: " + progressBarPoint);
+	if (progressBarPoint < progressBefore) {
+		console.log("increment width for progress bar: " + incrementWidth + "%");
+		$("#progress-bar-yellow").animate({ width: '100%'});
+	} else {}
+		incrementWidth = Math.floor(progressBarPoint - progressBefore);
+		console.log("increment width for progress bar: " + incrementWidth + "%");
+		$("#progress-bar-yellow").animate({ width: '+=(incrementWidth)'});
 }
 
 // Function display stars next to progress bar
@@ -238,7 +251,7 @@ choices.forEach(choice => {
 		console.log(getScore);
 
 		// Call function progressBar to display the accumulative score in the progress bar 
-		progressBar(savedScore);
+		progressBar(progressBarPoint,savedScore);
 		console.log("your progress bar after: " + progressBarPoint);
 		$("#progress-bar-yellow").css("width", progressBarPoint + "%");
 		
