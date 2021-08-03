@@ -113,7 +113,7 @@ getNewQuestion = () => {
 	// If 10th question is left unanswered and time's up, go back to wheel page
 	if (availableQuestions.length === 0) {
 		console.log("The end");
-		return window.location.assign("/wheel.html");
+		return window.location.assign("wheel.html");
 	};
 	
 	questionCounter++;
@@ -157,9 +157,9 @@ getNewQuestion = () => {
 
 // Function countdown to set 20 seconds timer
 let counter;
+let count;
 function countdown () {
-	//let count = 20;
-	let count = 10;
+	count = 10;
 	counter = setInterval(timer, 1000);
 	function timer() {
 		count--;
@@ -173,6 +173,14 @@ function countdown () {
 		$("#timer").text(count);
 	};
 };
+
+function stopTimer () {
+	clearInterval(counter);
+	$("#timer").text(count);
+	console.log(count);
+	return;
+
+}
 
 // Function display progress bar
 let progressBarPoint;
@@ -234,7 +242,6 @@ choices.forEach(choice => {
 		console.log("your progress bar after: " + progressBarPoint);
 		$("#progress-bar-yellow").css("width", progressBarPoint + "%");
 		
-
 		// Assign stars if score reach each 1000 points
 		stars = Math.min(Math.floor(savedScore / fullPoints), maxStars);
 		console.log("You have now " + stars + " stars");
@@ -246,13 +253,14 @@ choices.forEach(choice => {
 		if (diffStars >= 1) { 
 			console.log(stars);
 			console.log("CONGRATS!!");
+			stopTimer();
 			showModalStars(e);
 			// Save the stars value into local storage
 			localStorage.setItem(topic + "_stars", stars);
 			getStars = localStorage.getItem(topic + "_stars", stars);
 			//Display stars from previous stars
 			//progressStars(getStars);
-			//return;
+			return;
 		}
 		
 		console.log(stars);
@@ -263,6 +271,7 @@ choices.forEach(choice => {
 		console.log(availableQuestions.length === 0);
 		if (questionCounter === maxQuestion) {
 			if(diffStars === 0) {
+				stopTimer();
 				showModalTenQuestions(e);
 			}
 		} else {
