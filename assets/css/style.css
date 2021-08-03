@@ -76,11 +76,40 @@ li {
     align-items: center;
 }
 
-/*
-.content-hero {
-    position: absolute;
+.container-header {
+    position: relative;
+    height: 100%;
 }
-*/
+
+.icon-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #FED82A;
+    border: 5px solid #FED82A;
+    padding: 0.25rem 0.75rem;
+    border-radius: 10px;
+    background-color:rgba( 255, 255, 255, 0.50 );
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+.icon-wrapper:hover {
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 216, 42, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
+.icon-wrapper > a {
+    color: #FED82A;
+}
+
+.content-hero p {
+    color: #456DB6;
+    font-weight: 700;
+}
+
 .star-container {
     /*height: calc(10rem + 7vh);*/
     height: 100px;
@@ -95,13 +124,29 @@ li {
     padding-right: 0.25rem;
     padding-left: 0.25rem;
 }
-  
+
+/*
 .overlay {
-    /*padding: 1rem;*/
+    padding: 1rem;
     background-color: rgba(255,255,255,0.5);
     border-radius: 40px;
 }
-  
+*/
+.footer-text {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;   /* Height of the footer */
+    background-color: rgb(133, 205, 106, 0.7);
+    color: #456DB6;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.footer-text a {
+    color: #456DB6;
+}
+
 /*-- Buttons --*/
   
 .btn {
@@ -348,6 +393,10 @@ form {
         height: 80px;
         margin-right: -20px;
         margin-left: -20px;
+    }
+    .footer-text,
+    .content-hero p {
+        font-size: 1.5rem;
     }
 }
 

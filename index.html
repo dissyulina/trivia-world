@@ -24,10 +24,16 @@
 
 <body>
     <header>
-       
-            <div class="hero" title="">
-                <div class="content-hero px-4">
-                    <div class="overlay mx-auto px-1 py-4">
+        <div class="hero" title="">
+            <div class="container-fluid container-header d-flex justify-content-center">
+                <div class="icon-wrapper">
+                    <a aria-current="modal" href="#" role="button"><i class="fas fa-user"></i></a>
+                </div>
+                <div class="content-hero px-4 align-self-center">
+                    <div class="text-center">
+                        <p>Hello, <span class="existing-username"></span> !</p>
+                    </div>
+                    <div class="mx-auto px-1 py-4">
                         <div class="star-container d-flex justify-content-center">
                             <img src="assets/images/star.png" class="star align-self-end">
                             <img src="assets/images/star.png" class="star align-self-start">
@@ -36,6 +42,7 @@
                         <div class="px-1 px-md-4 pt-4">
                             <h1>Trivia World</h1>
                         </div>
+                        
                         <div>
                             <ul class="d-flex flex-column align-items-center mt-3 mt-sm-4">
                                 <li><a class="btn btn-start btn-main" href="wheel.html" role="button">PLAY</a></li>
@@ -45,9 +52,38 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Footer -->
+                <ul class="footer-text text-center d-flex flex-row align-items-center mb-0">
+                    <li class="me-2 me-md-4">
+                        <span class="footer-copyright"><i class="far fa-copyright"></i> Dissy Ulina 2021</span></span>
+                    </li>
+                    <li class="me-2 me-md-4">
+                        <a href="https://www.linkedin.com/in/dissyulina/" target="_blank" rel="noopener" aria-label="Linkedin - Dissy Ulina">
+                            <i class="fab fa-linkedin-in btn-click"></i>
+                        </a>
+                    </li>
+                    <li class="me-2 me-md-4">	
+                        <a href="https://github.com/dissyulina/" target="_blank" rel="noopener" aria-label="Github - dissyulina">
+                            <i class="fab fa-github-alt btn-click"></i>
+                        </a>
+                    </li>
+                    <li class="icon-wrapper">	
+                        <a aria-current="modal" href="#" role="button">
+                            <i class="fas fa-volume-up"></i>
+                        </a>
+                    </li>
+                </ul>
+
             </div>
+        </div>
+    </header>
+
+    
+            
         
-    </header>  
+        
+      
 
     <!--Modal on page load-->
     <div class="modal fade" id="username-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

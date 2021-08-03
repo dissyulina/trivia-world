@@ -4,9 +4,9 @@ let userName;
 let data;
 
 //Show modal on window load
-$(window).on('load', function() {
-	$("#username-modal").modal('show');
-});
+//$(window).on('load', function() {
+//	$("#username-modal").modal('show');
+//});
 
 //Event listener as the username has been filled and the submit button is clicked
 $('#submit-username').on('click', function(e) {
