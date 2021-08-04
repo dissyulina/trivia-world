@@ -127,6 +127,7 @@ getNewQuestion = () => {
 	// Display points, question number, and the topic to the html
 	$("#question-number").text("Question " + questionCounter);
 	$("#question-points").text("Your question worth: " + points);
+	$("#your-score").text("Your score : " + getScore);
 	$("#question-topic").text("Topic : " + topic);
 	
 	// Decode html entities and display the question
@@ -140,7 +141,12 @@ getNewQuestion = () => {
 
 	// Display progress bar from previous score
 	console.log("Your score before: " + getScore);
-	progressBar(0,getScore);
+	if(getScore >= 3000) {
+		progressBar(3000, 3000);
+	} else {
+		progressBar(0, getScore);
+	}
+	
 	console.log("your progress bar before : " + progressBarPoint);
 	$("#progress-bar-yellow").css("width",progressBarPoint + "%");
 
@@ -200,25 +206,36 @@ function progressBar(progressBefore, scoreAfter) {
 	*/
 	//progressBarPoint = Math.min(progressBarPoint, 100);
 	console.log("progress bar point: " + progressBarPoint);
-	if (progressBarPoint < progressBefore) {
+	if((scoreAfter >= 3000) && (progressBefore >= 3000)) {
+		console.log("full achievement");
+		$("#progress-bar-yellow").css("width","100px");
+	} else if (progressBarPoint < progressBefore) {
 		console.log("increment width for progress bar: " + incrementWidth + "%");
 		$("#progress-bar-yellow").animate({ width: '100%'});
-	} else {}
+	} else {
 		incrementWidth = Math.floor(progressBarPoint - progressBefore);
 		console.log("increment width for progress bar: " + incrementWidth + "%");
 		$("#progress-bar-yellow").animate({ width: '+=(incrementWidth)'});
+	}
 }
 
 // Function display stars next to progress bar
 function progressStars(st) {
 	$("#progress-bar-stars").empty();
-	let i=0;
-    while (i <= Math.min(st, 2)) {
-		$("#progress-bar-stars").append('<img src="assets/images/star.png">');
+	if(st <= 2) {
+		let i=0;
+		while (i <= Math.min(st, 2)) {
+			$("#progress-bar-stars").append('<img src="assets/images/star.png">');
+			$("#progress-bar-stars img").addClass("stars-achievement");
+			$("#progress-bar-stars").css("width","auto");
+			i++;
+		}
+	} else {
+		$("#progress-bar-stars").append('<img src="assets/images/game-trophy.png">');
 		$("#progress-bar-stars img").addClass("stars-achievement");
 		$("#progress-bar-stars").css("width","auto");
-		i++;
 	}
+	
 }
 
 // After a choice is clicked, record the choice, stop the countdown, and move on to next question, 
@@ -251,7 +268,10 @@ choices.forEach(choice => {
 		console.log(getScore);
 
 		// Call function progressBar to display the accumulative score in the progress bar 
-		progressBar(progressBarPoint,savedScore);
+		//if (getScore <= 3000) {
+			progressBar(progressBarPoint,savedScore);
+		//}
+		
 		console.log("your progress bar after: " + progressBarPoint);
 		$("#progress-bar-yellow").css("width", progressBarPoint + "%");
 		
