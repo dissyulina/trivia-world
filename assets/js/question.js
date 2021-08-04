@@ -267,10 +267,10 @@ choices.forEach(choice => {
 			console.log(stars);
 			console.log("CONGRATS!!");
 			stopTimer();
-			//$("#progress-bar-yellow").one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', showModalStars(e));
-			setTimeout(showModalStars(e), 5000);
-			console.log("after 5 seconds");
-			
+			document.getElementById("progress-bar-yellow").addEventListener("transitionend", function() {
+				showModalStars(e);
+			});
+
 			// Save the stars value into local storage
 			localStorage.setItem(topic + "_stars", stars);
 			getStars = localStorage.getItem(topic + "_stars", stars);
@@ -314,6 +314,8 @@ function showModalTenQuestions(e) {
 function showModalStars(e) {
 	e.preventDefault();
 	$("#modal-stars").modal("show");
+	console.log($("#getstar-sound"));
+	$("#getstar-sound")[0].play();
 	$("#stars-title").text("Woohooo! You’ve made it to " + savedScore + " points in " + topic + ". You get " + stars + " star!");
 
 	if (stars === 1) {
