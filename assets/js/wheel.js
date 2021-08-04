@@ -18,12 +18,17 @@ $("#btn-wheel").click(function() {
 	$("#wheel").css("transition","all 7s ease-out");
 	$("#wheel").css("transform","rotate(" + deg + "deg)");
 	$("#wheel").addClass("blur");
+	$("#wheel-sound")[0].play();
+	//document.getElementById("wheel-sound").loop = true;
 });
 
 // As soon as the transition ends (code until line 35 was sourced from youtube video: Weibenfalk - Vanilla Javascript Wheel of Fortune, and changed to jQuery by the developer. Added comments as the developer understands the process)
 document.getElementById("wheel").addEventListener("transitionend", function() {
 	$("#btn-wheel").css('pointer-events','auto');
 	$("#wheel").removeClass("blur");
+	console.log("transition ends");
+	$("#wheel-sound")[0].pause();
+	$("#wheel-sound")[0].currentTime = 0;
 
 	// Calculate the actual deg (0-360deg), because we want the next spin to start from that degree, and transform the wheel instantly without the user seeing it
 	const actualDeg = deg % 360;
