@@ -23,20 +23,63 @@
 </head>
 
 <body>
-    <audio id="wheel-sound">
-        <source src="assets/audio/wheel-spin.mp3" type="audio/mpeg">
-    </audio>
+    
     <section>
         <div class="background-blueray">
-            <div class="container d-flex flex-column justify-content-center align-items-center">
-                <h2>Let’s see which topic you’ll get!</h2>
-                <img class="mx-auto" id="picker" src="assets/images/picker.png" alt="">
-                <img class="mx-auto mb-2 mb-md-4 wheel" id="wheel" src="assets/images/wheel.png" alt="">
-                <button type="button" id="btn-wheel" class="btn btn-main mt-3 my-md-5">SPIN THE WHEEL</button>
-                <a class="btn btn-second mx-5 mt-2" href="index.html" role="button" onclick="saveData()">Quit</a>
+            <audio id="wheel-sound">
+                <source src="assets/audio/wheel-spin.mp3" type="audio/mpeg">
+            </audio>
+
+            <div class="container container-header d-flex flex-column justify-content-center align-items-center">
+                <h3 class="my-3 my-md-4">Let’s see which topic you’ll get!</h3>
+                <div class="flex-shrink-1 d-flex flex-column align-items-center">
+                    <img class="mx-auto" id="picker" src="assets/images/picker.png" alt="">
+                    <img class="mx-auto mb-3 mb-md-4" id="wheel" src="assets/images/wheel.png" alt="">
+                </div>
+                <div class="buttons d-flex flex-column align-items-center">
+                    <button type="button" id="btn-wheel" class="btn btn-main">SPIN THE WHEEL</button>
+                    <a class="btn btn-second mx-5 mt-3" href="index.html" role="button" onclick="saveData()">Quit</a>
+                </div>
+                
+
+                <!-- Footer -->
+                <ul class="footer-text text-center d-flex flex-row align-items-center mb-0">
+                    <li class="me-2 me-md-4">
+                        <span class="footer-copyright"><i class="far fa-copyright"></i> Dissy Ulina 2021</span></span>
+                    </li>
+                    <li class="me-2 me-md-4">
+                        <a href="https://www.linkedin.com/in/dissyulina/" target="_blank" rel="noopener" aria-label="Linkedin - Dissy Ulina">
+                            <i class="fab fa-linkedin-in btn-click"></i>
+                        </a>
+                    </li>
+                    <li class="me-2 me-md-4">	
+                        <a href="https://github.com/dissyulina/" target="_blank" rel="noopener" aria-label="Github - dissyulina">
+                            <i class="fab fa-github-alt btn-click"></i>
+                        </a>
+                    </li>
+                    <div class="icons-shortcut d-flex flex-row justify-content-center">
+                        <li class="icon-wrapper">	
+                            <a aria-current="modal" href="#" role="button" id="#goto-achievement">
+                                <i class="fas fa-trophy"></i>
+                            </a>
+                        </li>
+                        <li class="icon-wrapper">	
+                            <a aria-current="modal" href="#" role="button" class="toggle-sound">
+                                <i class="fas fa-volume-down"></i>
+                            </a>
+                        </li>
+                    </div>
+                    
+                </ul>
             </div>
+
+             <!-- Footer -->
+
+                
+
         </div>
 
+        <!--Modal for topic result of the spinning wheel-->
         <div class="modal fade" id="modal-topic" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="topic-title" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -60,12 +103,14 @@
                 </div>
             </div>
         </div>
-        
-    </section>
+    </section>  
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
-    <script src="assets/js/wheel.js"></script> 
+
+    <script src="assets/js/wheel.js"></script>
+    <script src="assets/js/sound.js"></script> 
     <!--
     <script src="assets/js/script.js"></script>
     <script src="assets/js/question.js"></script>

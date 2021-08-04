@@ -6,7 +6,7 @@ body {
   
 header h1 {
     font-family: 'Luckiest Guy', cursive;
-    font-size: 64px;
+    font-size: 4rem;
     /*font-size: calc(42px + 3vw);*/
     color: #7696F3;
     text-align: center;
@@ -19,7 +19,8 @@ h2, h3, h4, h5 {
     font-family: Pacifico, cursive;
 }
   
-.header-container {
+header,
+section {
     height: 100vh;
     width: 100vw;
 }
@@ -81,10 +82,9 @@ li {
     height: 100%;
 }
 
+
+
 .icon-wrapper {
-    position: absolute;
-    top: 10px;
-    right: 20px;
     font-size: 1.5rem;
     color: #FED82A;
     border: 5px solid #FED82A;
@@ -92,7 +92,14 @@ li {
     border-radius: 10px;
     background-color:rgba( 255, 255, 255, 0.50 );
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    margin-left: 0.5rem;
+}
 
+.icons-shortcut,
+.icon-login {
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 
 .icon-wrapper:hover {
@@ -108,6 +115,7 @@ li {
 .content-hero p {
     color: #456DB6;
     font-weight: 700;
+    font-size: 1.5rem;
 }
 
 .content-hero span {
@@ -136,6 +144,8 @@ li {
     border-radius: 40px;
 }
 */
+
+/* Footer */
 .footer-text {
     position: absolute;
     bottom: 0;
@@ -158,7 +168,7 @@ li {
     border-width: 1px;
     border-radius: 40px;
     font-size: 1rem;
-    padding: 0.75rem 1.75rem;
+    padding: 0.5rem 1.5rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
@@ -245,28 +255,31 @@ form {
 /* Wheel Page */
 
 .background-blueray {
-    min-height: 100vh;
+    height: 100%;
     width: auto;
     background: url(../images/blueray.jpg) no-repeat center center;
     background-attachment: scroll; 
     background-size: cover;
     display: flex;
     align-items: center;
-    padding: 2rem 0;
 }
 
 #picker {
-    height: 13vh;
-    width: 10vw;
+    height: 11vh;
+    width: calc(0.5 * 10vh);
     max-width: 5rem;
     margin-bottom: -9vh;
     z-index: 2;
 }
 
-.wheel {
-    width: 90vw;
+#wheel {
+    width: min(85vw, 50vh);
     max-width: 30rem;
     height: auto;
+}
+
+.buttons {
+    margin-bottom: 6rem;
 }
 
 .blur {
@@ -381,16 +394,24 @@ form {
 
 /* Special queries for the very small screens (iphone 5, moto G4, etc) */
 @media screen and (max-width: 400px) {
+    .star-container {
+        height: 5rem;
+    }
+      
+    .star {
+        height: 4rem;
+    }
+
    .modal-body,
    .modal-footer {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         padding: 0.75rem;
    }
 
    .btn {
     border-radius: 30px;
-    font-size: 0.8rem;
-    padding: 0.4rem 1.2rem;
+    font-size: 0.9rem;
+    padding: 0.4rem 1.5rem;
     }
 
     .btn-start {
@@ -400,11 +421,13 @@ form {
     .icon-wrapper {
         font-size: 1rem;
         padding: 0.15rem 0.5rem;
-        top: 5px;
+        top: 8px;
     }
 
     .footer-text {
-        height: 3rem;
+        height: 4rem;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 
