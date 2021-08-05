@@ -22,39 +22,54 @@
     <title>Triva World</title>
 </head>
 
-<body class="background-gradient pt-3 pt-md-5">
+<body class="background-gradient">
     <audio id="getstar-sound">
         <source src="assets/audio/getstar.mp3" type="audio/mpeg">
     </audio>
     <div>
-        <div class="container">
-            <!-- Progress Bar -->
-            <div class="d-flex flex-row align-items-center">
-                <div id="progress-bar-grey" class="flex-grow-1 me-2 me-md-4">
-                    <div id="progress-bar-yellow" class="">
+        <div class="container-fluid bg-progess-bar">
+            <div class="container py-2 py-md-3">
+                <!-- Progress Bar -->
+                <div class="d-flex flex-row align-items-center">
+                    <div id="progress-bar-grey" class="flex-grow-1 me-2 me-md-4">
+                        <div id="progress-bar-yellow" class="">
+                        </div>
+                    </div>
+                    <div id="progress-bar-stars" class="stars-achievement-wrapper d-flex flex-row justify-content-center align-items-center ms-2 ms-md-4">
                     </div>
                 </div>
-                <div id="progress-bar-stars" class="stars-achievement-wrapper d-flex flex-row justify-content-center align-items-center ms-2 ms-md-4">
+            </div>
+            
+        </div>
+        <div class="container">
+            <div class="row">
+                <!-- Game Statistic -->
+                <div class="col-9">
+                    <div id="question-points" class="mt-2 mt-md-4 blue-text">
+                        <p></p>
+                    </div>
+                    <div id="question-topic" class="blue-text">
+                        <p></p>
+                    </div>
+                    <div id="question-level" class="blue-text">
+                        <p></p>
+                    </div>
+                    <div id="your-score" class="mb-2 mb-md-4 blue-text">
+                        <p></p>
+                    </div>
+                </div>
+                <!-- Timer -->
+                <div class="col-3 d-flex justify-content-center align-items-center">
+                    <div id="timer">
+
+                    </div>
                 </div>
             </div>
+            
 
-            <!-- Question -->
-            <div id="question-points" class="mt-2 mt-md-3">
-                <p></p>
-            </div>
-            <div id="question-topic">
-                <p></p>
-            </div>
-            <div id="question-level">
-                <p></p>
-            </div>
-            <div id="your-score" class="mb-2 mb-md-3">
-                <p></p>
-            </div>
-
-            <!-- Answers -->
+            <!-- Question and Multiple choice answers -->
             <div class="d-flex flex-column justify-content-center align-items-center">
-                <p id="question-number" class="mt-4"></p>
+                <p id="question-number" class="mt-4 fw-bold"></p>
                 <p id="question-text" class="my-2"></p>
                 <div class="choice-container my-4">
                     <div class="row">
@@ -69,12 +84,36 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Timer -->
-            <div id="timer">
-
-            </div>
         </div>
+
+        <!-- Footer -->
+        <ul class="footer-text text-center d-flex flex-row align-items-center mb-0">
+            <li class="me-2 me-md-4">
+                <span class="footer-copyright"><i class="far fa-copyright"></i> Dissy Ulina 2021</span></span>
+            </li>
+            <li class="me-2 me-md-4">
+                <a href="https://www.linkedin.com/in/dissyulina/" target="_blank" rel="noopener" aria-label="Linkedin - Dissy Ulina">
+                    <i class="fab fa-linkedin-in btn-click"></i>
+                </a>
+            </li>
+            <li class="me-2 me-md-4">	
+                <a href="https://github.com/dissyulina/" target="_blank" rel="noopener" aria-label="Github - dissyulina">
+                    <i class="fab fa-github-alt btn-click"></i>
+                </a>
+            </li>
+            <div class="icons-shortcut d-flex flex-row justify-content-center">
+                <li class="icon-wrapper">	
+                    <a aria-current="modal" href="#" role="button" id="#goto-achievement">
+                        <i class="fas fa-trophy"></i>
+                    </a>
+                </li>
+                <li class="icon-wrapper">	
+                    <a aria-current="modal" href="#" role="button" class="toggle-sound">
+                        <i class="fas fa-volume-down"></i>
+                    </a>
+                </li>
+            </div>
+        </ul>
 
         <!--Modal pop up-->
         <div class="modal fade" id="modal-stars" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="topic-title" aria-hidden="true">

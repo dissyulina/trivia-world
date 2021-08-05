@@ -113,7 +113,7 @@ li {
 }
 
 .content-hero p {
-    color: #456DB6;
+    color: #2c4d8a;
     font-weight: 700;
     font-size: 1.5rem;
 }
@@ -152,14 +152,15 @@ li {
     width: 100vw;
     height: 5rem;   /* Height of the footer */
     background-color: rgb(133, 205, 106, 0.7);
-    color: #456DB6;
+    color: #2c4d8a;
     font-weight: 700;
     font-size: 1rem;
 }
 
 .footer-text a,
 .icon-wrapper > a {
-    color: #456DB6;
+    color: #2c4d8a;
+    /*color: #456DB6;*/
 }
 
 /*-- Buttons --*/
@@ -307,6 +308,9 @@ form {
     background-attachment: scroll; 
     background-size: cover;
 }
+.bg-progess-bar {
+    background-color: rgb(140 214 232);
+}
 
 #progress-bar-grey {
     height: 1rem;
@@ -324,11 +328,15 @@ form {
     border-radius: 20px;
     transition: 1s ease;
 }
-
+.blue-text {
+    color: #2c4d8a;
+    font-weight: 600;
+}
+/*
 #question-points {
     margin-top: 3rem;
 }
-
+*/
 .choice-container {
     width: 100%;
 }
@@ -348,7 +356,7 @@ form {
 }
 
 #timer {
-    color: lightgray;
+    color:lightgray;
     font-size: 10vh;
     text-align: center;
 }
@@ -394,6 +402,10 @@ form {
 
 /* Special queries for the very small screens (iphone 5, moto G4, etc) */
 @media screen and (max-width: 400px) {
+    .background-gradient {
+        line-height: 1.2;
+    }
+
     .star-container {
         height: 5rem;
     }
@@ -429,6 +441,7 @@ form {
         padding-left: 10px;
         padding-right: 10px;
     }
+
 }
 
 @media screen and (min-width: 800px) {
@@ -441,7 +454,7 @@ form {
         margin-right: -20px;
         margin-left: -20px;
     }
-    .footer-text,
+
     .content-hero p {
         font-size: 1.5rem;
     }
