@@ -202,7 +202,6 @@ function stopTimer () {
 	$("#timer").text(count);
 	console.log(count);
 	return;
-
 }
 
 // Function display progress bar
@@ -267,15 +266,25 @@ choices.forEach(choice => {
 		const selectedChoice = e.target;
 		const selectedAnswer = selectedChoice.dataset["number"];
 		clearInterval(counter);
-
+		let classRightOrWrong;
 		// If the answer is correct, add points into score
 		if(selectedAnswer == currentQuestion.answer) {
 			points = points;
 			console.log("Your answer is correct");
+			$("#correct-answer")[0].play();
+			classRightOrWrong = "correct";
+			e.target.classList.add(classRightOrWrong);
+			console.log("class to apply: " + classRightOrWrong);
+			//e.target.style.backgroundColor = "green";
 		} else {
 			points = 0;
-			console.log("Your answer is wrong")
+			console.log("Your answer is wrong");
+			classRightOrWrong = "wrong";
+			e.target.classList.add(classRightOrWrong);
+			console.log("class to apply: " + classRightOrWrong);
+			//e.target.style.backgroundColor = "red";
 		};
+		
 		score = Number(getScore) + points;
 		console.log("You got: " + points + "points");
 		console.log("Your total points are :" + score);
@@ -334,7 +343,20 @@ choices.forEach(choice => {
 				showModalTenQuestions(e);
 			}
 		} else {
-			getNewQuestion();
+			/*
+			setTimeout(() => {
+				e.target.style.backgroundColor = "white";
+				getNewQuestion();
+			}, 1000);
+			*/
+			setTimeout(function() {
+				e.target.classList.remove(classRightOrWrong);
+				//e.target.style.backgroundColor = "white";
+				getNewQuestion();
+			}, 1000);
+
+			//setTimeout(getNewQuestion, 1000);
+			//getNewQuestion();
 		}
 	});
 });

@@ -355,6 +355,14 @@ form {
     transition: transform 150ms;
 }
 
+.correct {
+    background-color: rgb(133, 205, 106);
+}
+
+.wrong {
+    background-color: rgb(221,88,88);
+}
+
 #timer {
     color:lightgray;
     font-size: 10vh;
