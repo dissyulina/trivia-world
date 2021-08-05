@@ -49,13 +49,15 @@ console.log(getScore);
 
 // An array of URL inside object, with topic as key -> Topic: [easy, medium, hard]
 const getUrl = {
-	Science: ["https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=17&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=17&difficulty=hard&type=multiple"],
+	Science: ["https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple", 
+	"https://opentdb.com/api.php?amount=10&category=17&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=17&difficulty=hard&type=multiple"],
 	Computer: ["https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=18&difficulty=hard&type=multiple"],
 	Music: ["https://opentdb.com/api.php?amount=10&category=12&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=12&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=12&difficulty=hard&type=multiple"],
 	Film: ["https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=11&difficulty=hard&type=multiple"],
 	Geography: ["https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=22&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=22&difficulty=hard&type=multiple"],
 	Sports: ["https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=21&difficulty=hard&type=multiple"],
 }
+
 console.log(getUrl[topic][getStars]);
 
 // If there are 3 stars, get the hard difficulty level - same as when there are 2 stars
@@ -126,9 +128,12 @@ getNewQuestion = () => {
 
 	// Display points, question number, and the topic to the html
 	$("#question-number").text("Question " + questionCounter);
-	$("#question-points").text("Your question worth: " + points);
-	$("#your-score").text("Your score : " + getScore);
+	$("#question-points").text("This question worth: " + points);
+	$("#your-score").text("Your total score : " + getScore);
 	$("#question-topic").text("Topic : " + topic);
+
+	//Display question's difficulty level
+	$("#question-level").text('Difficulty level : ' + questionLevel());
 	
 	// Decode html entities and display the question
 	$("#question-text").html(currentQuestion.question).text();
@@ -142,7 +147,7 @@ getNewQuestion = () => {
 	// Display progress bar from previous score
 	console.log("Your score before: " + getScore);
 	if(getScore >= 3000) {
-		progressBar(3000, 3000);
+		progressBarFull();
 	} else {
 		progressBar(0, getScore);
 	}
@@ -160,6 +165,17 @@ getNewQuestion = () => {
 	availableQuestions.splice(questionIndex, 1);
 	acceptingAnswers = true;
 };
+
+//Function to get difficulty level of question
+function questionLevel() {
+	if (difficultyLevel === 0) {
+		return "Easy";
+	} else if (difficultyLevel === 1) {
+		return "Medium";
+	} else {
+		return "Hard";
+	}
+}
 
 // Function countdown to set 20 seconds timer
 let counter;
@@ -180,6 +196,7 @@ function countdown () {
 	};
 };
 
+//Function to stop the timer
 function stopTimer () {
 	clearInterval(counter);
 	$("#timer").text(count);
@@ -206,10 +223,7 @@ function progressBar(progressBefore, scoreAfter) {
 	*/
 	//progressBarPoint = Math.min(progressBarPoint, 100);
 	console.log("progress bar point: " + progressBarPoint);
-	if((scoreAfter >= 3000) && (progressBefore >= 3000)) {
-		console.log("full achievement");
-		$("#progress-bar-yellow").css("width","100px");
-	} else if (progressBarPoint < progressBefore) {
+	if (progressBarPoint < progressBefore) {
 		console.log("increment width for progress bar: " + incrementWidth + "%");
 		$("#progress-bar-yellow").animate({ width: '100%'});
 	} else {
@@ -217,6 +231,13 @@ function progressBar(progressBefore, scoreAfter) {
 		console.log("increment width for progress bar: " + incrementWidth + "%");
 		$("#progress-bar-yellow").animate({ width: '+=(incrementWidth)'});
 	}
+}
+
+//Function to display progress bar full achievement
+function progressBarFull() {
+	console.log("full achievement");
+	$("#progress-bar-yellow").css("width","100%");
+	progressBarPoint = 100;
 }
 
 // Function display stars next to progress bar
@@ -268,9 +289,11 @@ choices.forEach(choice => {
 		console.log(getScore);
 
 		// Call function progressBar to display the accumulative score in the progress bar 
-		//if (getScore <= 3000) {
+		if (progressBarPoint === 100) {
+			progressBarFull();
+		} else {
 			progressBar(progressBarPoint,savedScore);
-		//}
+		}
 		
 		console.log("your progress bar after: " + progressBarPoint);
 		$("#progress-bar-yellow").css("width", progressBarPoint + "%");
