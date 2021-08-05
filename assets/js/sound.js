@@ -47,6 +47,6 @@ function soundOn() {
         sounds[i].muted = false;
     }
     for(j=0; j < toggleSound.length; j++) {
-        toggleSound[j].innerHTML = '<i class="fas fa-volume-down"></i>';
+        toggleSound[j].innerHTML = '<i class="fas fa-volume-up"></i>';
     }
 }
