@@ -470,5 +470,9 @@ form {
         width: 120px;
         height: 120px;
     }
+
+    .modal-dialog {
+    max-width: 600px;
+    }
 }
 

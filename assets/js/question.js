@@ -9,8 +9,8 @@ let questionCounter = 0; //what number of question are the user on
 let availableQuestions =[]; // an array of our question set
 
 //Variables for points system
-//const correctPoints = [50, 100, 150, 200];
-const correctPoints = [300, 400, 500, 600];
+const correctPoints = [50, 100, 150, 200];
+//const correctPoints = [300, 400, 500, 600];
 const fullPoints = 1000;
 const maxStars = 3;
 let points;
@@ -112,10 +112,11 @@ startGame = () => {
 };
 
 getNewQuestion = () => {
-	// If 10th question is left unanswered and time's up, go back to wheel page
+	// If 10th question is left unanswered and time's up, show up modal
 	if (availableQuestions.length === 0) {
 		console.log("The end");
-		return window.location.assign("wheel.html");
+		showModalTenQuestions(e);
+		//return window.location.assign("wheel.html");
 	};
 	
 	questionCounter++;
@@ -271,7 +272,7 @@ choices.forEach(choice => {
 		if(selectedAnswer == currentQuestion.answer) {
 			points = points;
 			console.log("Your answer is correct");
-			$("#correct-answer")[0].play();
+			$("#correct-sound")[0].play();
 			classRightOrWrong = "correct";
 			e.target.classList.add(classRightOrWrong);
 			console.log("class to apply: " + classRightOrWrong);
@@ -279,6 +280,7 @@ choices.forEach(choice => {
 		} else {
 			points = 0;
 			console.log("Your answer is wrong");
+			$("#wrong-sound")[0].play();
 			classRightOrWrong = "wrong";
 			e.target.classList.add(classRightOrWrong);
 			console.log("class to apply: " + classRightOrWrong);
@@ -365,6 +367,7 @@ choices.forEach(choice => {
 function showModalTenQuestions(e) {
 	e.preventDefault();
 	$("#modal-stars").modal("show");
+	$("#ten-questions-sound")[0].play();
 	$("#stars-title").text("You’ve answered 10 questions and you’ve got " + score + " points in this round. Your total points are " + savedScore);
 	console.log(score);
 	console.log(score == 0);

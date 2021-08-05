@@ -27,8 +27,14 @@
     <audio id="getstar-sound">
         <source src="assets/audio/getstar.mp3" type="audio/mpeg">
     </audio>
-    <audio id="correct-answer">
+    <audio id="correct-sound">
         <source src="assets/audio/correct-answer.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="wrong-sound">
+        <source src="assets/audio/wrong-answer.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="ten-questions-sound">
+        <source src="assets/audio/questions-up.mp3" type="audio/mpeg">
     </audio>
 
     <!-- Content -->
@@ -45,8 +51,8 @@
                     </div>
                 </div>
             </div>
-            
         </div>
+
         <div class="container">
             <div class="row">
                 <!-- Game Statistic -->
@@ -72,7 +78,6 @@
                 </div>
             </div>
             
-
             <!-- Question and Multiple choice answers -->
             <div class="d-flex flex-column justify-content-center align-items-center">
                 <p id="question-number" class="mt-4 fw-bold"></p>
@@ -135,7 +140,7 @@
                     <div class="modal-body" id="stars-text">
                         
                     </div>
-                    <div class="modal-footer d-flex flex-column flex-md-row justify-content-center align-items-center my-3 my-md-4">
+                    <div class="modal-footer d-flex flex-column flex-md-row justify-content-center justify-content-md-evenly align-items-center my-3 my-md-4">
                         <a class="btn btn-main" href="wheel.html" role="button">Play Again!</a>
                         <!--<button type="button" class="btn btn-main" data-bs-dismiss="modal">BRING IT ON!</button> -->
                         <a class="btn btn-main" href="achievements.html" role="button">See All of My Stars</a>

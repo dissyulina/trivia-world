@@ -44,6 +44,7 @@ document.getElementById("wheel").addEventListener("transitionend", function() {
 
 	// Show the modal pop up
 	$("#modal-topic").modal("show");
+	$("#topic-sound")[0].play();
 	$("#topic-title").text("You got: " + displayTopics[result][0] + "!");
 
 	// Display the complete content to the modal
