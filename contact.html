@@ -17,7 +17,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Pacifico&display=swap" rel="stylesheet">
     <!--CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Triva World</title>
+    <title>Contact Page</title>
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_YWNTnQVobzPy8qDGDM5g0");
+        })();
+    </script>
 </head>
 
 <body>
@@ -31,18 +39,18 @@
                     <div class="container py-5 px-3 px-md-4 px-lg-5">
                         <h2>Get in touch with us!</h2>
                         <p>Thank you for playing this game! How do you like it? Do you have any inputs or comments? We’d like to hear it from you! Fill out this contact form and we’ll get back to you as soon as we can.</p>
-                        <form class="py-5 px-3">
+                        <form class="py-5 px-3" onsubmit="return sendMail(this);">
                             <div class="mb-3">
                                 <label for="input-name" class="form-label">Name: </label>
-                                <input type="text" class="form-control" id="input-name" placeholder="John Doe" required>
+                                <input type="text" class="form-control" id="input-name" placeholder="John Doe" name="name" required>
                             </div>
                             <div class="mb-3">
                                 <label for="input-email" class="form-label">Email address: </label>
-                                <input type="email" class="form-control" id="input-email" placeholder="name@example.com" required>
+                                <input type="email" class="form-control" id="input-email" placeholder="name@example.com" name="email" required>
                             </div>
                             <div class="mb-3">
                                 <label for="input-message" class="form-label">Message: </label>
-                                <textarea class="form-control" id="input-message" rows="3" placeholder="Your message" required></textarea>
+                                <textarea class="form-control" id="input-message" rows="3" placeholder="Your message" name="message" required></textarea>
                             </div>
                             <div class="d-flex justify-content-end mt-5">
                                 <button type="submit" class="btn btn-form">Send Message</button>
@@ -62,6 +70,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/contact.js"></script>
 </body>
 </html>
