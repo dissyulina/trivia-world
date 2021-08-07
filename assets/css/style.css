@@ -206,6 +206,15 @@ li {
     box-shadow: 0 0.4rem 1.4rem 0 rgba(224, 41, 93, 0.5);
     transform: translateY(-0.1rem);
     transition: transform 150ms;
+    color: lightpink;
+}
+
+.btn-main:hover {
+    color: lightpink;
+}
+
+.btn-second:hover {
+    color: #a10a35;
 }
 
 /* Modals */
@@ -348,7 +357,6 @@ form {
 }
 
 .choice-text {
-    border: 0.1rem solid #fff;
     background-color: #fff;
     width: 100%;
     padding: 1rem;

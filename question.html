@@ -19,147 +19,149 @@
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Pacifico&display=swap" rel="stylesheet">
     <!--CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Triva World</title>
+    <title>Question Page</title>
 </head>
 
-<body class="background-gradient">
-    <!-- Audios -->
-    <audio id="getstar-sound">
-        <source src="assets/audio/getstar.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="correct-sound">
-        <source src="assets/audio/correct-answer.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="wrong-sound">
-        <source src="assets/audio/wrong-answer.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="ten-questions-sound">
-        <source src="assets/audio/questions-up.mp3" type="audio/mpeg">
-    </audio>
+<body>
+    <section>
+        <div class="background-gradient">
+            <!-- Audios -->
+            <audio id="getstar-sound">
+                <source src="assets/audio/getstar.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="correct-sound">
+                <source src="assets/audio/correct-answer.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="wrong-sound">
+                <source src="assets/audio/wrong-answer.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="ten-questions-sound">
+                <source src="assets/audio/questions-up.mp3" type="audio/mpeg">
+            </audio>
 
-    <!-- Content -->
-    <div>
-        <div class="container-fluid bg-progess-bar">
-            <div class="container py-2 py-md-3">
-                <!-- Progress Bar -->
-                <div class="d-flex flex-row align-items-center">
-                    <div id="progress-bar-grey" class="flex-grow-1 me-2 me-md-4">
-                        <div id="progress-bar-yellow" class="">
+            <!-- Content -->
+            <div>
+                <div class="container-fluid bg-progess-bar">
+                    <div class="container py-2 py-md-3">
+                        <!-- Progress Bar -->
+                        <div class="d-flex flex-row align-items-center">
+                            <div id="progress-bar-grey" class="flex-grow-1 me-2 me-md-4">
+                                <div id="progress-bar-yellow" class="">
+                                </div>
+                            </div>
+                            <div id="progress-bar-stars" class="stars-achievement-wrapper d-flex flex-row justify-content-center align-items-center ms-2 ms-md-4">
+                            </div>
                         </div>
                     </div>
-                    <div id="progress-bar-stars" class="stars-achievement-wrapper d-flex flex-row justify-content-center align-items-center ms-2 ms-md-4">
-                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="container">
-            <div class="row">
-                <!-- Game Statistic -->
-                <div class="col-9">
-                    <div id="question-points" class="mt-2 mt-md-4 blue-text">
-                        <p></p>
-                    </div>
-                    <div id="question-topic" class="blue-text">
-                        <p></p>
-                    </div>
-                    <div id="question-level" class="blue-text">
-                        <p></p>
-                    </div>
-                    <div id="your-score" class="mb-2 mb-md-4 blue-text">
-                        <p></p>
-                    </div>
-                </div>
-                <!-- Timer -->
-                <div class="col-3 d-flex justify-content-center align-items-center">
-                    <div id="timer">
-
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Question and Multiple choice answers -->
-            <div class="d-flex flex-column justify-content-center align-items-center">
-                <p id="question-number" class="mt-4 fw-bold"></p>
-                <p id="question-text" class="my-2"></p>
-                <div class="choice-container my-4">
+                <div class="container">
                     <div class="row">
-                        <div class="col-12 col-lg-6">
-                            <p class="choice-text mb-3 mb-md-4 py-1 py-md-2" data-number="1"></p>
-                            <p class="choice-text mb-3 mb-md-4 py-1 py-md-2" data-number="2"></p>
+                        <!-- Game Statistic -->
+                        <div class="col-9">
+                            <div id="question-points" class="mt-2 mt-md-4 blue-text">
+                                <p></p>
+                            </div>
+                            <div id="question-topic" class="blue-text">
+                                <p></p>
+                            </div>
+                            <div id="question-level" class="blue-text">
+                                <p></p>
+                            </div>
+                            <div id="your-score" class="mb-2 mb-md-4 blue-text">
+                                <p></p>
+                            </div>
                         </div>
-                        <div class="col-12 col-lg-6">
-                            <p class="choice-text mb-3 mb-md-4 py-1 py-md-2" data-number="3"></p>
-                            <p class="choice-text mb-3 mb-md-4 py-1 py-md-2" data-number="4"></p>
+                        <!-- Timer -->
+                        <div class="col-3 d-flex justify-content-center align-items-center">
+                            <div id="timer">
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question and Multiple choice answers -->
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <p id="question-number" class="mt-4 fw-bold"></p>
+                        <p id="question-text" class="my-2"></p>
+                        <div class="choice-container my-4">
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <p class="choice-text mb-3 mb-md-4 py-1 py-md-2" data-number="1"></p>
+                                    <p class="choice-text mb-3 mb-md-4 py-1 py-md-2" data-number="2"></p>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <p class="choice-text mb-3 mb-md-4 py-1 py-md-2" data-number="3"></p>
+                                    <p class="choice-text mb-3 mb-md-4 py-1 py-md-2" data-number="4"></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Footer -->
-        <ul class="footer-text text-center d-flex flex-row align-items-center mb-0">
-            <li class="me-2 me-md-4">
-                <span class="footer-copyright"><i class="far fa-copyright"></i> Dissy Ulina 2021</span></span>
-            </li>
-            <li class="me-2 me-md-4">
-                <a href="https://www.linkedin.com/in/dissyulina/" target="_blank" rel="noopener" aria-label="Linkedin - Dissy Ulina">
-                    <i class="fab fa-linkedin-in btn-click"></i>
-                </a>
-            </li>
-            <li class="me-2 me-md-4">	
-                <a href="https://github.com/dissyulina/" target="_blank" rel="noopener" aria-label="Github - dissyulina">
-                    <i class="fab fa-github-alt btn-click"></i>
-                </a>
-            </li>
-            <div class="icons-shortcut d-flex flex-row justify-content-center">
-                <li class="icon-wrapper">	
-                    <a aria-current="modal" href="achievements.html" role="button" id="#goto-achievement">
-                        <i class="fas fa-trophy"></i>
-                    </a>
-                </li>
-                <li class="icon-wrapper">	
-                    <a aria-current="modal" role="button" class="toggle-sound">
-                        <i class="fas fa-volume-up"></i>
-                    </a>
-                </li>
-            </div>
-        </ul>
+                <!-- Footer -->
+                <div>
+                    <ul class="footer-text text-center d-flex flex-row align-items-center mb-0">
+                        <li class="me-2 me-md-4">
+                            <span class="footer-copyright"><i class="far fa-copyright"></i> Dissy Ulina 2021</span></span>
+                        </li>
+                        <li class="me-2 me-md-4">
+                            <a href="https://www.linkedin.com/in/dissyulina/" target="_blank" rel="noopener" aria-label="Linkedin - Dissy Ulina">
+                                <i class="fab fa-linkedin-in btn-click"></i>
+                            </a>
+                        </li>
+                        <li class="me-2 me-md-4">	
+                            <a href="https://github.com/dissyulina/" target="_blank" rel="noopener" aria-label="Github - dissyulina">
+                                <i class="fab fa-github-alt btn-click"></i>
+                            </a>
+                        </li>
+                        <li class="icons-shortcut d-flex flex-row justify-content-center">
+                            <div class="icon-wrapper">	
+                                <a aria-current="modal" href="achievements.html" role="button" id="#goto-achievement">
+                                    <i class="fas fa-trophy"></i>
+                                </a>
+                            </div>
+                            <div class="icon-wrapper">	
+                                <a aria-current="modal" role="button" class="toggle-sound">
+                                    <i class="fas fa-volume-up"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-        <!--Modal pop up-->
-        <div class="modal fade" id="modal-stars" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="topic-title" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content bg-modal">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="stars-title"></h5>
-                    </div>
-                
-                    <div id="stars-img" class="d-flex flex-row justify-content-center align-items-center my-3 my-md-4">
-
-                    </div>
-                    <div class="modal-body" id="stars-text">
+                <!--Modal pop up-->
+                <div class="modal fade" id="modal-stars" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="topic-title" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content bg-modal">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="stars-title"></h5>
+                            </div>
                         
-                    </div>
-                    <div class="modal-footer d-flex flex-column justify-content-center align-items-center my-3 my-md-4">
-                        <a class="btn btn-main" href="wheel.html" role="button">Play Again!</a>
-                        <!--<button type="button" class="btn btn-main" data-bs-dismiss="modal">BRING IT ON!</button> -->
-                        <a class="btn btn-main" href="achievements.html" role="button">See All of My Stars</a>
-                        <a class="btn btn-second" role="button" href="index.html" onclick="saveData()">Quit</a>
+                            <div id="stars-img" class="d-flex flex-row justify-content-center align-items-center my-3 my-md-4">
 
+                            </div>
+                            <div class="modal-body" id="stars-text">
+                                
+                            </div>
+                            <div class="modal-footer d-flex flex-column justify-content-center align-items-center my-3 my-md-4">
+                                <a class="btn btn-main" href="wheel.html" role="button">Play Again!</a>
+                                <!--<button type="button" class="btn btn-main" data-bs-dismiss="modal">BRING IT ON!</button> -->
+                                <a class="btn btn-main" href="achievements.html" role="button">See All of My Stars</a>
+                                <a class="btn btn-second" role="button" href="index.html" onclick="saveData()">Quit</a>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
     <script src="assets/js/sound.js"></script> 
     <script src="assets/js/question.js"></script>
 
-    <!--
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/wheel.js"></script> 
-    -->
 </body>
 </html>

@@ -12,6 +12,11 @@ function sendMail(contactForm) {
     });
     return false;
 }
+/*
+//Response as the user send valid form
+$('#contact-form').on('submit', function (e) {
+    $("#btn-submit").text('<i class="fas fa-check"></i> Sent');
+    $('#contact-form')[0].reset(); //clear the fields
+}); 
 
-
-    
+*/  

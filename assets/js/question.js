@@ -115,7 +115,7 @@ getNewQuestion = () => {
 	// If 10th question is left unanswered and time's up, show up modal
 	if (availableQuestions.length === 0) {
 		console.log("The end");
-		showModalTenQuestions(e);
+		showModalTenQuestions();
 		//return window.location.assign("wheel.html");
 	};
 	
@@ -365,7 +365,7 @@ choices.forEach(choice => {
 
 // Function to show modal after 10 set of questions end
 function showModalTenQuestions(e) {
-	e.preventDefault();
+	//e.preventDefault();
 	$("#modal-stars").modal("show");
 	$("#ten-questions-sound")[0].play();
 	$("#stars-title").text("You’ve answered 10 questions and you’ve got " + score + " points in this round. Your total points are " + savedScore);
