@@ -22,6 +22,8 @@ if (lastPlayer === null) {
 $('#btn-player').on('click', function(e) {
 	saveData();
 	$("#username-modal").modal('show');
+    $("#username-modal h5").text("Change Player");
+    $("#username-modal p").text("Add a new player or input your saved username");
 });
 
 //Show modal on window load
@@ -67,7 +69,7 @@ function retrieveData() {
 	localStorage.setItem("Science_score", data.scienceScore);
 	localStorage.setItem("Science_stars", data.scienceStars);
 }
-
+/*
 function saveData() {
     // All the quiz's datas are put into a new object
     let datas = new Object();
@@ -105,3 +107,4 @@ function saveData() {
     window.localStorage.removeItem('Science_stars');
     window.localStorage.removeItem('Science_score');
 };
+*/
