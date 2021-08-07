@@ -210,22 +210,21 @@ let progressBarPoint;
 let incrementWidth;
 function progressBar(progressBefore, scoreAfter) {
 	progressBarPoint = Math.floor((scoreAfter / fullPoints * 100) % 100);
-	/*
-	if (scoreAfter >= 3000) {
-		progressBarPoint = ((scoreAfter - 3000) / fullPoints * 100);
-	} else if (scoreAfter >= 2000) {
-		progressBarPoint = ((scoreAfter - 2000) / fullPoints * 100);
-	} else if (scoreAfter >= 1000) {
-		progressBarPoint = ((scoreAfter - 1000) / fullPoints * 100);
-	} else {
-		progressBarPoint = (scoreAfter / fullPoints * 100);
-	}
-	*/
-	//progressBarPoint = Math.min(progressBarPoint, 100);
 	console.log("progress bar point: " + progressBarPoint);
 	if (progressBarPoint < progressBefore) {
 		console.log("increment width for progress bar: " + incrementWidth + "%");
 		$("#progress-bar-yellow").animate({ width: '100%'});
+
+		// change stars from gray to yellow
+		console.log($(".stars-achievement").length);
+		for (let i=0; i < $(".stars-achievement").length; i++) {
+			console.log("inside the for loop for turning stars to yellow");
+			$("#progress-bar-stars > img")[i].remove();
+			$("#progress-bar-stars").append('<img src="assets/images/star.png">');
+			$("#progress-bar-stars img").addClass("stars-achievement");
+		}
+		console.log("for loop for turning stars to yellow is done");
+		
 	} else {
 		incrementWidth = Math.floor(progressBarPoint - progressBefore);
 		console.log("increment width for progress bar: " + incrementWidth + "%");
@@ -246,7 +245,7 @@ function progressStars(st) {
 	if(st <= 2) {
 		let i=0;
 		while (i <= Math.min(st, 2)) {
-			$("#progress-bar-stars").append('<img src="assets/images/star.png">');
+			$("#progress-bar-stars").append('<img src="assets/images/gray-star.png">');
 			$("#progress-bar-stars img").addClass("stars-achievement");
 			$("#progress-bar-stars").css("width","auto");
 			i++;
@@ -403,42 +402,3 @@ function showModalStars(e) {
 		$("#stars-text").text("Congratulations, level's completed for " + topic + " !! You’re now unofficially a " + topic + " professor! You know all about it. You read relevant articles about it and always keep up with the news. Play another trivia and see if you’re as amazing in another topics as well.")	
 	}
 }
-
-// Function to save points and stars of a user to local storage, attached to click event of "Quit" button
-function saveData() {
-    // All the quiz's datas are put into a new object
-    let datas = new Object();
-    console.log(localStorage.getItem("Sports_stars"));
-    datas = {
-        sportsStars: localStorage.getItem("Sports_stars"),
-        sportsScore: localStorage.getItem("Sports_score"),
-        computerStars: localStorage.getItem("Computer_stars"),
-        computerScore: localStorage.getItem("Computer_score"),
-        musicStars: localStorage.getItem("Music_stars"),
-        musicScore: localStorage.getItem("Music_score"),
-        geographyStars: localStorage.getItem("Geography_stars"),
-        geographyScore: localStorage.getItem("Geography_score"),
-        filmStars: localStorage.getItem("Film_stars"),
-        filmScore: localStorage.getItem("Film_score"),
-        scienceStars: localStorage.getItem("Science_stars"),
-        scienceScore: localStorage.getItem("Science_score"),
-    }
-    console.log(localStorage.getItem("player"));
-    inputName = localStorage.getItem("player");
-    localStorage.setItem(inputName, JSON.stringify(datas));
-    console.log(JSON.stringify(datas));
-
-    //remove all keys, except the data key inputName
-    window.localStorage.removeItem('Sports_stars');
-    window.localStorage.removeItem('Sports_score');
-    window.localStorage.removeItem('Computer_stars');
-    window.localStorage.removeItem('Computer_score');
-    window.localStorage.removeItem('Music_stars');
-    window.localStorage.removeItem('Music_score');
-    window.localStorage.removeItem('Geography_stars');
-    window.localStorage.removeItem('Geography_score');
-    window.localStorage.removeItem('Film_stars');
-    window.localStorage.removeItem('Film_score');
-    window.localStorage.removeItem('Science_stars');
-    window.localStorage.removeItem('Science_score');
-};
