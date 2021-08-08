@@ -219,7 +219,7 @@ li {
 
 /* Modals */
 .bg-modal {
-    background: url(../images/bg-modal.jpg) no-repeat center center;
+    background: linear-gradient(45deg, lightpink, lightyellow, lightblue);
     background-size: cover;
 }
 
@@ -343,15 +343,18 @@ form {
     border-radius: 20px;
     transition: 1s ease;
 }
+
+.complete-achievement {
+    width: auto;
+    height: 50px;
+}
+
+
 .blue-text {
     color: #2c4d8a;
     font-weight: 600;
 }
-/*
-#question-points {
-    margin-top: 3rem;
-}
-*/
+
 .choice-container {
     width: 100%;
 }
@@ -421,6 +424,16 @@ form {
     height: 50px;
     margin-right: -10px;
     margin-left: -10px;
+}
+
+.complete-achievement-text {
+    color : #FF9900;
+    font-weight: 700;
+    height: 24px;
+}
+
+.complete-achievement-wrapper p i {
+    color: #01a74b;
 }
 
 /* Media Queries */

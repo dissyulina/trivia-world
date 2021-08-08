@@ -254,7 +254,7 @@ function progressStars(st) {
 		}
 	} else {
 		$("#progress-bar-stars").append('<img src="assets/images/achievement-complete.png">');
-		$("#progress-bar-stars img").addClass("stars-achievement");
+		$("#progress-bar-stars img").addClass("complete-achievement");
 		$("#progress-bar-stars").css("width","auto");
 	}
 	
