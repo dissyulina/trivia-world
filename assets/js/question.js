@@ -9,8 +9,8 @@ let questionCounter = 0; //what number of question are the user on
 let availableQuestions =[]; // an array of our question set
 
 //Variables for points system
-const correctPoints = [50, 100, 150, 200];
-//const correctPoints = [300, 400, 500, 600];
+//const correctPoints = [50, 100, 150, 200];
+const correctPoints = [300, 400, 500, 600];
 const fullPoints = 1000;
 const maxStars = 3;
 let points;
@@ -217,9 +217,11 @@ function progressBar(progressBefore, scoreAfter) {
 
 		// change stars from gray to yellow
 		console.log($(".stars-achievement").length);
+		$("progress-bar-stars > img").remove();
+
 		for (let i=0; i < $(".stars-achievement").length; i++) {
-			console.log("inside the for loop for turning stars to yellow");
-			$("#progress-bar-stars > img")[i].remove();
+			console.log("inside the for loop for turning stars to yellow" + [i]);
+			console.log("how many stars turn to yellow?" + $(".stars-achievement").length);
 			$("#progress-bar-stars").append('<img src="assets/images/star.png">');
 			$("#progress-bar-stars img").addClass("stars-achievement");
 		}
@@ -251,7 +253,7 @@ function progressStars(st) {
 			i++;
 		}
 	} else {
-		$("#progress-bar-stars").append('<img src="assets/images/game-trophy.png">');
+		$("#progress-bar-stars").append('<img src="assets/images/achievement-complete.png">');
 		$("#progress-bar-stars img").addClass("stars-achievement");
 		$("#progress-bar-stars").css("width","auto");
 	}
