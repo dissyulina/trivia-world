@@ -217,11 +217,11 @@ function progressBar(progressBefore, scoreAfter) {
 
 		// change stars from gray to yellow
 		console.log($(".stars-achievement").length);
-		$("progress-bar-stars > img").remove();
-
-		for (let i=0; i < $(".stars-achievement").length; i++) {
+	
+		for (let i=0; i < ($(".stars-achievement").length); i++) {
 			console.log("inside the for loop for turning stars to yellow" + [i]);
 			console.log("how many stars turn to yellow?" + $(".stars-achievement").length);
+			$("#progress-bar-stars img:first").remove();
 			$("#progress-bar-stars").append('<img src="assets/images/star.png">');
 			$("#progress-bar-stars img").addClass("stars-achievement");
 		}
