@@ -1,4 +1,18 @@
 // Using emailJS, send email
+//$('#btn-submit').click(function (event) {
+$('#contact-form').on('submit', function (e) {
+
+    e.preventDefault();
+
+    setTimeout(function() {
+        $("#btn-submit").html('<i class="fas fa-check"></i> Sent');
+        $("#btn-submit i").css("color", "#01a74b");
+        $('#contact-form')[0].reset();
+    }, 1000);
+    
+    //sendMail(this); 
+});
+
 function sendMail(contactForm) {
     emailjs.send("gmail", "template_trivaworld", {
         "from_name": contactForm.name.value,
@@ -10,13 +24,9 @@ function sendMail(contactForm) {
     }, function(error) {
         console.log('FAILED...', error);
     });
-    return false;
-}
-/*
-//Response as the user send valid form
-$('#contact-form').on('submit', function (e) {
+
     $("#btn-submit").text('<i class="fas fa-check"></i> Sent');
     $('#contact-form')[0].reset(); //clear the fields
-}); 
 
-*/  
+    return false;
+}
