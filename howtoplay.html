@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Pacifico&display=swap" rel="stylesheet">
     <!--CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Triva World</title>
+    <title>How To Play</title>
 </head>
 
 <body>
@@ -30,13 +30,31 @@
                 <div class="col-12 col-lg-6 background-blue d-flex justify-content-center align-items-center">
                     <div class="container py-5 px-3 px-md-4 px-lg-5">
                     <h2>How To Play</h2>
-                    <ol>
-                        <li>Spin the wheel to get a topic.</li>
-                        <li>Answer 10 set of questions that related to the topic. For each correct question, you’ll get points between 50-300 (depends on the difficulty).</li>
-                        <li>After 10 questions, you’ll get to spin the wheel again.</li>
-                        <li>When your accumulated points reach 1000, you’ll get a star, and you’ll have a chance to spin the wheel again.</li>
-                        <li>Collect 3 stars and you’ve reached the maximum achievement for a topic</li>
-                        <li>Click on the ‘see my badges’ button to see all stars that you’ve collected on each topic</li>
+                    <ol class="d-flex flex-column">
+                        <li class="d-flex">
+                            <img src="assets/images/icons-numbers/one.png" title="" height="40px">
+                            <p class="ms-2">Spin the wheel to get a topic.</p>
+                        </li>
+                        <li class="d-flex mt-3">
+                            <img src="assets/images/icons-numbers/two.png" title="" height="40px">
+                            <p class="ms-2">Answer 10 set of questions that related to the topic. For each correct question, you’ll get points between 100 to 250.</p>
+                        </li>
+                        <li class="d-flex mt-3">
+                            <img src="assets/images/icons-numbers/three.png" title="" height="40px">
+                            <p class="ms-2">After 10 questions, you have the choice to spin the wheel again or to quit.</p>
+                        </li>
+                        <li class="d-flex mt-3">
+                            <img src="assets/images/icons-numbers/four.png" title="" height="40px">
+                            <p class="ms-2">For every 1000 accumulated points, you’ll get a star.</p>
+                        </li>
+                        <li class="d-flex mt-3">
+                            <img src="assets/images/icons-numbers/five.png" title="" height="40px">
+                            <p class="ms-2">Collect 3 stars and you’ve reached the maximum achievement for a topic.</p>
+                        </li>
+                        <li class="d-flex mt-3">
+                            <img src="assets/images/icons-numbers/six.png" title="" height="40px">
+                            <p class="ms-2">Click on the 'See All My Stars’ button to see all stars that you’ve collected on each topic.</p>
+                        </li>
                     </ol>
                     <div>
                         <ul class="d-flex flex-column align-items-center">
@@ -48,11 +66,42 @@
                 </div>
             </div>
         </div>  
+
+        <!-- Footer -->
+        <div>
+            <ul class="footer-text position-sticky text-center d-flex flex-row align-items-center mb-0">
+                <li class="me-2 me-md-4">
+                    <span class="footer-copyright"><i class="far fa-copyright"></i> Dissy Ulina 2021</span></span>
+                </li>
+                <li class="me-2 me-md-4">
+                    <a href="https://www.linkedin.com/in/dissyulina/" target="_blank" rel="noopener" aria-label="Linkedin - Dissy Ulina">
+                        <i class="fab fa-linkedin-in btn-click"></i>
+                    </a>
+                </li>
+                <li class="me-2 me-md-4">	
+                    <a href="https://github.com/dissyulina/" target="_blank" rel="noopener" aria-label="Github - dissyulina">
+                        <i class="fab fa-github-alt btn-click"></i>
+                    </a>
+                </li>
+                <li class="icons-shortcut d-flex flex-row justify-content-center">
+                    <div class="icon-wrapper">	
+                        <a aria-current="modal" href="achievements.html" role="button" id="#goto-achievement">
+                            <i class="fas fa-trophy"></i>
+                        </a>
+                    </div>
+                    <div class="icon-wrapper">	
+                        <a aria-current="modal" role="button" class="toggle-sound">
+                            <i class="fas fa-volume-up"></i>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.js"></script>
+
     
 </body>
 </html>
