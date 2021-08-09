@@ -92,10 +92,9 @@ li {
     border-radius: 10px;
     background-color:rgba( 255, 255, 255, 0.50 );
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    margin-left: 0.5rem;
 }
 
-.icons-shortcut,
+
 .icon-login {
     position: absolute;
     right: 10px;
@@ -157,6 +156,12 @@ li {
     color: #2c4d8a;
     font-weight: 700;
     font-size: 1rem;
+}
+
+#achievement-page .footer-text,
+#howtoplay-page .footer-text,
+#contact-page .footer-text {
+    position: static;
 }
 
 .footer-text a,
@@ -486,7 +491,7 @@ form {
 
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
     #progress-bar-grey {
         height: 1.5rem;
     }
@@ -503,6 +508,12 @@ form {
     .star-modal {
         width: 120px;
         height: 120px;
+    }
+    #achievement-page footer ul,
+    #howtoplay-page footer ul,
+    #contact-page footer ul {
+        position: absolute;
+        bottom: 0;
     }
 }
 
