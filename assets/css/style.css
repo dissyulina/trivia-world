@@ -322,6 +322,17 @@ form {
 }
 
 /* Question page */
+#loader-question {
+    height: 100vh;
+}
+
+#loader-question img {
+    height: 5rem;
+}
+
+.hidden {
+    visibility: hidden;
+}
 
 .background-gradient {
     height: 100vh;
@@ -330,6 +341,7 @@ form {
     background-attachment: scroll; 
     background-size: cover;
 }
+
 .bg-progess-bar {
     background-color: rgb(140 214 232);
 }

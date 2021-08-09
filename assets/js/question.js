@@ -109,6 +109,8 @@ startGame = () => {
 	availableQuestions = [...quizDatas];
 	console.log(availableQuestions);
 	getNewQuestion();
+	$("#question-start").removeClass("hidden");
+	$("#loader-question").remove();
 };
 
 getNewQuestion = () => {
