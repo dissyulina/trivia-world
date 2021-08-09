@@ -283,8 +283,10 @@ form {
     background: url(../images/blueray.jpg) no-repeat center center;
     background-attachment: scroll; 
     background-size: cover;
+    /*
     display: flex;
     align-items: center;
+    */
 }
 
 #picker {
@@ -458,7 +460,7 @@ form {
 /* Media Queries */
 
 /* Special queries for the very small screens (iphone 5, moto G4, etc) */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 360px) {
     .background-gradient {
         line-height: 1.2;
     }
@@ -480,7 +482,7 @@ form {
    .btn {
     border-radius: 30px;
     font-size: 0.9rem;
-    padding: 0.4rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     }
 
     .btn-start {
