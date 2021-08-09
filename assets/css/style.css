@@ -156,6 +156,7 @@ li {
     color: #2c4d8a;
     font-weight: 700;
     font-size: 1rem;
+    
 }
 
 #achievement-page .footer-text,
@@ -459,8 +460,8 @@ form {
 
 /* Media Queries */
 
-/* Special queries for the very small screens (iphone 5, moto G4, etc) */
-@media screen and (max-width: 360px) {
+/* Special queries for the small screens (iphone 5, moto G4, etc) */
+@media screen and (max-width: 400px) {
     .background-gradient {
         line-height: 1.2;
     }
