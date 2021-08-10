@@ -50,3 +50,4 @@ function soundOn() {
         toggleSound[j].innerHTML = '<i class="fas fa-volume-up"></i>';
     }
 }
+

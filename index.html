@@ -24,10 +24,16 @@
 
 <body>
     <header>
+        <!-- Audio -->
+        <audio id="click-sound">
+            <source src="assets/audio/button-click.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Content -->
         <div class="hero" title="">
             <div class="container-fluid container-header d-flex justify-content-center">
                 <div class="icon-wrapper icon-login">
-                    <a id="btn-player" href="#" role="button"><i class="fas fa-user"></i></a>
+                    <div id="btn-player" role="button"><i class="fas fa-user"></i></div>
                 </div>
                 <div class="content-hero px-4 align-self-center">
                     <div class="text-center">
@@ -72,12 +78,12 @@
                     </li>
                     <li class="ms-auto d-flex flex-row justify-content-center">
                         <div class="icon-wrapper">	
-                            <a aria-current="modal" href="achievements.html" role="button" id="#goto-achievement">
+                            <a href="achievements.html" role="button" id="#goto-achievement">
                                 <i class="fas fa-trophy"></i>
                             </a>
                         </div>
                         <div class="icon-wrapper ms-2 ms-md-3">	
-                            <a aria-current="modal" role="button" class="toggle-sound">
+                            <a role="button" class="toggle-sound">
                                 <i class="fas fa-volume-up"></i>
                             </a>
                         </div>
@@ -86,7 +92,6 @@
             </footer>
         </div>
     </header>
-
 
     <!-- Modal on page load -->
     <div class="modal fade" id="username-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -99,7 +104,6 @@
                 <div class="modal-body">
                     <p>What's your username?*</p>
                     <div>
-
                     </div>
                     <div class="mx-auto">
                         <label for="username" class="col-form-label"></label>
@@ -114,8 +118,12 @@
             </div>
         </div>
     </div>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
+
+    <!-- JS files -->
     <script src="assets/js/sound.js"></script>
     <script src="assets/js/quit-button.js"></script>
     <script src="assets/js/script.js"></script>

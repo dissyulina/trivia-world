@@ -19,6 +19,7 @@ if (lastPlayer === null) {
 	retrieveData();
 }
 
+// Event listener when Change Player button is clicked, show up modal to input username
 $('#btn-player').on('click', function(e) {
 	saveData();
 	$("#username-modal").modal('show');
@@ -65,5 +66,4 @@ function retrieveData() {
         localStorage.setItem("Science_score", data.scienceScore);
         localStorage.setItem("Science_stars", data.scienceStars);
     }
-
 }

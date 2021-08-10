@@ -107,8 +107,9 @@ li {
     transition: transform 150ms;
 }
 
-.icon-wrapper > a {
-    color: #FED82A;
+.icon-wrapper > a,
+#btn-player {
+    color: #2c4d8a;
     display: block;
     padding: 0.25rem 0.75rem;
 }
@@ -155,20 +156,21 @@ li {
     background-color: rgb(133, 205, 106, 0.7);
     color: #2c4d8a;
     font-weight: 700;
-    font-size: 1rem;
-    
+    font-size: 1rem;   
+}
+
+.footer-text a {
+    color: #2c4d8a;
+}
+
+.footer-text a:hover {
+    color: #4a7bd4;
 }
 
 #achievement-page .footer-text,
 #howtoplay-page .footer-text,
 #contact-page .footer-text {
     position: static;
-}
-
-.footer-text a,
-.icon-wrapper > a {
-    color: #2c4d8a;
-    /*color: #456DB6;*/
 }
 
 /*-- Buttons --*/
@@ -262,6 +264,10 @@ section h2 {
 section ol {
     padding-top: 2rem;
     padding-bottom: 3rem;
+}
+
+.icon-numbers {
+    height: 40px;
 }
 
 /* Contact Page */
@@ -495,7 +501,8 @@ form {
         top: 8px;
     }
 
-    .icon-wrapper a {
+    .icon-wrapper a,
+    #btn-player {
         padding: 0.15rem 0.5rem;
     }
 
