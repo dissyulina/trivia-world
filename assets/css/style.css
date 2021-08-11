@@ -97,7 +97,7 @@ li {
 
 .icon-login {
     position: absolute;
-    right: 10px;
+    right: 2rem;
     top: 10px;
 }
 
@@ -248,8 +248,11 @@ li {
   
 .full-container {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-  
+
 .background-blue {
     background-color: #EAF3FA;
     height: inherit;
@@ -266,6 +269,11 @@ section ol {
     padding-bottom: 3rem;
 }
 
+#howtoplay-page .row,
+#contact-page .row {
+    flex-grow: 1;
+}
+
 .icon-numbers {
     height: 40px;
 }
@@ -280,7 +288,7 @@ form {
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 ); 
     margin-bottom: 3rem;
-  }
+}
 
 /* Wheel Page */
 
@@ -421,6 +429,9 @@ form {
     background-size: cover;
     min-height: 100vh;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .overlay-icons {
@@ -466,7 +477,7 @@ form {
 
 /* Media Queries */
 
-/* Special queries for the small screens (iphone 5, moto G4, etc) */
+/* Special queries for the small screens */
 @media screen and (max-width: 400px) {
     .background-gradient {
         line-height: 1.2;
@@ -487,15 +498,19 @@ form {
    }
 
    .btn {
-    border-radius: 30px;
-    font-size: 0.9rem;
-    padding: 0.5rem 1.5rem;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        padding: 0.5rem 1.5rem;
     }
 
     .btn-start {
-    min-width: 10rem;
+        min-width: 10rem;
     }
 
+    .icon-login {
+        right: 10px;
+    }
+    
     .icon-wrapper {
         font-size: 1rem;
         top: 8px;
@@ -511,13 +526,13 @@ form {
         padding-left: 10px;
         padding-right: 10px;
     }
-
 }
 
 @media screen and (min-width: 768px) {
     #progress-bar-grey {
         height: 1.5rem;
     }
+
     .stars-achievement {
         width: 80px;
         height: 80px;
@@ -531,12 +546,6 @@ form {
     .star-modal {
         width: 120px;
         height: 120px;
-    }
-    #achievement-page footer ul,
-    #howtoplay-page footer ul,
-    #contact-page footer ul {
-        position: absolute;
-        bottom: 0;
     }
 }
 
