@@ -185,6 +185,26 @@ High fidelity mock-up for desktops:
 
 <br />   
 
+## **Features**  
+### **Existing Features**  
+#### **General Design Features**  
+   - Each page of the game is fully responsive on all device sizes and features intuitive navigational buttons.   
+   - Footer is available at the bottom of all pages, and the same for all pages to ensure easy control and navigation. In the footer there are:   
+      * Toggle sound on and off, to allow users to mute or to play the sound no matter on which page the user is currently at.   
+      * Access button to the achievement page, to allow users to go straight to their achievement page.  
+      *  Copyright remarks and links to the developer’s GitHub and LinkedIn.   
+   - Quit button functions to quit the game, save the users’ achievements, and bring the users back to the Landing Page. This button is placed on all the pages, except in the middle of the 10 questions on the Question page. However, after the 10 questions are finished, a modal pops up, and the users can click the Quit button to quit the game.   
+   - Sound effects were added across the game to enhance user experience in playing the game:   
+      * On the wheel when it’s spinning   
+      * On modal pop-up after the wheel spun (topic result from the spinning wheel)   
+      * On the answer choice if it’s clicked as an auditory response, if the answer is correct or wrong   
+      * On modal pop-up, after 10 questions are up   
+      * On modal pop-up when the user reaches a star   
+
+
+#### **Page Design Features**  
+   
+
 
 ---
 
