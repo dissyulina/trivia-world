@@ -388,21 +388,20 @@ function showModalStars(e) {
 	console.log($("#getstar-sound"));
 	$("#getstar-sound")[0].play();
 	$("#stars-title").text("Woohooo! You’ve made it to " + savedScore + " points in " + topic + ". You get " + stars + " star!");
-
-	if (stars === 1) {
+	// Display the stars
+	let i=0;
+    while (i < stars) {
 		$("#stars-img").append('<img src="assets/images/star.png">');
-		$("#stars-img").children("img").addClass("star-modal");
+        i++;
+    }
+	$("#stars-img").children("img").addClass("star-modal");
+	// Display the text
+	if (stars === 1) {
 		$("#stars-text").text("Yeah! You know basic knowlegde of " + topic + ". Challenge yourself and increase your points to get more stars! What do you want to do next?")
 	} else if (stars === 2) {
-		$("#stars-img").append('<img src="assets/images/star.png">');
-		$("#stars-img").append('<img src="assets/images/star.png">');
-		$("#stars-img").children("img").addClass("star-modal");
-		$("#stars-text").text("Amazing! You’re a " + topic + " fan and you're quite knowledgable in this. You earn your two stars achievement! Play another trivia and see if you’re as amazing in another topics as well.")		
+		$("#stars-text").text("Amazing! You’re a " + topic + " fan and you're quite knowledgable in this. You earn your two stars achievement! Play another trivia and see if you’re as amazing in another topics as well.")
 	} else if (stars === 3) {
-		$("#stars-img").append('<img src="assets/images/star.png">');
-		$("#stars-img").append('<img src="assets/images/star.png">');
-		$("#stars-img").append('<img src="assets/images/star.png">');
-		$("#stars-img").children("img").addClass("star-modal");
 		$("#stars-text").text("Congratulations, level's completed for " + topic + " !! You’re now unofficially a " + topic + " professor! You know all about it. You read relevant articles about it and always keep up with the news. Play another trivia and see if you’re as amazing in another topics as well.")	
 	}
+
 }
