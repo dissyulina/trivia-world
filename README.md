@@ -188,22 +188,43 @@ High fidelity mock-up for desktops:
 ## **Features**  
 ### **Existing Features**  
 #### **General Design Features**  
-   - Each page of the game is fully responsive on all device sizes and features intuitive navigational buttons.   
-   - Footer is available at the bottom of all pages, and the same for all pages to ensure easy control and navigation. In the footer there are:   
+   - **Fully responsive** - Each page of the game is fully responsive on all device sizes and features intuitive navigational buttons.   
+   - **Footer (toggle sound and direct access to the achievement page)** - Footer is available at the bottom of all pages, and the same for all pages to ensure easy control and navigation. In the footer there are:   
       * Toggle sound on and off, to allow users to mute or to play the sound no matter on which page the user is currently at.   
       * Access button to the achievement page, to allow users to go straight to their achievement page.  
       *  Copyright remarks and links to the developer’s GitHub and LinkedIn.   
-   - Quit button functions to quit the game, save the users’ achievements, and bring the users back to the Landing Page. This button is placed on all the pages, except in the middle of the 10 questions on the Question page. However, after the 10 questions are finished, a modal pops up, and the users can click the Quit button to quit the game.   
-   - Sound effects were added across the game to enhance user experience in playing the game:   
+   - **Quit (and save) button** - Quit button functions to quit the game, save the users’ achievements, and bring the users back to the Landing Page. This button is placed on all the pages, except in the middle of the 10 questions on the Question page. However, after the 10 questions are finished, a modal pops up, and the users can click the Quit button to quit the game.   
+   - **Sound effects** - Sound effects were added across the game to enhance user experience in playing the game:   
       * On the wheel when it’s spinning   
       * On modal pop-up after the wheel spun (topic result from the spinning wheel)   
       * On the answer choice if it’s clicked as an auditory response, if the answer is correct or wrong   
       * On modal pop-up, after 10 questions are up   
       * On modal pop-up when the user reaches a star   
 
+<br/>   
 
 #### **Page Design Features**  
-   
+   1. **Landing Page/ Main Menu Page**   
+   - There’s a conditional system that a user gets when they are entering the Landing Page.
+      * **Modal to input username** - If the user has never played the game on that device before (no data in the local storage is detected), the user will see a modal pop-up that welcomes the user to the game and prompts the user to input their username.   
+      * **Welcome greetings to last player** - If the user has played the game on that particular device before, on the landing page there’s a welcome greeting with the last username that played on that device before.   
+   - **Change Players Button** - Still related to the username, the change player button is available at the top left of the landing page, to allow the users to change players even if they are using the same device. If the users input an existing username, the game will load all the username’s previous data and achievements. All of the users’ achievements will be saved on the local storage so that the user can conveniently resume their playing.  
+   -  On the landing page, there are 3 main buttons: Play button, How To Play button, and Contact button, which all will lead to other pages. As the users click the Play button, they will be brought to the Wheel page, the How To Play button will bring users to the How To Play page and the Contact button to the Contact page.  
+   - Footer is placed at the bottom of the page.   
+
+   2. **Wheel Page**   
+   - **Easy accessibility of playing the game** - To ensure easy accessibility of the game playing from wherever page the users are currently at, there are Play buttons placed on all pages across the website. The users will be brought to this Wheel page when:   
+      * The users click the Play button on the Landing page, How to Play page, Contact page, and Achievement page.   
+      * The users click the Play Again button on the modal pop-up on the Question page, after 10 questions are up or after the users get a star.   
+   - **Spinning Wheel** - The Wheel page performs as the first page of the playing itself. On this page, the users will spin a wheel to determine a topic for the quiz. Six topics are spread into 12 sections in the spinning wheel: Sports, Music, Film, Computer, Geography, and Science.   
+   - There are two buttons on the Wheel page:  Spin The Wheel button, which functions as an action button to spin the wheel and the Quit button, which will take the user back to the Landing page.   
+   - **Modal pop-up to display the topic result** - When the users click the Spin The Wheel button, the wheel spins. After the spinning ends a modal pops up that displays the topic that the user gets from spinning the wheel. In the modal, there’s also a short explanation of the rules of the game. From this modal, the user can choose to proceed to the questions by clicking the Bring It On button, or the user can choose to spin the wheel again by clicking the Let Me Spin That Wheel Again button.   
+   - Footer is placed at the bottom of the page.   
+
+   3. **Question Page**  
+
+
+
 
 
 ---
