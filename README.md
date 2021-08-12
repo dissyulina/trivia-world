@@ -299,6 +299,9 @@ Due to limited resources (time constraint, skill of the developer at the moment,
    <br/>   
 
 ## **Issues and Bugs**  
+
+### **Solved Issues**  
+
 I ran into several issues and bugs while developing the website. Some of the tough ones are listed below, along with the solutions that successfully solved them.  
 
 1. **Issue**: During the coding process I made one aggregate JS file for spinning the wheel, for fetching API, and for displaying the questions. I made the logic separately at first and had difficulty connecting the topic result from the wheel and then fetch API according to that topic (I tried to pass the topic as a parameter for fetch function but it didn’t work). It took me 1 full day to search and try and I was still stuck. I contacted tutor support, and Sean from Code Institute helped me to solve the problem. The problem was the code for fetching already worked before the wheel spun, so the topic parameter could not be passed.   
@@ -310,7 +313,7 @@ I ran into several issues and bugs while developing the website. Some of the tou
     username --> as key   
     {sport: 250, music: 1200, science: 2150, etc.. }  --> as value    
 
-   **Solution**: Having learned through [this article](https://medium.com/programming-essentials/how-to-store-and-retrieve-objects-from-the-local-and-session-storage-b705603dd753) on how to store and retrieve an object in the local storage,  I used the JSON.stringify to convert an object to a JSON string and pass it to the local storage when the user decides to quit the game, and JSON.parse to parse a JSON string back into an object when the username is called again on the Landing page.  
+   **Solution**: Having learned through [this article](https://attacomsian.com/blog/javascript-local-storage-store-retrieve-objects) on how to store and retrieve an object in the local storage,  I used the JSON.stringify to convert an object to a JSON string and pass it to the local storage when the user decides to quit the game, and JSON.parse to parse a JSON string back into an object when the username is called again on the Landing page.  
 
 3. **Issue**: Toggle sound on/ off button that available at the footer on all pages. If the toggle sound is clicked on one page, that preference the user set on that page would have to carry through to the next page.   
 
@@ -319,6 +322,21 @@ I ran into several issues and bugs while developing the website. Some of the tou
 4. **Issue**: Username and change player, the design and logic behind it. The feature to change players initially wasn’t in my wireframes and mockups, as I didn’t know exactly how to apply that. I had long thought about how to implement it the best way to ensure a great user experience. On a first design, I made a modal pop up at the landing page to prompt the user to input the username, but soon realized that it was not a good UX to have to input it every time the user goes back to the landing page. If I use the session storage to remember it and remove the modal once the user has input the username, other users can’t change the username and play the game.   
 
    **Solution**: After discussing it with my mentor, I decided to create a Change Player button on the Landing page. When the user plays the game for the first time on that device (there’s no data detected in the local storage), a modal pops up to prompt the user to input a username. While when there’s already data in the local storage, the landing page will display a welcome greeting to the last username that played the game. If new players want to play, they can click the Change Player button at the top right of the landing page.  
+
+5. **Issue**: When the questions from Open Trivia DB were displayed, I encountered unfamiliar strings such as “&#039;”. I didn’t know what it was and had some difficulty searching it on google.  
+   **Solution**: After searching on Slack, there was a thread with the same problem, and one of the replies informed that it was HTML entities. I searched again on the internet with the HTML entities as keyword and found a very simple solution [here on Stack Overflow](https://stackoverflow.com/questions/5796718/html-entity-decode).
+ 
+
+### **Known Issues & Unsolved Bugs**  
+1. On iOS Safari, the sound effect when a modal pops up after the wheel is transitioned is not played. This is a known issue with iOS Safari, and the documentation can be found on this [Apple Documentation](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/Device-SpecificConsiderations/Device-SpecificConsiderations.html):   
+“In Safari on iOS (for all devices, including iPad), where the user may be on a cellular network and be charged per data unit, preload and autoplay are disabled. No data is loaded until the user initiates it. This means the JavaScript play() and load() methods are also inactive until the user initiates playback unless the play() or load() method is triggered by user action.”   
+Because the sound audio play after the wheel’s transition ends, and not by user action, unfortunately, it can’t be played.   
+
+2. In the console, there’s a warning: “Error with Permissions-Policy header: Unrecognized feature: 'interest cohort.”   
+This is a Github issue, as a part of an effort from Github to ensure the privacy of the users when browsing GitHub Pages sites. This topic can be found on [this link](https://github.community/t/i-have-no-idea-what-the-interest-cohort-is/179780/2), and we can’t do anything to make it disappear.   
+
+
+
 
 
 
