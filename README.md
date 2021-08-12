@@ -309,9 +309,10 @@ I ran into several issues and bugs while developing the website. Some of the tou
    **Solution**: The solution was to separate the JS file between the code to make the wheel spin (and linked it to the Wheel page), and the code for fetch request (and linked it to the Question page). The topic result from the wheel’s JS file is saved into the local storage, and then on the other JS file, get the topic result back, to then be passed to the fetch function. This solution made me learn about using local and session storage which then become a key knowledge throughout the project, especially in storing and getting achievements.  
 
 2. **Issue**: I wanted to save players’ achievements (points and stars for every topic) while also allowing player change. When a player inputs an existing username, I wanted the achievements for that username being called and the player can resume the playing. For this purpose, I used local storage. My mentor gave me a heads up on the first mentoring to save them to the local storage as below:  
-
-    username --> as key   
-    {sport: 250, music: 1200, science: 2150, etc.. }  --> as value    
+   ```
+    username: // as key   
+    {sport: 250, music: 1200, science: 2150, etc.. }  // as value    
+    ```
 
    **Solution**: Having learned through [this article](https://attacomsian.com/blog/javascript-local-storage-store-retrieve-objects) on how to store and retrieve an object in the local storage,  I used the JSON.stringify to convert an object to a JSON string and pass it to the local storage when the user decides to quit the game, and JSON.parse to parse a JSON string back into an object when the username is called again on the Landing page.  
 
@@ -334,6 +335,61 @@ Because the sound audio play after the wheel’s transition ends, and not by use
 
 2. In the console, there’s a warning: “Error with Permissions-Policy header: Unrecognized feature: 'interest cohort.”   
 This is a Github issue, as a part of an effort from Github to ensure the privacy of the users when browsing GitHub Pages sites. This topic can be found on [this link](https://github.community/t/i-have-no-idea-what-the-interest-cohort-is/179780/2), and we can’t do anything to make it disappear.   
+
+<br/>   
+
+
+## **Deployment**  
+The project was developed using Gitpod as the code editor, committed to Git as a local repository, and finally pushed/ stored to GitHub.  
+
+### **Deployment to GitHub Pages**  
+The project was deployed to GitHub Pages using the following steps:   
+1. Log in to GitHub.  
+2. Navigate to the main page of GitHub Repository that will be deployed.  
+3. At the top of the Repository, locate the "Settings" button on the menu and click it.  
+4. Inside the Settings, on the left side of the page, there’s a list of tab menu. Locate the “Pages” tab, and click it.  
+5. Under "Source", click the dropdown called "None", select "Master", and then click the “Save” button.  
+6. The page will automatically refresh.  
+7. There’s a notification message that provides the now published site link: “Your site is ready to be published at https://dissyulina.github.io/the-little-pantry/”.  
+
+
+### **Forking the GitHub Repository**  
+1. Log in to GitHub.  
+2. Navigate to the main page of GitHub Repository that will be deployed.  
+3. At the top of the Repository, locate the "Settings" button on the menu and click it.  
+4. Inside the Settings, on the left side of the page, there’s a list of tab menu. Locate the “Pages” tab, and click it.  
+5. Under "Source", click the dropdown called "None", select "Master", and then click the “Save” button.  
+6. The page will automatically refresh.  
+7. There’s a notification message that provides the now published site link: “Your site is ready to be published at https://dissyulina.github.io/the-little-pantry/”.  
+ 
+
+### **Making a Local Clone** 
+By cloning a GitHub Repository you can create a local copy on your computer of the remote repository. This allows you to make all of your edits locally rather than directly in the source files of the origin repository, by using the following steps:  
+1. Log in to GitHub 
+2. Navigate to the main page of the GitHub Repository that you want to clone.
+3. Above the list of files, click the dropdown called "Code".
+4. To clone the repository using HTTPS, under "HTTPS", copy the link.
+5. Open Git Bash.
+6. Change the current working directory to the location where you want the cloned directory to be made.
+7. Type git clone, and then paste the URL you copied in Step 4.  
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+8. Press Enter. Your local clone will be created.
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```  
+Changes made on the local machine (cloned repository) can be pushed to the upstream repository directly if you have a write access for the repository. Otherwise, the changes made in the cloned repository are first pushed to the forked repository, and then a pull request is created.  
+Click [Here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) to retrieve pictures for some of the buttons and more detailed explanations of the above process.  
+
+<br />  
+
+
 
 
 
