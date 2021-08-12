@@ -232,7 +232,8 @@ High fidelity mock-up for desktops:
       * The users get a star (1000 points), or   
       * The users have answered 10 questions, or   
       * The timer is up, on the 10th question.   
-   The text inside the modal differs according to which of those three conditions above made the modal appear.  From this modal the users can navigate to other pages using three buttons: Play Again button, Go To Achievement Page button, and Quit button.   
+
+      The text inside the modal differs according to which of those three conditions above made the modal appear.  From this modal the users can navigate to other pages using three buttons: Play Again button, Go To Achievement Page button, and Quit button.   
    - Footer is placed at the bottom of the page.   
 
 4. **Achievement Page**  
@@ -296,6 +297,28 @@ Due to limited resources (time constraint, skill of the developer at the moment,
    Vecteezy vector editor was used to edit the sections of the wheel image.   
 
    <br/>   
+
+## **Issues and Bugs**  
+I ran into several issues and bugs while developing the website. Some of the tough ones are listed below, along with the solutions that successfully solved them.  
+
+1. **Issue**: During the coding process I made one aggregate JS file for spinning the wheel, for fetching API, and for displaying the questions. I made the logic separately at first and had difficulty connecting the topic result from the wheel and then fetch API according to that topic (I tried to pass the topic as a parameter for fetch function but it didn’t work). It took me 1 full day to search and try and I was still stuck. I contacted tutor support, and Sean from Code Institute helped me to solve the problem. The problem was the code for fetching already worked before the wheel spun, so the topic parameter could not be passed.   
+
+   **Solution**: The solution was to separate the JS file between the code to make the wheel spin (and linked it to the Wheel page), and the code for fetch request (and linked it to the Question page). The topic result from the wheel’s JS file is saved into the local storage, and then on the other JS file, get the topic result back, to then be passed to the fetch function. This solution made me learn about using local and session storage which then become a key knowledge throughout the project, especially in storing and getting achievements.  
+
+2. **Issue**: I wanted to save players’ achievements (points and stars for every topic) while also allowing player change. When a player inputs an existing username, I wanted the achievements for that username being called and the player can resume the playing. For this purpose, I used local storage. My mentor gave me a heads up on the first mentoring to save them to the local storage as below:  
+
+    username --> as key   
+    {sport: 250, music: 1200, science: 2150, etc.. }  --> as value    
+
+   **Solution**: Having learned through [this article](https://medium.com/programming-essentials/how-to-store-and-retrieve-objects-from-the-local-and-session-storage-b705603dd753) on how to store and retrieve an object in the local storage,  I used the JSON.stringify to convert an object to a JSON string and pass it to the local storage when the user decides to quit the game, and JSON.parse to parse a JSON string back into an object when the username is called again on the Landing page.  
+
+3. **Issue**: Toggle sound on/ off button that available at the footer on all pages. If the toggle sound is clicked on one page, that preference the user set on that page would have to carry through to the next page.   
+
+   **Solution**: I used session storage to store the data, so when the users navigate to another page, I can get the stored data and apply it to the toggle sound on that page. Because it’s session storage, the data will be lost once the website is closed.  
+
+4. **Issue**: Username and change player, the design and logic behind it. The feature to change players initially wasn’t in my wireframes and mockups, as I didn’t know exactly how to apply that. I had long thought about how to implement it the best way to ensure a great user experience. On a first design, I made a modal pop up at the landing page to prompt the user to input the username, but soon realized that it was not a good UX to have to input it every time the user goes back to the landing page. If I use the session storage to remember it and remove the modal once the user has input the username, other users can’t change the username and play the game.   
+
+   **Solution**: After discussing it with my mentor, I decided to create a Change Player button on the Landing page. When the user plays the game for the first time on that device (there’s no data detected in the local storage), a modal pops up to prompt the user to input a username. While when there’s already data in the local storage, the landing page will display a welcome greeting to the last username that played the game. If new players want to play, they can click the Change Player button at the top right of the landing page.  
 
 
 
