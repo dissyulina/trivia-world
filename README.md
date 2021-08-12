@@ -461,6 +461,20 @@ The images were sourced from this page:
 3. [Freesound](https://freesound.org)
    - Sound for topic result
 
+<br/>  
+
+### **Contents**
+   All questions and multiple choice answers were fetched from [Open Trivia DB](https://opentdb.com).  
+
+<br/>
+
+## **Acknowledgements**
+   * My mentor, Oluwaseun Owonikoko, for the helpful feedback on every detail of the website.
+   * Code Institute's Tutor Support, for the quick response and helfpful solutions.
+   * My husband Sandi, for his daily continuous support and for testing the website across our mobile devices.
+   * Slack community, as the first help to ask when I encountered a problem.
+
+[Back to top]()  
 
 
 
