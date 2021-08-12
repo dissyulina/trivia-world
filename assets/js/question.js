@@ -160,7 +160,7 @@ function questionLevel() {
 let counter;
 let count;
 function countdown () {
-	count = 10;
+	count = 20;
 	counter = setInterval(timer, 1000);
 	function timer() {
 		count--;
