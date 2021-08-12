@@ -245,7 +245,7 @@ High fidelity mock-up for desktops:
    - **Instructions of the game** - How To Play page can be accessed via the Landing page. How To Play page consists of rules and instructions of the game.   
    - There are two buttons on this page, which are: Play button, so the users can immediately play the game without going back to the Landing Page first, and Back To Main Manu button that will bring the user to the Landing page.   
    - Footer is placed at the bottom of the page.  
-   
+
 
 6. **Contact Page**  
    - **Contact form** - Contact page can be accessed via the Landing page. The contact page consists of a contact form where the users can send a message to the developer.  
@@ -260,6 +260,43 @@ Due to limited resources (time constraint, skill of the developer at the moment,
 - Build the back-end database of the game so the users’ achievements can be saved on the server instead of on the local storage of users' devices.   
 - In addition to building a back-end database of the game, an online high scoreboard can be implemented as well, allowing users to see high scores of other players.   
 - Adjust the stars system so that it doesn’t have a maximum cap, allowing the users to continue playing and still get rewards.   
+
+<br/>   
+
+## **Technologies Used**  
+### **Main Languages Used**
+   * [HTML5](https://en.wikipedia.org/wiki/HTML5)
+   * [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)  
+   * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)   
+
+### **Frameworks, Libraries & Programs Used**  
+   1. [Bootstrap 5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction//)  
+   Bootstrap was used to assist with the responsiveness and styling of the website. 
+   2. [jQuery 3.6.0](https://jquery.com/)  
+   jQuery was used as a JavaScript library to help writing less JavaScript code.  
+   3. [Google Fonts](https://fonts.google.com)  
+   Google fonts was used to import the "Open Sans", “Pacifico”, and “Luckiest Guy” fonts into the html file, and were used on all parts of the site.  
+   4. [Font Awesome](https://fontawesome.com)  
+   Font Awesome was used throughout the website to add icons for aesthetic and UX purposes.   
+   5. [Git](https://git-scm.com)  
+   Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.  
+   6. [GitHub](https://github.com)  
+   GitHub was used to store the projects code after being pushed from Git. 
+   7. [Figma](https://www.figma.com)  
+   Figma was used to create the wireframes and the high fidelity mock up during the design process.  
+   8. [Autoprefixer CSS](https://autoprefixer.github.io)  
+   Autoprefixer CSS was used to add vendor prefixes to the CSS rules, to ensure that they work across all browsers.   
+   9. [Am I Responsive](ami.responsivedesign.is)  
+   Am I Responsive was used to preview the website across a variety of popular devices. 
+   10. [Tiny JPG](https://tinyjpg.com) and [Tiny PNG](https://tinypng.com)    
+   Tiny JPG and Tiny PNG were used to reduce the file size of the images.
+   11. [Coolors](https://coolors.co)  
+   Coolors was used to create a cohesive color scheme for the website.
+   12. [Vecteezy vector editor](https://www.vecteezy.com/editor)  
+   Vecteezy vector editor was used to edit the sections of the wheel image.   
+
+   <br/>   
+
 
 
 
