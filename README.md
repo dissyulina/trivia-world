@@ -389,6 +389,79 @@ Click [Here](https://docs.github.com/en/github/creating-cloning-and-archiving-re
 
 <br />  
 
+## **Testing**  
+The testing documentation can be found [here](). 
+
+<br />  
+
+
+## **Credits**  
+
+### **Code**
+1. Bootstrap 5.0: Bootstrap Library was used throughout the project, including these Bootstrap components below: 
+- Bootstrap Modal
+- Bootstrap Grid System
+- Bootstrap Form
+2. Youtube videos series titled Build A Quiz App , by James Q Quick: https://www.youtube.com/watch?v=rFWbAj40JrQ.
+The code in these videos was sourced to fetch API for the questions and to display the questions and the answers to the HTML page.   
+3. Youtube videos series titled Vanilla Javascript - Wheel of Fortune mini game, by Weibenfalk: https://www.youtube.com/watch?v=KdFp12QX-Io&t=793s.
+The code in these videos was sourced to spin a spinning wheel and to get the result.   
+
+4. Stackoverflow
+- To decode HTML Entities: https://stackoverflow.com/questions/5796718/html-entity-decode   
+- 
+
+5. Autoprefixer CSS  
+   Add different vendor prefixer to CSS. Input all the CSS code here: https://autoprefixer.github.io  
+
+
+### **Images and Icons**  
+All images were attributed inside their alt or title attribute.
+The images were sourced from this page:
+1. [Freepik](https://www.freepik.com)   
+   - By pch.vector:
+      * The image on the Contact Page   
+      * The image on the How To Play Page
+      * The geography image inside modal
+      * The film image inside modal
+      * The computer image inside modal
+   - By vectorjuice:
+      * The science image inside modal
+      * The music image inside modal
+      * the sport image inside modal
+   - By rawpixeldotcom:
+      * The gradient background image on the Question page
+   - By freepik:
+      * The hero image on the landing page
+2. [Vecteezy](https://www.vecteezy.com)
+   - By kevenodes: The wheel image (and edited by the developer)
+3. [Flaticon](https://www.flaticon.com)
+   - By Smashicon: The topic icons used on the Achievement page
+   - By Vectors Market: Numbers icons used on the How To Play page
+4. [Pngtree](https://pngtree.com) - Star image
+5. [Nicepng](https://www.nicepng.com) - The picker above the wheel 
+6. [Font Awesome](https://fontawesome.com)   
+   - Icon for Change Player button
+   - Icon for Toggle Sound On/ Off
+   - Icon for Achievement page navigation
+7. [Svg background](https://www.svgbackgrounds.com) - the background image on the Wheel page
+8. [Loading.io](https://loading.io/) - the spinning page loader   
+9. [Favicon.io](https://favicon.io) - the favicon for the website   
+
+
+### **Sound effects**
+
+1. [Mixkit](https://mixkit.co/free-sound-effects/)
+   - Sound for correct answer
+   - Sound for modal pop-up after 10 questions are over, or time is up
+   - Sound for modal pop-up when the user get a star
+2. [Zapsplat](https://www.zapsplat.com)
+   - Sound for wrong answer
+   - Sound while the wheel spins  
+3. [Freesound](https://freesound.org)
+   - Sound for topic result
+
+
 
 
 
