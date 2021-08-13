@@ -1,4 +1,8 @@
 //Script for the Spinning Wheel
+
+//Variables declaration
+let deg = 0;
+let result;
 const displayTopics = {
 	1: ["Science", "assets/images/science.jpg"],
 	2: ["Computer", "assets/images/computer.jpg"],
@@ -8,9 +12,6 @@ const displayTopics = {
 	6: ["Sports", "assets/images/sports.jpg"],
 }
 
-let deg = 0;
-let result;
-
 // Create a spin between 3000 - 6000 degree (code sourced from youtube video: Weibenfalk - Vanilla Javascript Wheel of Fortune, and changed to jQuery by the developer.)
 $("#btn-wheel").click(function() {
 	$("#btn-wheel").css('pointer-events','none');
@@ -19,14 +20,12 @@ $("#btn-wheel").click(function() {
 	$("#wheel").css("transform","rotate(" + deg + "deg)");
 	$("#wheel").addClass("blur");
 	$("#wheel-sound")[0].play();
-	//document.getElementById("wheel-sound").loop = true;
 });
 
-// As soon as the transition ends (code until line 35 was sourced from youtube video: Weibenfalk - Vanilla Javascript Wheel of Fortune, and changed to jQuery by the developer. Added comments as the developer understands the process)
+// As soon as the transition ends (code until line 39 was sourced from youtube video: Weibenfalk - Vanilla Javascript Wheel of Fortune, and changed to jQuery by the developer. Added comments as the developer understands the process)
 document.getElementById("wheel").addEventListener("transitionend", function() {
 	$("#btn-wheel").css('pointer-events','auto');
 	$("#wheel").removeClass("blur");
-	console.log("transition ends");
 	$("#wheel-sound")[0].pause();
 	$("#wheel-sound")[0].currentTime = 0;
 
@@ -55,9 +54,7 @@ document.getElementById("wheel").addEventListener("transitionend", function() {
 	$(".topic-image").empty();
 	$(".topic-image").append('<img src="' + displayTopics[result][1] + '">');
 	$(".topic-image").children("img").addClass("img-fluid");
-	//$("#question-topic").text("Topic : " + displayTopics[result][0]);
 
-	console.log(result);
 });
 
 //When the user click 'Bring it on' Button, it stores the topic to the local storage
