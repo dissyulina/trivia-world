@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Trivia World is a web-based interactive quiz game on various topics, features a spinning wheel, and stars achievement system. Play and collect your stars!"/>
-    <meta name="keywords" content="quiz, trivia, game, interactive, stars, spinning wheel, topics">
+    <meta name="keywords" content="quiz, trivia, game, quiz game, quiz app, interactive, stars, spinning wheel, topics">
     <!--Favicon-->
     <link rel="icon" href="favicon.ico" title="Trivia World Thumbnail Image">
     <!--Bootsrap 5-->
@@ -24,21 +24,24 @@
 </head>
 
 <body>
-    
     <section>
         <div class="background-blueray">
-            <audio id="wheel-sound">
-                <source src="assets/audio/wheel-spin.mp3" type="audio/mpeg">
-            </audio>
-            <audio id="topic-sound">
-                <source src="assets/audio/choose-topic.mp3" type="audio/mpeg">
-            </audio>
+            <!-- Audios -->
+            <div>
+                <audio id="wheel-sound">
+                    <source src="assets/audio/wheel-spin.mp3" type="audio/mpeg">
+                </audio>
+                <audio id="topic-sound">
+                    <source src="assets/audio/choose-topic.mp3" type="audio/mpeg">
+                </audio>
+            </div>
 
+            <!-- Title, Wheel, and Buttons -->
             <div class="container container-header d-flex flex-column justify-content-center align-items-center">
                 <h3 class="my-3 my-md-4">Let’s see which topic you’ll get!</h3>
                 <div class="flex-shrink-1 d-flex flex-column align-items-center">
-                    <img class="mx-auto" id="picker" src="assets/images/picker.png" alt="">
-                    <img class="mx-auto mb-3 mb-md-4" id="wheel" src="assets/images/wheel.png" alt="">
+                    <img class="mx-auto" id="picker" src="assets/images/picker.png" alt="The picker for the spinning wheel, sourced from Nicepng">
+                    <img class="mx-auto mb-3 mb-md-4" id="wheel" src="assets/images/wheel.png" alt="A spinning wheel, sourced from Vecteezy">
                 </div>
                 <div class="buttons d-flex flex-column align-items-center">
                     <button type="button" id="btn-wheel" class="btn btn-main">SPIN THE WHEEL</button>
@@ -46,7 +49,6 @@
                 </div>
             </div>
                 
-
             <!-- Footer -->
             <footer>
                 <ul class="footer-text text-center d-flex flex-row align-items-center mb-0">
@@ -54,52 +56,51 @@
                         <span class="footer-copyright"><i class="far fa-copyright"></i> Dissy Ulina 2021</span></span>
                     </li>
                     <li class="me-2 me-md-4">
-                        <a href="https://www.linkedin.com/in/dissy-ulina-159864208" target="_blank" rel="noopener" aria-label="Linkedin - Dissy Ulina">
+                        <a href="https://www.linkedin.com/in/dissy-ulina-159864208" target="_blank" rel="noopener" aria-label="Open the developer's linkedin page in a new tab">
                             <i class="fab fa-linkedin-in btn-click"></i>
                         </a>
                     </li>
                     <li class="me-2 me-md-4">	
-                        <a href="https://github.com/dissyulina/" target="_blank" rel="noopener" aria-label="Github - dissyulina">
+                        <a href="https://github.com/dissyulina/" target="_blank" rel="noopener" aria-label="Open the developer's github page in a new tab">
                             <i class="fab fa-github-alt btn-click"></i>
                         </a>
                     </li>
                     <div class="ms-auto d-flex flex-row justify-content-center">
                         <li class="icon-wrapper">	
-                            <a aria-current="modal" href="achievements.html" role="button" id="#goto-achievement">
+                            <a href="achievements.html" role="button" aria-label="Go to the achievement page" aria-label="Toggle sound on and off">
                                 <i class="fas fa-trophy"></i>
                             </a>
                         </li>
                         <li class="icon-wrapper ms-2 ms-md-3">	
-                            <a aria-current="modal" role="button" class="toggle-sound">
+                            <a role="button" class="toggle-sound" aria-label="Toggle sound on and off">
                                 <i class="fas fa-volume-up"></i>
                             </a>
                         </li>
                     </div> 
                 </ul>
             </footer>
-            
-        </div>
 
-        <!--Modal for topic result of the spinning wheel-->
-        <div class="modal fade" id="modal-topic" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="topic-title" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="topic-title"></h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-12 col-md-6 topic-image"></div>
-                            <div class="col-12 col-md-6">
-                                <p class="topic-explanation"></p>
+            <!--Modal for topic result of the spinning wheel-->
+            <div class="modal fade" id="modal-topic" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="topic-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="topic-title"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-12 col-md-6 topic-image"></div>
+                                <div class="col-12 col-md-6">
+                                    <p class="topic-explanation"></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer d-flex flex-column align-items-center">
-                        <a class="btn btn-main" id="btn-start-quiz" href="question.html" role="button">BRING IT ON!</a>
-                        <!--<button type="button" class="btn btn-main" data-bs-dismiss="modal">BRING IT ON!</button> -->
-                        <button type="button" class="btn btn-second" data-bs-dismiss="modal">Let me spin that wheel again</button>
+                        <div class="modal-footer d-flex flex-column align-items-center">
+                            <a class="btn btn-main" id="btn-start-quiz" href="question.html" role="button">BRING IT ON!</a>
+                            <!--<button type="button" class="btn btn-main" data-bs-dismiss="modal">BRING IT ON!</button> -->
+                            <button type="button" class="btn btn-second" data-bs-dismiss="modal">Let me spin that wheel again</button>
+                        </div>
                     </div>
                 </div>
             </div>
