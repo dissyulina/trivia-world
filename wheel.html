@@ -25,7 +25,7 @@
 
 <body>
     <section>
-        <div class="background-blueray">
+        <div class="background-blueray full-container">
             <!-- Audios -->
             <div>
                 <audio id="wheel-sound">
@@ -37,15 +37,15 @@
             </div>
 
             <!-- Title, Wheel, and Buttons -->
-            <div class="container container-header d-flex flex-column justify-content-center align-items-center">
-                <h3 class="my-3 my-md-4">Let’s see which topic you’ll get!</h3>
+            <div class="container container-header d-flex flex-column justify-content-center align-items-center flex-grow-1">
+                <h3 class="my-4 my-md-5">Let’s see which topic you’ll get!</h3>
                 <div class="flex-shrink-1 d-flex flex-column align-items-center">
                     <img class="mx-auto" id="picker" src="assets/images/picker.png" alt="The picker for the spinning wheel, sourced from Nicepng">
                     <img class="mx-auto mb-3 mb-md-4" id="wheel" src="assets/images/wheel.png" alt="A spinning wheel, sourced from Vecteezy">
                 </div>
-                <div class="buttons d-flex flex-column align-items-center">
+                <div class="mb-3 mb-md-5 d-flex flex-column align-items-center">
                     <button type="button" id="btn-wheel" class="btn btn-main">SPIN THE WHEEL</button>
-                    <a class="btn btn-second mx-5 mt-3" href="index.html" role="button" onclick="saveData()">Quit</a>
+                    <a class="btn btn-second mx-5 mt-2 mt-md-3" href="index.html" role="button" onclick="saveData()">Quit</a>
                 </div>
             </div>
                 

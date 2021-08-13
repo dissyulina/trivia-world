@@ -50,7 +50,6 @@ li {
 }
   
 .hero {
-    height: 100vh;
     width: 100vw;
     background: url(../images/hero.jpg) no-repeat center center;
     -webkit-background-size: cover;
@@ -124,8 +123,9 @@ li {
 /* Footer */
 
 .footer-text {
-    position: absolute;
-    bottom: 0;
+    /*position: absolute;
+    bottom: 0;*/
+    position: static;
     width: 100vw;
     height: 5rem;  
     background-color: rgb(133, 205, 106, 0.7);
@@ -141,14 +141,14 @@ li {
 .footer-text a:hover {
     color: #4a7bd4;
 }
-
+/*
 .background-gradient .footer-text,
 #achievement-page .footer-text,
 #howtoplay-page .footer-text,
 #contact-page .footer-text {
     position: static;
 }
-
+*/
 /*-- Buttons --*/
 
 .btn {
@@ -237,11 +237,6 @@ section ol {
     padding-bottom: 3rem;
 }
 
-#howtoplay-page .row,
-#contact-page .row {
-    flex-grow: 1;
-}
-
 .icon-numbers {
     height: 40px;
 }
@@ -261,7 +256,6 @@ form {
 /* Wheel Page */
 
 .background-blueray {
-    height: 100vh;
     width: auto;
     background: url(../images/blueray.jpg) no-repeat center center;
     background-attachment: scroll; 
@@ -281,11 +275,11 @@ form {
     max-width: 30rem;
     height: auto;
 }
-
+/*
 .buttons {
     margin-bottom: 6rem;
 }
-
+*/
 .blur {
     animation: blur 7s;
 }
@@ -317,7 +311,6 @@ form {
 }
 
 .background-gradient {
-    min-height: 100vh;
     width: 100vw;
     background: url(../images/bg-question.jpg) no-repeat center center;
     background-attachment: scroll; 
