@@ -25,26 +25,29 @@
 
 <body>
     <header>
-        <!-- Content -->
-        <div class="hero" title="">
+        <div class="hero" title="Earth landscape flat illustration, sourced from Freepik by Freepik">
+            <!-- Content -->
             <div class="container-fluid container-header d-flex justify-content-center">
+                <!-- Change Player button -->
                 <div class="icon-wrapper icon-login">
-                    <div id="btn-player" role="button"><i class="fas fa-user"></i></div>
+                    <div id="btn-player" role="button" aria-label="Change player"><i class="fas fa-user"></i></div>
                 </div>
                 <div class="content-hero px-4 align-self-center">
+                    <!-- Greeting to the last player -->
                     <div class="text-center">
-                        <p>Hello, <span id="last-player"></span> !</p>
+                        <p>Hello <span id="last-player"></span> !</p>
                     </div>
                     <div class="mx-auto px-1 py-2 py-md-4">
                         <div class="star-container d-flex justify-content-center">
-                            <img src="assets/images/star.png" class="star align-self-end">
-                            <img src="assets/images/star.png" class="star align-self-start">
-                            <img src="assets/images/star.png" class="star align-self-end">
+                            <img src="assets/images/star.png" class="star align-self-end" alt="Star illustration, sourced from Pngtree">
+                            <img src="assets/images/star.png" class="star align-self-start" alt="Star illustration, sourced from Pngtree">
+                            <img src="assets/images/star.png" class="star align-self-end" alt="Star illustration, sourced from Pngtree">
                         </div>
+                        <!-- Game's title -->
                         <div class="px-1 px-md-4 pt-3 pt-s-4">
                             <h1>Trivia World</h1>
                         </div>
-                        
+                        <!-- Buttons -->
                         <div>
                             <ul class="d-flex flex-column align-items-center mt-3 mt-sm-4">
                                 <li><a class="btn btn-start btn-main" href="wheel.html" role="button">PLAY</a></li>
@@ -63,23 +66,23 @@
                         <span class="footer-copyright"><i class="far fa-copyright"></i> Dissy Ulina 2021</span></span>
                     </li>
                     <li class="me-2 me-md-4">
-                        <a href="https://www.linkedin.com/in/dissy-ulina-159864208" target="_blank" rel="noopener" aria-label="Linkedin - Dissy Ulina">
+                        <a href="https://www.linkedin.com/in/dissy-ulina-159864208" target="_blank" rel="noopener" aria-label="Open the developer's linkedin page in a new tab">
                             <i class="fab fa-linkedin-in btn-click"></i>
                         </a>
                     </li>
                     <li class="me-2 me-md-4">	
-                        <a href="https://github.com/dissyulina/" target="_blank" rel="noopener" aria-label="Github - dissyulina">
+                        <a href="https://github.com/dissyulina/" target="_blank" rel="noopener" aria-label="Open the developer's github page in a new tab">
                             <i class="fab fa-github-alt btn-click"></i>
                         </a>
                     </li>
                     <li class="ms-auto d-flex flex-row justify-content-center">
                         <div class="icon-wrapper">	
-                            <a href="achievements.html" role="button" id="#goto-achievement">
+                            <a href="achievements.html" role="button" aria-label="Go to the achievement page">
                                 <i class="fas fa-trophy"></i>
                             </a>
                         </div>
                         <div class="icon-wrapper ms-2 ms-md-3">	
-                            <a role="button" class="toggle-sound">
+                            <a role="button" class="toggle-sound" aria-label="Toggle sound on and off">
                                 <i class="fas fa-volume-up"></i>
                             </a>
                         </div>
@@ -87,33 +90,31 @@
                 </ul>
             </footer>
         </div>
-    </header>
-
-    <!-- Modal on page load -->
-    <div class="modal fade" id="username-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title mx-auto" id="staticBackdropLabel">Welcome to The Trivia World!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>What's your username?*</p>
-                    <div>
+    
+        <!-- Modal to input username -->
+        <div class="modal fade" id="username-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title mx-auto" id="staticBackdropLabel">Welcome to The Trivia World!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="mx-auto">
-                        <label for="username" class="col-form-label"></label>
-                        <input type="text" placeholder="Your username" aria-label="Username" id="username" aria-describedby="username-help" required>
-                        <br>
-                        <small id="username-help" class="form-text text-muted">*Your achievement will not be saved if you don't input a username</small>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-main btn-sm mt-3" id="submit-username" data-bs-dismiss="modal">Submit</button>
+                    <div class="modal-body">
+                        <p>What's your username?*</p>
+                        <div class="mx-auto">
+                            <label for="username" class="col-form-label"></label>
+                            <input type="text" placeholder="Your username" aria-label="Username" id="username" aria-describedby="username-help">
+                            <br>
+                            <small id="username-help" class="form-text text-muted">*Your achievement will not be saved if you don't input a username</small>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-main btn-sm mt-3" id="submit-username" data-bs-dismiss="modal">Submit</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
