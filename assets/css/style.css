@@ -20,8 +20,7 @@ h2, h3, h4, h5 {
     font-family: Pacifico, cursive;
 }
   
-header,
-section {
+header {
     height: 100vh;
     width: 100vw;
 }
@@ -143,6 +142,7 @@ li {
     color: #4a7bd4;
 }
 
+.background-gradient .footer-text,
 #achievement-page .footer-text,
 #howtoplay-page .footer-text,
 #contact-page .footer-text {
@@ -261,7 +261,7 @@ form {
 /* Wheel Page */
 
 .background-blueray {
-    height: 100%;
+    height: 100vh;
     width: auto;
     background: url(../images/blueray.jpg) no-repeat center center;
     background-attachment: scroll; 
@@ -317,7 +317,7 @@ form {
 }
 
 .background-gradient {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     background: url(../images/bg-question.jpg) no-repeat center center;
     background-attachment: scroll; 
@@ -448,16 +448,19 @@ form {
 
 /* Special queries for the small screens */
 @media screen and (max-width: 400px) {
+    header h1 {
+        font-size: 3.25rem;
+    }
     .background-gradient {
         line-height: 1.2;
     }
 
     .star-container {
-        height: 5rem;
+        height: 4rem;
     }
       
     .star {
-        height: 4rem;
+        height: 3rem;
     }
 
    .modal-body,
