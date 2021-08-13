@@ -23,6 +23,14 @@ let topic = localStorage.getItem("topicResult");
 let getStars;
 let getScore;
 
+// Variables for timer
+let counter;
+let count;
+
+// Variable for progress bar
+let progressBarPoint;
+let incrementWidth;
+
 // An array of URL inside object, with topic as key -> Topic: [easy, medium, hard]
 const getUrl = {
 	Science: ["https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple", 
@@ -145,86 +153,6 @@ getNewQuestion = () => {
 	countdown();
 };
 
-//Function to get difficulty level of question
-function questionLevel() {
-	if (difficultyLevel === 0) {
-		return "Easy";
-	} else if (difficultyLevel === 1) {
-		return "Medium";
-	} else {
-		return "Hard";
-	}
-}
-
-// Function countdown to set 20 seconds timer
-let counter;
-let count;
-function countdown () {
-	count = 20;
-	counter = setInterval(timer, 1000);
-	function timer() {
-		count--;
-		if (count === 0) {
-			//counter ended, stop timer and move on to the next question
-			clearInterval(counter);
-			getNewQuestion();
-			return;
-		};
-		// dispay the number of seconds	
-		$("#timer").text(count);
-	};
-};
-
-//Function to stop the timer
-function stopTimer () {
-	clearInterval(counter);
-	$("#timer").text(count);
-	return;
-}
-
-// Function display progress bar
-let progressBarPoint;
-let incrementWidth;
-function progressBar(progressBefore, scoreAfter) {
-	progressBarPoint = Math.floor((scoreAfter / fullPoints * 100) % 100);
-	if (progressBarPoint < progressBefore) {
-		$("#progress-bar-yellow").animate({ width: '100%'});
-		// Change stars from gray to yellow
-		for (let i=0; i < ($(".stars-achievement").length); i++) {
-			$("#progress-bar-stars img:first").remove();
-			$("#progress-bar-stars").append('<img src="assets/images/star.png">');
-			$("#progress-bar-stars img").addClass("stars-achievement");
-		}	
-	} else {
-		incrementWidth = Math.floor(progressBarPoint - progressBefore);
-		$("#progress-bar-yellow").animate({ width: '+=(incrementWidth)'});
-	}
-}
-
-//Function to display progress bar full achievement
-function progressBarFull() {
-	$("#progress-bar-yellow").css("width","100%");
-	progressBarPoint = 100;
-}
-
-// Function display stars next to progress bar
-function progressStars(st) {
-	$("#progress-bar-stars").empty();
-	if(st <= 2) {
-		let i=0;
-		while (i <= Math.min(st, 2)) {
-			$("#progress-bar-stars").append('<img src="assets/images/gray-star.png">');
-			$("#progress-bar-stars img").addClass("stars-achievement");
-			$("#progress-bar-stars").css("width","auto");
-			i++;
-		}
-	} else {
-		$("#progress-bar-stars").append('<img src="assets/images/achievement-complete.png">');
-		$("#progress-bar-stars img").addClass("complete-achievement");
-		$("#progress-bar-stars").css("width","auto");
-	}
-}
-
 // After a choice is clicked, record the choice, stop the countdown, and move on to next question
 choices.forEach(choice => {
 	choice.addEventListener("click", e => {
@@ -294,6 +222,82 @@ choices.forEach(choice => {
 		}
 	});
 });
+
+//Function to get difficulty level of question
+function questionLevel() {
+	if (difficultyLevel === 0) {
+		return "Easy";
+	} else if (difficultyLevel === 1) {
+		return "Medium";
+	} else {
+		return "Hard";
+	}
+}
+
+// Function countdown to set 20 seconds timer
+function countdown () {
+	count = 20;
+	counter = setInterval(timer, 1000);
+	function timer() {
+		count--;
+		if (count === 0) {
+			//counter ended, stop timer and move on to the next question
+			clearInterval(counter);
+			getNewQuestion();
+			return;
+		};
+		// dispay the number of seconds	
+		$("#timer").text(count);
+	};
+};
+
+//Function to stop the timer
+function stopTimer () {
+	clearInterval(counter);
+	$("#timer").text(count);
+	return;
+}
+
+// Function display progress bar
+function progressBar(progressBefore, scoreAfter) {
+	progressBarPoint = Math.floor((scoreAfter / fullPoints * 100) % 100);
+	if (progressBarPoint < progressBefore) {
+		$("#progress-bar-yellow").animate({ width: '100%'});
+		// Change stars from gray to yellow
+		for (let i=0; i < ($(".stars-achievement").length); i++) {
+			$("#progress-bar-stars img:first").remove();
+			$("#progress-bar-stars").append('<img src="assets/images/star.png">');
+			$("#progress-bar-stars img").addClass("stars-achievement");
+		}	
+	} else {
+		incrementWidth = Math.floor(progressBarPoint - progressBefore);
+		$("#progress-bar-yellow").animate({ width: '+=(incrementWidth)'});
+	}
+}
+
+//Function to display progress bar full achievement
+function progressBarFull() {
+	$("#progress-bar-yellow").css("width","100%");
+	progressBarPoint = 100;
+}
+
+// Function display stars next to progress bar
+function progressStars(st) {
+	$("#progress-bar-stars").empty();
+	if(st <= 2) {
+		let i=0;
+		while (i <= Math.min(st, 2)) {
+			$("#progress-bar-stars").append('<img src="assets/images/gray-star.png">');
+			$("#progress-bar-stars img").addClass("stars-achievement");
+			$("#progress-bar-stars").css("width","auto");
+			i++;
+		}
+	} else {
+		$("#progress-bar-stars").append('<img src="assets/images/achievement-complete.png">');
+		$("#progress-bar-stars img").addClass("complete-achievement");
+		$("#progress-bar-stars").css("width","auto");
+	}
+}
 
 // Function to show modal after 10 set of questions end
 function showModalTenQuestions(e) {
