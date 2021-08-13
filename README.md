@@ -329,9 +329,13 @@ I ran into several issues and bugs while developing the website. Some of the tou
  
 
 ### **Known Issues & Unsolved Bugs**  
-1. On iOS Safari, the sound effect when a modal pops up after the wheel is transitioned is not played. This is a known issue with iOS Safari, and the documentation can be found on this [Apple Documentation](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/Device-SpecificConsiderations/Device-SpecificConsiderations.html):   
-“In Safari on iOS (for all devices, including iPad), where the user may be on a cellular network and be charged per data unit, preload and autoplay are disabled. No data is loaded until the user initiates it. This means the JavaScript play() and load() methods are also inactive until the user initiates playback unless the play() or load() method is triggered by user action.”   
-Because the sound audio play after the wheel’s transition ends, and not by user action, unfortunately, it can’t be played.   
+1. On iOS Safari, these sound effects don't work:
+   - A modal pops up after the wheel is transitioned, and
+   - A modal pops up after the progress bar is transitioned,   
+
+   This is a known issue with iOS Safari, and the documentation can be found on this [Apple Documentation](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/Device-SpecificConsiderations/Device-SpecificConsiderations.html):   
+   “In Safari on iOS (for all devices, including iPad), where the user may be on a cellular network and be charged per data unit, preload and autoplay are disabled. No data is loaded until the user initiates it. This means the JavaScript play() and load() methods are also inactive until the user initiates playback unless the play() or load() method is triggered by user action.”   
+   Because the sound audio play after the wheel’s transition ends, and not by user action, unfortunately, it can’t be played.   
 
 2. In the console, there’s a warning: “Error with Permissions-Policy header: Unrecognized feature: 'interest cohort.”   
 This is a Github issue, as a part of an effort from Github to ensure the privacy of the users when browsing GitHub Pages sites. This topic can be found on [this link](https://github.community/t/i-have-no-idea-what-the-interest-cohort-is/179780/2), and we can’t do anything to make it disappear.   
@@ -435,6 +439,7 @@ The images were sourced from this page:
       * The hero image on the landing page
 2. [Vecteezy](https://www.vecteezy.com)
    - By kevenodes: The wheel image (and edited by the developer)
+   - By Dooder: The image on the Achievement Page
 3. [Flaticon](https://www.flaticon.com)
    - By Smashicon: The topic icons used on the Achievement page
    - By Vectors Market: Numbers icons used on the How To Play page
