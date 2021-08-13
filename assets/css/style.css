@@ -423,6 +423,11 @@ form {
 }
 
 /* Achievements page */
+.bg-white {
+    background-color: #FFFEFE;
+    border-radius: 40px;
+}
+
 #achievement-page {
     /*background-color: #DCF7FE;*/
     background: url(../images/bg-triangles.jpg) no-repeat center center;
