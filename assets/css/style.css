@@ -275,11 +275,7 @@ form {
     max-width: 30rem;
     height: auto;
 }
-/*
-.buttons {
-    margin-bottom: 6rem;
-}
-*/
+
 .blur {
     animation: blur 7s;
 }

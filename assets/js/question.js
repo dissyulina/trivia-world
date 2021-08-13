@@ -113,6 +113,8 @@ getNewQuestion = () => {
 	// If 10th question is left unanswered and time's up, show up modal
 	if (availableQuestions.length === 0) {
 		showModalTenQuestions();
+		stopTimer();
+		return;
 	};
 	questionCounter++;
 
@@ -235,7 +237,7 @@ function questionLevel() {
 }
 
 // Function countdown to set 20 seconds timer
-function countdown () {
+function countdown() {
 	count = 20;
 	counter = setInterval(timer, 1000);
 	function timer() {
@@ -252,7 +254,7 @@ function countdown () {
 };
 
 //Function to stop the timer
-function stopTimer () {
+function stopTimer() {
 	clearInterval(counter);
 	$("#timer").text(count);
 	return;
@@ -299,19 +301,6 @@ function progressStars(st) {
 	}
 }
 
-// Function to show modal after 10 set of questions end
-function showModalTenQuestions(e) {
-	$("#modal-stars").modal("show");
-	$("#ten-questions-sound")[0].play();
-	$("#stars-title").text("You’ve answered 10 questions and you’ve got " + score + " points in this round. Your total points are " + savedScore);
-	// Display text according to score
-	if (score == 0) {
-		$("#stars-text").text("Ooopps.. was it harder than you thought, or did you just got distracted while answering the questions? Don't worry! You can redeem yourself by choosing 'Play Again'. You can see your all of your stars achievement by choosing ‘See my stars’. Or if you wish to quit the game, click the ‘Quit’ button.");
-	} else {
-	$("#stars-text").text("Not bad! What do you want to do next? You can choose ‘play again’ to challenge yourself and increase your points to get stars. You can see all of the stars that you've earned by choosing ‘See my stars’. Or if you wish to quit the game, click the ‘Quit’ button.");
-	}
-}
-
 // Function to show modal after the user get an additional star
 function showModalStars(e) {
 	e.preventDefault();
@@ -327,10 +316,26 @@ function showModalStars(e) {
 	$("#stars-img").children("img").addClass("star-modal");
 	// Display the text
 	if (stars === 1) {
-		$("#stars-text").text("Yeah! You know basic knowlegde of " + topic + ". Challenge yourself and increase your points to get more stars! What do you want to do next?")
+		$("#stars-text").text("Yeah! You know the basic knowledge of " + topic + ". Challenge yourself and increase your points to get more stars! What do you want to do next?")
 	} else if (stars === 2) {
-		$("#stars-text").text("Amazing! You’re a " + topic + " fan and you're quite knowledgable in this. You earn your two stars achievement! Play another round and see if you’re as great in other topics as well.")
+		$("#stars-text").text("Amazing! You’re a " + topic + " fan and you're quite knowledgeable in this. You earn your two stars achievement! Play another round and see if you’re as great in other topics as well.")
 	} else if (stars === 3) {
 		$("#stars-text").text("Congratulations, achievement's completed for " + topic + " !! You’re now (unofficially) a " + topic +"s professor! You know all about it. You read relevant articles about it and always keep up with the news. Play another round and see if you’re as amazing in other topics as well.")	
+	}
+}
+
+// Function to show modal after 10 set of questions end
+function showModalTenQuestions(e) {
+	$("#modal-stars").modal("show");
+	$("#ten-questions-sound")[0].play();
+	$("#stars-title").text("You’ve answered 10 questions and you’ve got total points of " + savedScore + "!");
+	console.log(score);
+	// Display text according to score
+	if (stars === 3) {
+		$("#stars-text").text("Impressive! Your score for " + topic + " is now " + savedScore + ". You've already got complete achievement in this. Challenge yourself on another topic and let's collect all the stars!");
+	} else if (score == 0) {
+		$("#stars-text").text("Ooopps.. was it harder than you thought, or did you just got distracted while answering the questions? Don't worry! You can redeem yourself by choosing 'Play Again'. You can see your all of your stars achievement by choosing ‘See My Stars’. Or if you wish to quit the game, click the ‘Quit’ button.");
+	} else {
+		$("#stars-text").text("Not bad! What do you want to do next? You can choose ‘play again’ to challenge yourself and increase your points to get stars. You can see all of the stars that you've earned by choosing ‘See My Stars’. Or if you wish to quit the game, click the ‘Quit’ button.");
 	}
 }
