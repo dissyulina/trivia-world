@@ -37,7 +37,6 @@ for (let i in achievementDatas) {
 
     // Display "Complete" if number of stars = 3
     if ((numberOfStars === "3")) {
-        console.log("number of stars for :" + (i) + localStorage.getItem(i));
         achievementDatas[i][1].innerHTML ='<p>Complete <span><i class="fas fa-check"></i></span></p>';
         achievementDatas[i][1].children[0].className = "complete-achievement-text";
     } else {

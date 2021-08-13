@@ -4,7 +4,6 @@
 function saveData() {
     // All the quiz's datas are put into a new object
     let datas = new Object();
-    console.log(localStorage.getItem("Sports_stars"));
     datas = {
         sportsStars: localStorage.getItem("Sports_stars"),
         sportsScore: localStorage.getItem("Sports_score"),
@@ -19,10 +18,8 @@ function saveData() {
         scienceStars: localStorage.getItem("Science_stars"),
         scienceScore: localStorage.getItem("Science_score"),
     }
-    console.log(localStorage.getItem("player"));
     inputName = localStorage.getItem("player");
     localStorage.setItem(inputName, JSON.stringify(datas));
-    console.log(JSON.stringify(datas));
 
     //remove all keys, except the data key inputName
     window.localStorage.removeItem('Sports_stars');

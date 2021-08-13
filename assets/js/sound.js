@@ -1,25 +1,20 @@
 // JS file to toggle on and off
 
+// Variables declaration
 let sounds = document.getElementsByTagName("audio");
 let toggleSound = document.getElementsByClassName("toggle-sound");
-console.log(toggleSound);
 let getSound = sessionStorage.getItem("sound");
-
 let i; //increment for audio tag
 let j; //increment for toggle sound
 
-console.log("sound for this page is :" + getSound);
-// If toggle sound is clicked
+// If toggle sound is clicked, set it to session storage
 $(".toggle-sound").click(function() {
     getSound = sessionStorage.getItem("sound");
-    console.log("sound is : " + getSound);
     if ((getSound === "on") || (getSound === null)) {
         sessionStorage.setItem("sound", "off");
-        console.log("toggle button is clicked to mute");
         soundOff();
     } else {
         sessionStorage.setItem("sound", "on");
-        console.log("toggle button is clicked to play sound");
         soundOn();
     }
 });

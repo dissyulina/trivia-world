@@ -6,7 +6,6 @@ let lastPlayer;
 
 // Check last player on local storage
 lastPlayer = localStorage.getItem('player',lastPlayer);
-console.log(lastPlayer === null);
 
 // If there's no lastPlayer saved in the local storage, show up modal to input username
 if (lastPlayer === null) {
@@ -33,13 +32,10 @@ $('#submit-username').on('click', function(e) {
     inputName = $('#username').val();
 
 	// Check if user already exist as a key in local storage
-	console.log(localStorage.getItem(inputName));
 	if((inputName === "") || (localStorage.getItem(inputName) === null)) {
-		console.log("new player");
 		$("#last-player").text(inputName);
 		localStorage.setItem('player',inputName);
 	} else {
-		console.log("data player exists");
 		$("#last-player").text(inputName);
 		retrieveData();
 	}
@@ -49,7 +45,6 @@ function retrieveData() {
 	// Retrieve the JSON string, parse it to object
 	localStorage.setItem('player',inputName);
 	data = JSON.parse(localStorage.getItem(inputName));
-	console.log(data);
 
     if(data) {
         // Set object back as keys in local storage
