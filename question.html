@@ -26,27 +26,27 @@
 <body>
     <section>
         <!-- Audios -->
-        <audio id="getstar-sound">
-            <source src="assets/audio/getstar.mp3" type="audio/mpeg">
-        </audio>
-        <audio id="correct-sound">
-            <source src="assets/audio/correct-answer.mp3" type="audio/mpeg">
-        </audio>
-        <audio id="wrong-sound">
-            <source src="assets/audio/wrong-answer.mp3" type="audio/mpeg">
-        </audio>
-        <audio id="ten-questions-sound">
-            <source src="assets/audio/questions-up.mp3" type="audio/mpeg">
-        </audio>
+        <div>
+            <audio id="getstar-sound">
+                <source src="assets/audio/getstar.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="correct-sound">
+                <source src="assets/audio/correct-answer.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="wrong-sound">
+                <source src="assets/audio/wrong-answer.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="ten-questions-sound">
+                <source src="assets/audio/questions-up.mp3" type="audio/mpeg">
+            </audio>
+        </div>
 
-        <!-- Background -->
+        <!-- Content -->
         <div class="background-gradient">
-
             <!-- Loader -->
             <div id="loader-question" class="d-flex justify-content-center align-items-center">
-                <img src="assets/images/spinner.gif" alt="loading">
+                <img src="assets/images/spinner.gif" alt="loading, gif sourced from loading.io">
             </div>
-            
             <!-- Content of the game , all empty elements will be filled dinamically using JS-->
             <div id="question-start hidden">
                 <div class="container-fluid bg-progess-bar">
@@ -55,7 +55,7 @@
                         <div class="d-flex flex-row align-items-center">
                             <div id="progress-bar-grey" class="flex-grow-1 me-2 me-md-4">
                                 <!-- Empty div for progress bar -->
-                                <div id="progress-bar-yellow" class="">
+                                <div id="progress-bar-yellow">
                                 </div>
                             </div>
                             <!-- Empty div for stars next to progress bar -->
@@ -67,7 +67,7 @@
 
                 <div class="container">
                     <div class="row">
-                        <!-- Game Statistic -->
+                        <!-- Heads Up Display-->
                         <div class="col-9">
                             <div id="question-points" class="mt-2 mt-md-4 blue-text">
                                 <p></p>
@@ -107,38 +107,38 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Footer -->
-                <footer>
-                    <ul class="footer-text text-center d-flex flex-row align-items-center mb-0">
-                        <li class="me-2 me-md-4">
-                            <span class="footer-copyright"><i class="far fa-copyright"></i> Dissy Ulina 2021</span></span>
-                        </li>
-                        <li class="me-2 me-md-4">
-                            <a href="https://www.linkedin.com/in/dissy-ulina-159864208" target="_blank" rel="noopener" aria-label="Linkedin - Dissy Ulina">
-                                <i class="fab fa-linkedin-in btn-click"></i>
-                            </a>
-                        </li>
-                        <li class="me-2 me-md-4">	
-                            <a href="https://github.com/dissyulina/" target="_blank" rel="noopener" aria-label="Github - dissyulina">
-                                <i class="fab fa-github-alt btn-click"></i>
-                            </a>
-                        </li>
-                        <li class="ms-auto d-flex flex-row justify-content-center">
-                            <div class="icon-wrapper">	
-                                <a aria-current="modal" href="achievements.html" role="button" id="#goto-achievement">
-                                    <i class="fas fa-trophy"></i>
-                                </a>
-                            </div>
-                            <div class="icon-wrapper ms-2 ms-md-3">	
-                                <a aria-current="modal" role="button" class="toggle-sound">
-                                    <i class="fas fa-volume-up"></i>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </footer>
             </div>
+
+            <!-- Footer -->
+            <footer>
+                <ul class="footer-text text-center d-flex flex-row align-items-center mb-0">
+                    <li class="me-2 me-md-4">
+                        <span class="footer-copyright"><i class="far fa-copyright"></i> Dissy Ulina 2021</span></span>
+                    </li>
+                    <li class="me-2 me-md-4">
+                        <a href="https://www.linkedin.com/in/dissy-ulina-159864208" target="_blank" rel="noopener" aria-label="Open the developer's linkedin page in a new tab">
+                            <i class="fab fa-linkedin-in btn-click"></i>
+                        </a>
+                    </li>
+                    <li class="me-2 me-md-4">	
+                        <a href="https://github.com/dissyulina/" target="_blank" rel="noopener" aria-label="Open the developer's github page in a new tab">
+                            <i class="fab fa-github-alt btn-click"></i>
+                        </a>
+                    </li>
+                    <li class="ms-auto d-flex flex-row justify-content-center">
+                        <div class="icon-wrapper">	
+                            <a href="achievements.html" role="button" aria-label="Go to the achievement page">
+                                <i class="fas fa-trophy"></i>
+                            </a>
+                        </div>
+                        <div class="icon-wrapper ms-2 ms-md-3">	
+                            <a role="button" class="toggle-sound" aria-label="Toggle sound on and off">
+                                <i class="fas fa-volume-up"></i>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </footer>
         </div>
 
         <!--Modal pop up-->
