@@ -1,3 +1,5 @@
+/* General */
+
 body {
     font-family: 'Open Sans', sans-serif;
     color: #30343F;
@@ -7,7 +9,6 @@ body {
 header h1 {
     font-family: 'Luckiest Guy', cursive;
     font-size: 4rem;
-    /*font-size: calc(42px + 3vw);*/
     color: #7696F3;
     text-align: center;
     -webkit-text-stroke-width: 5px;
@@ -53,37 +54,16 @@ li {
     height: 100vh;
     width: 100vw;
     background: url(../images/hero.jpg) no-repeat center center;
-    /* The vendor prefixes below are from Autoprefixer CSS */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-/*
-    display: -webkit-box; 
-    display: -ms-flexbox; 
-    display: flex;
-
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    */
 }
 
 .container-header {
     position: relative;
     height: 100%;
 }
-
-
 
 .icon-wrapper {
     font-size: 1.5rem;
@@ -93,7 +73,6 @@ li {
     background-color:rgba( 255, 255, 255, 0.50 );
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
-
 
 .icon-login {
     position: absolute;
@@ -125,11 +104,7 @@ li {
 }
 
 .star-container {
-    /*height: calc(10rem + 7vh);*/
     height: 100px;
-    /*padding-top: 5rem;
-    padding-bottom: 2rem;
-    padding-bottom: calc(3rem + 5vh);*/
 }
   
 .star {
@@ -148,11 +123,12 @@ li {
 */
 
 /* Footer */
+
 .footer-text {
     position: absolute;
     bottom: 0;
     width: 100vw;
-    height: 5rem;   /* Height of the footer */
+    height: 5rem;  
     background-color: rgb(133, 205, 106, 0.7);
     color: #2c4d8a;
     font-weight: 700;
@@ -174,7 +150,7 @@ li {
 }
 
 /*-- Buttons --*/
-  
+
 .btn {
     border-width: 1px;
     border-radius: 40px;
@@ -198,14 +174,6 @@ li {
     background-color: #fff;
     border: 1px solid #E0295D;
 }
-/*  
-.btn-form {
-    color: #E0295D;
-    background-color: #fff;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-}
-*/
   
 #btn-wheel {
     border: 0.5rem dotted yellow;
@@ -228,6 +196,7 @@ li {
 }
 
 /* Modals */
+
 .bg-modal {
     background: linear-gradient(45deg, lightpink, lightyellow, lightblue);
     background-size: cover;
@@ -256,7 +225,6 @@ li {
 .background-blue {
     background-color: #EAF3FA;
     height: inherit;
-    /*min-height: 100vh;*/
 }
   
 section h2 {
@@ -298,10 +266,6 @@ form {
     background: url(../images/blueray.jpg) no-repeat center center;
     background-attachment: scroll; 
     background-size: cover;
-    /*
-    display: flex;
-    align-items: center;
-    */
 }
 
 #picker {
@@ -339,6 +303,7 @@ form {
 }
 
 /* Question page */
+
 #loader-question {
     height: 100vh;
 }
@@ -365,7 +330,6 @@ form {
 
 #progress-bar-grey {
     height: 1rem;
-    /*width: 100%;*/
     background-color: gray;
     border-radius: 20px;
 }
@@ -423,13 +387,13 @@ form {
 }
 
 /* Achievements page */
+
 .bg-white {
     background-color: #FFFEFE;
     border-radius: 40px;
 }
 
 #achievement-page {
-    /*background-color: #DCF7FE;*/
     background: url(../images/bg-triangles.jpg) no-repeat center center;
     background-size: cover;
     min-height: 100vh;
