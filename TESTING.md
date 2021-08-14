@@ -145,4 +145,12 @@ No errors were found, but there are 61 warnings and they are all concerning the 
 
 <br/>  
 
+## **JavaScript Testing**  
+I ran the code through [JSHint](https://jshint.com/), and there were some warnings. I took actions to fix most of them, and the documentation can be read below.
+
+- ``` achievement.js ``` : [The screenshot of the final result can be found in this link](assets/testing/jshint/achievements-jshint.jpg)  
+- ``` contact.js ``` : [The screenshot of the final result can be found in this link](assets/testing/jshint/contact-jshint.jpg)  
+- ``` question.js ``` : [The screenshot of the final result can be found in this link](assets/testing/jshint/question-jshint.jpg)  
+
+
 

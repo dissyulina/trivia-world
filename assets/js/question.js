@@ -40,7 +40,7 @@ const getUrl = {
 	Film: ["https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=11&difficulty=hard&type=multiple"],
 	Geography: ["https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=22&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=22&difficulty=hard&type=multiple"],
 	Sports: ["https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple", "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple", "https://opentdb.com/api.php?amount=10&category=21&difficulty=hard&type=multiple"],
-}
+};
 
 // Get the stars on the topic from local storage, to determine the level of difficulty of the questions
 if ((localStorage.getItem(topic + "_stars", stars) === null) || (localStorage.getItem(topic + "_stars", stars) === "null")) {
@@ -99,23 +99,22 @@ fetch(getUrl[topic][difficultyLevel])
 	});
 
 
-startGame = () => {
-	accumulativePoints = 0;
+function startGame() {
 	// Spread the quizDatas array and put it into the availableQuestion array
 	availableQuestions = [...quizDatas];
 	getNewQuestion();
 	// Remove loader when the question is ready
 	$("#question-start").removeClass("hidden");
 	$("#loader-question").remove();
-};
+}
 
-getNewQuestion = () => {
+function getNewQuestion() {
 	// If 10th question is left unanswered and time's up, show up modal
 	if (availableQuestions.length === 0) {
 		showModalTenQuestions();
 		stopTimer();
 		return;
-	};
+	}
 	questionCounter++;
 
 	// Assign one of the points randomly from the correctPoints array 
@@ -127,7 +126,8 @@ getNewQuestion = () => {
 	$("#question-text").html(currentQuestion.question).text();
 	// Display each of the choices into the html content
 	choices.forEach(choice => {
-		const number = choice.dataset['number'];
+
+		const number = choice.dataset.number;
 		choice.innerHTML = currentQuestion["choice" + number];
 	});
 
@@ -153,7 +153,7 @@ getNewQuestion = () => {
 	// Call function to display stars next to progress bar and countdown timer
 	progressStars(getStars);
 	countdown();
-};
+}
 
 // After a choice is clicked, record the choice, stop the countdown, and move on to next question
 choices.forEach(choice => {
@@ -161,7 +161,7 @@ choices.forEach(choice => {
 		if (!acceptingAnswers) return;
 		acceptingAnswers = false;
 		const selectedChoice = e.target;
-		const selectedAnswer = selectedChoice.dataset["number"];
+		const selectedAnswer = selectedChoice.dataset.number;
 		clearInterval(counter);
 		let classRightOrWrong;
 		// If the answer is correct, add points into score, and put response - play sound and change background color
@@ -175,7 +175,7 @@ choices.forEach(choice => {
 			$("#wrong-sound")[0].play();
 			classRightOrWrong = "wrong";
 			e.target.classList.add(classRightOrWrong);
-		};
+		}
 		
 		score = Number(getScore) + points;
 
@@ -247,11 +247,11 @@ function countdown() {
 			clearInterval(counter);
 			getNewQuestion();
 			return;
-		};
+		}
 		// dispay the number of seconds	
 		$("#timer").text(count);
-	};
-};
+	}
+}
 
 //Function to stop the timer
 function stopTimer() {
@@ -316,11 +316,11 @@ function showModalStars(e) {
 	$("#stars-img").children("img").addClass("star-modal");
 	// Display the text
 	if (stars === 1) {
-		$("#stars-text").text("Yeah! You know the basic knowledge of " + topic + ". Challenge yourself and increase your points to get more stars! What do you want to do next?")
+		$("#stars-text").text("Yeah! You know the basic knowledge of " + topic + ". Challenge yourself and increase your points to get more stars! What do you want to do next?");
 	} else if (stars === 2) {
-		$("#stars-text").text("Amazing! You’re a " + topic + " fan and you're quite knowledgeable in this. You earn your two stars achievement! Play another round and see if you’re as great in other topics as well.")
+		$("#stars-text").text("Amazing! You’re a " + topic + " fan and you're quite knowledgeable in this. You earn your two stars achievement! Play another round and see if you’re as great in other topics as well.");
 	} else if (stars === 3) {
-		$("#stars-text").text("Congratulations, achievement's completed for " + topic + " !! You’re now (unofficially) a " + topic +"s professor! You know all about it. You read relevant articles about it and always keep up with the news. Play another round and see if you’re as amazing in other topics as well.")	
+		$("#stars-text").text("Congratulations, achievement's completed for " + topic + " !! You’re now (unofficially) a " + topic +"s professor! You know all about it. You read relevant articles about it and always keep up with the news. Play another round and see if you’re as amazing in other topics as well.");
 	}
 }
 
