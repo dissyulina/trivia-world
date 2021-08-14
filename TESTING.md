@@ -137,8 +137,10 @@ No errors were found, but there were some warnings at the first test. The warnin
 5. The How To Play Page (howtoplay.html): [the screenshot can be found in the this link](assets/testing/html-validator/howtoplay-test.jpg)   
 6. The Contact Page (contact.html): [the screenshot can be found in the this link](assets/testing/html-validator/contact-test.jpg)   
 
-**CSS**:
-- style.css
+### **CSS**
+No errors were found, but there are 61 warnings and they are all concerning the vendor prefixes. I decided to ignore the warnings because the vendor prefixes are important to ensure that the styling work across different browsers. [The screenshot of the result can be found in this link](assets/testing/css-test.jpg)  
+
+
 
 
 <br/>  
