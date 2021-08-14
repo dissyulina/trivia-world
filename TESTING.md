@@ -96,7 +96,7 @@ The links were tested to ensure that:
 - The social media buttons are working and opening in a new tab.  
 -  Hovering and active states are working.  
 I did the testing of all buttons and any clickable elements in the game. Below is the result.  
-  
+
 ![Buttons and links testing result](assets/testing/buttons-and-links-test.png "Buttons and links testing result")  
 
 ### **Game Play Testing**
@@ -106,4 +106,41 @@ The game play was tested to ensure that:
 - All points and stars calculations are working.
 - All features of the game itself function properly.  
 
-![Game play testing result](assets/testing/game-play-test.png "Game play testing result") 
+![Game play testing result](assets/testing/game-play-test.png "Game play testing result")  
+
+### **Forms Testing**
+The forms were also tested to ensure that:  
+- The ```required``` attributes are working (attached to all fields - name, email address, and message).  
+- When a valid form is submitted, the Send Message button turns to a spinning loader for 1 second, and then turns to Sent. 
+- The developer gets the notification message in their inbox.
+- The users get a thank you message in their inbox 
+
+All of the above are working properly.
+
+<br/>  
+
+## **Autoprefixer CSS**
+Autoprefixer CSS was used to add CSS vendor prefixes to the CSS rules after the developing process was done, to ensure that the they work across all browsers.  
+
+<br/>  
+
+## **W3C Validator Testing**  
+The [W3C Markup Validator](https://validator.w3.org) and [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) were used to validate the website to ensure there were no syntax errors in the project. The results are below:  
+
+### **HTML**
+No errors were found, but there were some warnings at the first test. The warnings were all the empty header tags that I used inside a modal, to then be filled dynamically with JavaScript. I filled in those header tags with a text and put the Html file back to the test. In the end, no warnings or errors were found on all pages.
+
+1. The Landing Page (index.html): [the screenshot can be found in the this link](assets/testing/html-validator/index-test.jpg)  
+2. The Wheel Page (wheel.html): [the screenshot can be found in the this link](assets/testing/html-validator/wheel-test.jpg)   
+3. The Question Page(question.html): [the screenshot can be found in the this link](assets/testing/html-validator/question-test.jpg)   
+4. The Achievements Page (achievements.html): [the screenshot can be found in the this link](assets/testing/html-validator/achievements-test.jpg)   
+5. The How To Play Page (howtoplay.html): [the screenshot can be found in the this link](assets/testing/html-validator/howtoplay-test.jpg)   
+6. The Contact Page (contact.html): [the screenshot can be found in the this link](assets/testing/html-validator/contact-test.jpg)   
+
+**CSS**:
+- style.css
+
+
+<br/>  
+
+
