@@ -6,7 +6,53 @@
 
 <br/>
 
-**Table of Contents**
+**Table of Contents**  
+1. [Introduction](https://github.com/dissyulina/trivia-world#introduction)  
+2. [UX Development Planes](https://github.com/dissyulina/trivia-world#ux-development-plane)   
+   i. [Strategy Plane](https://github.com/dissyulina/trivia-world#1-strategy-plane)  
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [User Stories](https://github.com/dissyulina/trivia-world#user-stories)  
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Online Research](https://github.com/dissyulina/trivia-world#online-research)  
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Project Goals, User Goals, and Developer Goals](https://github.com/dissyulina/trivia-world#project-goals)  
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Strategy Table](https://github.com/dissyulina/trivia-world#strategy-table)
+
+   ii. [Scope Plane](https://github.com/dissyulina/trivia-world#2-scope-plane)  
+   iii. [Structure Plane](https://github.com/dissyulina/trivia-world#3-structure-plane)  
+   iv. [Skeleton Plane / Wireframes](https://github.com/dissyulina/trivia-world#4-skeleton-plane)  
+   v. [Surface Plane / High Fidelity Mock Up](https://github.com/dissyulina/trivia-world#5-surface-plane)  
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Color Scheme](https://github.com/dissyulina/trivia-world#color-scheme)  
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Typography](https://github.com/dissyulina/trivia-world#typography)  
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Imagery](https://github.com/dissyulina/trivia-world#imagery)  
+
+3. [Features](https://github.com/dissyulina/trivia-world#features)  
+   i. [General Design Features](https://github.com/dissyulina/trivia-world#existing-features)  
+   ii. [Page Design Features](https://github.com/dissyulina/trivia-world#page-design-features)
+   iii. [Features to be Implemented in The Future](https://github.com/dissyulina/trivia-world#features-to-be-implemented-in-the-future)
+
+4. [Technology Used](https://github.com/dissyulina/trivia-world#technology-used)  
+   i. [Main and Additional Languanges](https://github.com/dissyulina/trivia-world#main-languages-used)  
+   ii. [Frameworks, Libraries, & Programs Used](https://github.com/dissyulina/trivia-world#frameworks-libraries--programs-used)  
+
+5. [Issues and Bugs](https://github.com/dissyulina/trivia-world#issues-and-bugs)  
+   i. [Solved Issues](https://github.com/dissyulina/trivia-world#solved-issues)  
+   ii. [Known Issues & Unsolved Bugs](https://github.com/dissyulina/trivia-world#known-issues--unsolved-bugs)  
+
+6. [Deployment](https://github.com/dissyulina/trivia-world#deployment)  
+   i. [Deploy to Github](https://github.com/dissyulina/trivia-world#deployment-to-github-pages)  
+   ii. [Forking to Github Repository](https://github.com/dissyulina/trivia-world#forking-the-github-repository)  
+   iii. [Making a Local Clone](https://github.com/dissyulina/trivia-world#making-a-local-clone)  
+
+7. [Testing](https://github.com/dissyulina/trivia-world#testing)   
+   i. [Go to TESTING.md]()  
+
+8. [Credits](https://github.com/dissyulina/trivia-world#credits)  
+   i. [Code](https://github.com/dissyulina/trivia-world#code)  
+   ii. [Images](https://github.com/dissyulina/trivia-world#images-and-icons)  
+   iii. [Sound Effects](https://github.com/dissyulina/trivia-world#sound-effects)  
+   iii. [Contents](https://github.com/dissyulina/trivia-world#contents)   
+
+9. [Acknowledgements](https://github.com/dissyulina/trivia-world#acknowledgements)  
+
+<br/>
 
 
 ------
@@ -264,7 +310,7 @@ Due to limited resources (time constraint, skill of the developer at the moment,
 
 <br/>   
 
-## **Technologies Used**  
+## **Technology Used**  
 ### **Main Languages Used**
    * [HTML5](https://en.wikipedia.org/wiki/HTML5)
    * [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)  
