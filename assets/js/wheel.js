@@ -10,7 +10,7 @@ const displayTopics = {
 	4: ["Film", "assets/images/film.jpg"],
 	5: ["Geography", "assets/images/geography.jpg"],
 	6: ["Sports", "assets/images/sports.jpg"],
-}
+};
 
 // Create a spin between 3000 - 6000 degree (code sourced from youtube video: Weibenfalk - Vanilla Javascript Wheel of Fortune, and changed to jQuery by the developer.)
 $("#btn-wheel").click(function() {
@@ -26,8 +26,8 @@ $("#btn-wheel").click(function() {
 document.getElementById("wheel").addEventListener("transitionend", function() {
 	$("#btn-wheel").css('pointer-events','auto');
 	$("#wheel").removeClass("blur");
-	$("#wheel-sound")[0].pause();
-	$("#wheel-sound")[0].currentTime = 0;
+	//$("#wheel-sound")[0].pause();
+	//$("#wheel-sound")[0].currentTime = 0;
 
 	// Calculate the actual deg (0-360deg), because we want the next spin to start from that degree, and transform the wheel instantly without the user seeing it
 	const actualDeg = deg % 360;
@@ -39,8 +39,14 @@ document.getElementById("wheel").addEventListener("transitionend", function() {
 	result = Math.ceil(actualDeg / sectionDeg);
 	if (result > 6) {
 		result = result - 6;
-	};
+	}
 
+	//Call the showModalTopic function after 0.5 second (to allow the user to see at which topic the wheel stops)
+	setTimeout(showModalTopic, 500);
+});
+
+// Function to show the result in a modal
+function showModalTopic() {
 	// Show the modal pop up
 	$("#modal-topic").modal("show");
 	$("#topic-sound")[0].play();
@@ -54,8 +60,7 @@ document.getElementById("wheel").addEventListener("transitionend", function() {
 	$(".topic-image").empty();
 	$(".topic-image").append('<img src="' + displayTopics[result][1] + '">');
 	$(".topic-image").children("img").addClass("img-fluid");
-
-});
+}
 
 //When the user click 'Bring it on' Button, it stores the topic to the local storage
 $("#btn-start-quiz").click(function(e) {
