@@ -69,7 +69,6 @@ fetch(getUrl[topic][difficultyLevel])
 		return res.json();
 	})
 	.then(loadedQuestions => {
-		console.log(loadedQuestions.results);
 		// Get each of the original question, and format that question to match the format that we need
 		quizDatas = loadedQuestions.results.map(loadedQuestion => {
 			const formattedQuestion = {
@@ -320,7 +319,7 @@ function showModalStars(e) {
 	} else if (stars === 2) {
 		$("#stars-text").text("Amazing! You’re a " + topic + " fan and you're quite knowledgeable in this. You earn your two stars achievement! Play another round and see if you’re as great in other topics as well.");
 	} else if (stars === 3) {
-		$("#stars-text").text("Congratulations, achievement's completed for " + topic + " !! You’re now (unofficially) a " + topic +"s professor! You know all about it. You read relevant articles about it and always keep up with the news. Play another round and see if you’re as amazing in other topics as well.");
+		$("#stars-text").text("Congratulations, achievement's completed for " + topic + " !! You’re now (unofficially) a " + topic + " professor! You know all about it. You read relevant articles about it and always keep up with the news. Play another round and see if you’re as amazing in other topics as well.");
 	}
 }
 
@@ -329,7 +328,6 @@ function showModalTenQuestions(e) {
 	$("#modal-stars").modal("show");
 	$("#ten-questions-sound")[0].play();
 	$("#stars-title").text("You’ve answered 10 questions and you’ve got total points of " + savedScore + "!");
-	console.log(score);
 	// Display text according to score
 	if (stars === 3) {
 		$("#stars-text").text("Impressive! Your score for " + topic + " is now " + savedScore + ". You've already got complete achievement in this. Challenge yourself on another topic and let's collect all the stars!");
