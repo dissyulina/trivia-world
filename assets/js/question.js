@@ -303,7 +303,7 @@ function progressStars(st) {
 
 // Function to show modal after the user get an additional star
 function showModalStars(e) {
-	e.preventDefault();
+	//e.preventDefault();
 	$("#modal-stars").modal("show");
 	$("#getstar-sound")[0].play();
 	$("#stars-title").text("Woohooo! You’ve made it to " + savedScore + " points in " + topic + ". You get " + stars + " star!");
