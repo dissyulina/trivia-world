@@ -9,16 +9,18 @@
 <br/>  
 
 **Table of Contents** 
-1. [User Stories Testing]()  
-2. [Manual Testing]()  
-   a. [Responsiveness Testing]()  
-   b. [Links Testing]()  
-   c. [Forms Testing]()  
-3. [Autoprefixer CSS]()  
-4. [W3C Validator Testing]()  
-5. [Lighthouse Testing]()  
-6. [CI Peer Code Review on Slack]()
-7. [Further Testing]()  
+1. [User Stories Testing](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#user-stories-testing)  
+2. [Manual Testing](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#manual-testing)  
+   a. [Responsiveness Testing](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#responsiveness-testing)  
+   b. [Links Testing](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#links-testing)  
+   c. [Game Play Testing](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#game-play-testing)   
+   d. [Form Testing](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#form-testing)  
+3. [Autoprefixer CSS](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#autoprefixer-css)  
+4. [W3C Validator Testing](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#w3c-validator-testing)  
+5. [JSHint Testing](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#javascript-testing)   
+5. [Lighthouse Testing](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#lighthouse-testing)  
+6. [CI Peer Code Review on Slack](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#ci-peer-code-review-on-slack)
+7. [Further Testing](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#further-testing)  
 
 <br/>  
 
@@ -129,8 +131,8 @@ The game play was tested to ensure that:
 
 ![Game play testing result](assets/testing/game-play-test.png "Game play testing result")  
 
-### **Forms Testing**
-The forms were also tested to ensure that:  
+### **Form Testing**
+The form was also tested to ensure that:  
 - The ```required``` attributes are working (attached to all fields - name, email address, and message).  
 - When a valid form is submitted, the Send Message button turns to a spinning loader for 1 second, and then turns to Sent. 
 - The developer gets the notification message in their inbox.
@@ -161,6 +163,9 @@ No errors were found, but there were some warnings at the first test. The warnin
 ### **CSS**
 No errors were found, but there are 61 warnings and they are all concerning the vendor prefixes. I decided to ignore the warnings because the vendor prefixes are important to ensure that the styling works across different browsers. [The screenshot of the result can be found in this link](assets/testing/css-test.jpg)  
 
+<br/>  
+
+[Back to top](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#trivia-world---testing)  
 
 <br/>  
 
