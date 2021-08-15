@@ -18,9 +18,9 @@
 3. [Autoprefixer CSS](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#autoprefixer-css)  
 4. [W3C Validator Testing](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#w3c-validator-testing)  
 5. [JSHint Testing](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#javascript-testing)   
-5. [Lighthouse Testing](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#lighthouse-testing)  
-6. [CI Peer Code Review on Slack](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#ci-peer-code-review-on-slack)
-7. [Further Testing](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#further-testing)  
+6. [Lighthouse Testing](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#lighthouse-testing)  
+7. [CI Peer Code Review on Slack](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#ci-peer-code-review-on-slack)
+8. [Further Testing](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#further-testing)  
 
 <br/>  
 
