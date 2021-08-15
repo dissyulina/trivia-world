@@ -134,7 +134,7 @@ li {
     color: #4a7bd4;
 }
 
-/*-- Buttons --*/
+/* Buttons */
 
 .btn {
     border-width: 1px;
@@ -208,7 +208,7 @@ li {
     border: none;
 }
 
-/*-- How To Play Page --*/
+/* How To Play Page */
   
 .full-container {
     min-height: 100vh;
@@ -408,11 +408,6 @@ form {
 }
 
 /* Achievements page */
-
-.bg-white {
-    background-color: #FFFEFE;
-    border-radius: 40px;
-}
 
 #achievement-page {
     background: url(../images/bg-triangles.jpg) no-repeat center center;
