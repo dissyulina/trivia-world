@@ -130,27 +130,67 @@ The [W3C Markup Validator](https://validator.w3.org) and [W3C CSS Validator](htt
 ### **HTML**
 No errors were found, but there were some warnings at the first test. The warnings were all the empty header tags that I used inside a modal, to then be filled dynamically with JavaScript. I filled in those header tags with a text and put the Html file back to the test. In the end, no warnings or errors were found on all pages.
 
-1. The Landing Page (index.html): [the screenshot can be found in the this link](assets/testing/html-validator/index-test.jpg)  
-2. The Wheel Page (wheel.html): [the screenshot can be found in the this link](assets/testing/html-validator/wheel-test.jpg)   
-3. The Question Page(question.html): [the screenshot can be found in the this link](assets/testing/html-validator/question-test.jpg)   
-4. The Achievements Page (achievements.html): [the screenshot can be found in the this link](assets/testing/html-validator/achievements-test.jpg)   
-5. The How To Play Page (howtoplay.html): [the screenshot can be found in the this link](assets/testing/html-validator/howtoplay-test.jpg)   
-6. The Contact Page (contact.html): [the screenshot can be found in the this link](assets/testing/html-validator/contact-test.jpg)   
+1. [The Landing Page (index.html)](assets/testing/html-validator/index-test.jpg)  
+2. [The Wheel Page (wheel.html)](assets/testing/html-validator/wheel-test.jpg)   
+3. [The Question Page(question.html](assets/testing/html-validator/question-test.jpg)   
+4. [The Achievements Page (achievements.html](assets/testing/html-validator/achievements-test.jpg)   
+5. [The How To Play Page (howtoplay.html](assets/testing/html-validator/howtoplay-test.jpg)   
+6. [The Contact Page (contact.html)](assets/testing/html-validator/contact-test.jpg)   
 
 ### **CSS**
-No errors were found, but there are 61 warnings and they are all concerning the vendor prefixes. I decided to ignore the warnings because the vendor prefixes are important to ensure that the styling work across different browsers. [The screenshot of the result can be found in this link](assets/testing/css-test.jpg)  
-
-
+No errors were found, but there are 61 warnings and they are all concerning the vendor prefixes. I decided to ignore the warnings because the vendor prefixes are important to ensure that the styling works across different browsers. [The screenshot of the result can be found in this link](assets/testing/css-test.jpg)  
 
 
 <br/>  
 
 ## **JavaScript Testing**  
-I ran the code through [JSHint](https://jshint.com/), and there were some warnings. I took actions to fix most of them, and the documentation can be read below.
+I ran the code through [JSHint](https://jshint.com/), and there were some warnings. All of the warnings have been fixed, except for one warning which shows ```emailjs``` as an undefined variable. However, ```emailjs``` is an external variable from a service that allows sending email from JavaScript, so it's not defined inside the js file. The summary of the warnings that I got from the JSHint test and the actions that I took to solve them can be found in the table below.  
+
+![The summary of JSHint testing result](assets/testing/jshint/jshint.png "The summary of JSHint testing result")  
 
 - ``` achievement.js ``` : [The screenshot of the final result can be found in this link](assets/testing/jshint/achievements-jshint.jpg)  
 - ``` contact.js ``` : [The screenshot of the final result can be found in this link](assets/testing/jshint/contact-jshint.jpg)  
 - ``` question.js ``` : [The screenshot of the final result can be found in this link](assets/testing/jshint/question-jshint.jpg)  
+- ``` script.js ``` : [The screenshot of the final result can be found in this link](assets/testing/jshint/script-jshint.jpg)  
+- ``` sound.js ``` : [The screenshot of the final result can be found in this link](assets/testing/jshint/sound-jshint.jpg)  
+- ``` wheel.js ``` : [The screenshot of the final result can be found in this link](assets/testing/jshint/wheel-jshint.jpg)  
 
 
+## **Lighthouse Testing**  
+The Chrome Lighthouse testing was used to audit the performance, accessibility, best practices, and SEO. Below are the result.
+- For the landing page (index.html) : desktop and mobile 
+
+   * ![Lighthouse testing for the landing page - desktop](assets/testing/lighthouse/landing-lh-des.jpg "Lighthouse testing for the landing page - desktop")   
+
+   * ![Lighthouse testing for the landing page - mobile](assets/testing/lighthouse/landing-lh-mob.jpg "Lighthouse testing for the landing page - mobile")   
+
+- For the wheel page (wheel.html) : desktop and mobile  
+
+   * ![Lighthouse testing for the wheel page - desktop](assets/testing/lighthouse/wheel-lh-des.jpg "Lighthouse testing for the wheel page - desktop")   
+
+   * ![Lighthouse testing for the wheel page - mobile](assets/testing/lighthouse/wheel-lh-mob.jpg "Lighthouse testing for the wheel page - mobile")   
+
+- For the question page (question.html) : desktop and mobile  
+
+   * ![Lighthouse testing for the question page - desktop](assets/testing/lighthouse/question-lh-des.jpg "Lighthouse testing for the question page - desktop")  
+
+   * ![Lighthouse testing for the question page - mobile](assets/testing/lighthouse/question-lh-mob.jpg "Lighthouse testing for the question page - mobile")  
+
+- For the achievements page (achievements.html) : desktop and mobile  
+
+   * ![Lighthouse testing for the achievements page - desktop](assets/testing/lighthouse/achievements-lh-des.jpg "Lighthouse testing for the achievements page - desktop")  
+
+   * ![Lighthouse testing for the achievements page - mobile](assets/testing/lighthouse/achievements-lh-mob.jpg "Lighthouse testing for the achievements page - mobile")  
+
+- For the how to play page (howtoplay.html) : desktop and mobile  
+
+   * ![Lighthouse testing for the how to play page - desktop](assets/testing/lighthouse/howtoplay-lh-des.jpg "Lighthouse testing for the how to play page - desktop")  
+
+   * ![Lighthouse testing for the how to play page - mobile](assets/testing/lighthouse/howtoplay-lh-mob.jpg "Lighthouse testing for the how to play page - mobile")  
+
+- For the contact page (contact.html) : desktop and mobile  
+
+   * ![Lighthouse testing for the contact page - desktop](assets/testing/lighthouse/contact-lh-des.jpg "Lighthouse testing for the contact page - desktop")  
+
+   * ![Lighthouse testing for the contact page - mobile](assets/testing/lighthouse/contact-lh-mob.jpg "Lighthouse testing for the contact page - mobile")  
 
