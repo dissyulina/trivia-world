@@ -25,7 +25,7 @@
 
 3. [Features](https://github.com/dissyulina/trivia-world#features)  
    i. [General Design Features](https://github.com/dissyulina/trivia-world#existing-features)  
-   ii. [Page Design Features](https://github.com/dissyulina/trivia-world#page-design-features)
+   ii. [Page Design Features](https://github.com/dissyulina/trivia-world#page-design-features)   
    iii. [Features to be Implemented in The Future](https://github.com/dissyulina/trivia-world#features-to-be-implemented-in-the-future)
 
 4. [Technology Used](https://github.com/dissyulina/trivia-world#technology-used)  
@@ -42,7 +42,7 @@
    iii. [Making a Local Clone](https://github.com/dissyulina/trivia-world#making-a-local-clone)  
 
 7. [Testing](https://github.com/dissyulina/trivia-world#testing)   
-   i. [Go to TESTING.md]()  
+   i. [Go to TESTING.md](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#trivia-world---testing)  
 
 8. [Credits](https://github.com/dissyulina/trivia-world#credits)  
    i. [Code](https://github.com/dissyulina/trivia-world#code)  
@@ -199,15 +199,15 @@ Wireframes were created using Figma to design the navigation and interface of th
 ### 5. Surface Plane  
 For a better and clearer visualization before coding, and also to check if the color scheme and images match and work great together, a high-fidelity mockup for mobile, tablet, and desktop was made and can be found below.
 
-High fidelity mock-up for mobiles:
+High fidelity mock-up for mobiles:   
 ![The mockup - mobile](assets/readme/mockup-mobile.jpg "The mockup - mobile")   
 
-High fidelity mock-up for tablets:
-![The mockup - tablet](assets/readme/mockup-tablet.jpg "The mockup - tablet") 
+High fidelity mock-up for tablets:   
+![The mockup - tablet](assets/readme/mockup-tablet.jpg "The mockup - tablet")  
 
-High fidelity mock-up for desktops:
-![The mockup - desktop](assets/readme/mockup-desktop-1.jpg "The mockup - tablet") 
-![The mockup - desktop](assets/readme/mockup-desktop-2.jpg "The mockup - tablet") 
+High fidelity mock-up for desktops:    
+![The mockup - desktop](assets/readme/mockup-desktop-1.jpg "The mockup - tablet")   
+![The mockup - desktop](assets/readme/mockup-desktop-2.jpg "The mockup - tablet")  
 
 
    #### **Color Scheme**  
@@ -341,6 +341,8 @@ Due to limited resources (time constraint, skill of the developer at the moment,
    Coolors was used to create a cohesive color scheme for the website.
    12. [Vecteezy vector editor](https://www.vecteezy.com/editor)  
    Vecteezy vector editor was used to edit the sections of the wheel image.   
+   13. [ScreenToGif](https://www.screentogif.com)   
+   ScreenToGif editor was used to record computer screen, convert to gif and resize it, to be added to Responsiveness testing.   
 
    <br/>   
 
