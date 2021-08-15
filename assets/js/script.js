@@ -25,7 +25,7 @@ $('#btn-player').on('click', function(e) {
     $("#username-modal p").text("Add a new player or input your saved username");
 });
 
-//Event listener as the username has been filled and the submit button is clicked
+// Event listener as the username has been filled and the submit button is clicked
 $('#submit-username').on('click', function(e) {
     e.preventDefault();
     inputName = $('#username').val();

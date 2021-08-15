@@ -4,8 +4,8 @@
 let sounds = document.getElementsByTagName("audio");
 let toggleSound = document.getElementsByClassName("toggle-sound");
 let getSound = sessionStorage.getItem("sound");
-let i; //increment for audio tag
-let j; //increment for toggle sound
+let i; // increment for audio tag
+let j; // increment for toggle sound
 
 // If toggle sound is clicked, set it to session storage
 $(".toggle-sound").click(function() {
@@ -19,14 +19,14 @@ $(".toggle-sound").click(function() {
     }
 });
 
-//Set sound when loading a new page
+// Set sound when loading a new page
 if ((getSound === "on") || (getSound === null)) {
     soundOn();
 } else {
     soundOff();
 }
 
-//Function when sound is off
+// Function when sound is off
 function soundOff() {
     for(i = 0; i < sounds.length; ++i) {
         sounds[i].muted = true;
@@ -36,7 +36,7 @@ function soundOff() {
     }
 }
 
-//Function when sound is on
+// Function when sound is on
 function soundOn() {
     for(i = 0; i < sounds.length; ++i) {
         sounds[i].muted = false;

@@ -1,6 +1,6 @@
-//Script for the Spinning Wheel
+// Script for the Spinning Wheel
 
-//Variables declaration
+// Variables declaration
 let deg = 0;
 let result;
 const displayTopics = {
@@ -22,12 +22,10 @@ $("#btn-wheel").click(function() {
 	$("#wheel-sound")[0].play();
 });
 
-// As soon as the transition ends (code until line 39 was sourced from youtube video: Weibenfalk - Vanilla Javascript Wheel of Fortune, and changed to jQuery by the developer. Added comments as the developer understands the process)
+// As soon as the transition ends (code until line 37 was sourced from youtube video: Weibenfalk - Vanilla Javascript Wheel of Fortune, and changed to jQuery by the developer. Added comments as the developer understands the process)
 document.getElementById("wheel").addEventListener("transitionend", function() {
 	$("#btn-wheel").css('pointer-events','auto');
 	$("#wheel").removeClass("blur");
-	//$("#wheel-sound")[0].pause();
-	//$("#wheel-sound")[0].currentTime = 0;
 
 	// Calculate the actual deg (0-360deg), because we want the next spin to start from that degree, and transform the wheel instantly without the user seeing it
 	const actualDeg = deg % 360;
@@ -41,7 +39,7 @@ document.getElementById("wheel").addEventListener("transitionend", function() {
 		result = result - 6;
 	}
 
-	//Call the showModalTopic function after 0.5 second (to allow the user to see at which topic the wheel stops)
+	// Call the showModalTopic function after 0.5 second (to allow the user to see at which topic the wheel stops)
 	setTimeout(showModalTopic, 500);
 });
 
@@ -62,7 +60,7 @@ function showModalTopic() {
 	$(".topic-image").children("img").addClass("img-fluid");
 }
 
-//When the user click 'Bring it on' Button, it stores the topic to the local storage
+// When the user click 'Bring it on' Button, it stores the topic to the local storage
 $("#btn-start-quiz").click(function(e) {
 	e.preventDefault();
 	localStorage.setItem("topicResult", displayTopics[result][0]);
