@@ -3,7 +3,7 @@
 // Function to save points and stars of a user to local storage, attached to click event of "Quit" button
 function saveData() {
     // All the quiz's datas are put into a new object
-    let datas = new Object();
+    let datas = {};
     datas = {
         sportsStars: localStorage.getItem("Sports_stars"),
         sportsScore: localStorage.getItem("Sports_score"),
@@ -17,7 +17,7 @@ function saveData() {
         filmScore: localStorage.getItem("Film_score"),
         scienceStars: localStorage.getItem("Science_stars"),
         scienceScore: localStorage.getItem("Science_score"),
-    }
+    };
     inputName = localStorage.getItem("player");
     localStorage.setItem(inputName, JSON.stringify(datas));
 
@@ -34,4 +34,10 @@ function saveData() {
     window.localStorage.removeItem('Film_score');
     window.localStorage.removeItem('Science_stars');
     window.localStorage.removeItem('Science_score');
-};
+
+}
+
+// Call the function inside a click event listener
+$("#btn-quit").click(function() {
+    saveData();
+});
