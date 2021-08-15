@@ -11,9 +11,9 @@
 **Table of Contents** 
 1. [User Stories Testing]()  
 2. [Manual Testing]()  
-a. [Responsiveness Testing]()  
-b. [Links Testing]()  
-c. [Forms Testing]()  
+   a. [Responsiveness Testing]()  
+   b. [Links Testing]()  
+   c. [Forms Testing]()  
 3. [Autoprefixer CSS]()  
 4. [W3C Validator Testing]()  
 5. [Lighthouse Testing]()  
@@ -88,7 +88,28 @@ c. [Forms Testing]()
 <br/>  
 
 ## **Manual Testing**
-### **Responsiveness Testing**  
+### **Responsiveness Testing**   
+To check the responsiveness of the website across all devices, the developer tools are used regularly during the developing process. Please note that due to the gifs' resolutions, the colors on the demonstration below might be different from the actual site.  
+- The responsiveness of the Landing Page   
+   ![The responsiveness of the Landing Page](assets/testing/responsiveness/landing-resp.gif "The responsiveness of the Landing Page")   
+
+- The responsiveness of the Wheel Page   
+   ![The responsiveness of the Wheel Page](assets/testing/responsiveness/wheel-resp.gif "The responsiveness of the Wheel Page")   
+
+- The responsiveness of the Question Page  
+   ![The responsiveness of the Question Page](assets/testing/responsiveness/question-resp.gif "The responsiveness of the Question Page") 
+ 
+- The responsiveness of the Achievements Page  
+   ![The responsiveness of the Achievements Page](assets/testing/responsiveness/achievements-resp.gif "The responsiveness of the Achievements Page") 
+
+- The responsiveness of the How To Play Page  
+   ![The responsiveness of the How To Play Page](assets/testing/responsiveness/howtoplay-resp.gif "The responsiveness of the How To Play Page") 
+
+- The responsiveness of the Contact Page  
+   ![The responsiveness of the Contact Page](assets/testing/responsiveness/contact-resp.gif "The responsiveness of the Contact Page") 
+
+
+<br/>
 
 ### **Links Testing**
 The links were tested to ensure that:  
@@ -132,8 +153,8 @@ No errors were found, but there were some warnings at the first test. The warnin
 
 1. [The Landing Page (index.html)](assets/testing/html-validator/index-test.jpg)  
 2. [The Wheel Page (wheel.html)](assets/testing/html-validator/wheel-test.jpg)   
-3. [The Question Page(question.html](assets/testing/html-validator/question-test.jpg)   
-4. [The Achievements Page (achievements.html](assets/testing/html-validator/achievements-test.jpg)   
+3. [The Question Page(question.html)](assets/testing/html-validator/question-test.jpg)   
+4. [The Achievements Page (achievements.html)](assets/testing/html-validator/achievements-test.jpg)   
 5. [The How To Play Page (howtoplay.html](assets/testing/html-validator/howtoplay-test.jpg)   
 6. [The Contact Page (contact.html)](assets/testing/html-validator/contact-test.jpg)   
 
@@ -194,3 +215,26 @@ The Chrome Lighthouse testing was used to audit the performance, accessibility, 
 
    * ![Lighthouse testing for the contact page - mobile](assets/testing/lighthouse/contact-lh-mob.jpg "Lighthouse testing for the contact page - mobile")  
 
+<br/>
+
+## **CI Peer Code Review on Slack**  
+The website was also submitted to the Peer-code-review channel on Slack to get some feedback. The feedback I got was from a fellow student, Daniel_C_5p, that on small screens, the footer (on the landing page, the wheel page, and the question page) covers the buttons and some of the content above it. That happened because I used position absolute for the footer and set the height of the page to 100vh. Although along the process of making it I was actively using the Developer Tools and had made sure the design looks good on a screen as small as iPhone 5,  it still displayed distorted on his phone, an iPhone 8.  
+
+Based on the feedback above, these changes were made:  
+I decided to change my approach, and change the position absolute to position static (default), and turn the parent of the footer into a flexbox container, in combination with justify content between, so that the footer stays at the bottom. I also took out the height of the page 100vh, and change it to minimal height 100vh.   
+
+<br/>  
+
+
+## **Further Testing**  
+- The Website was tested on Google Chrome, Microsoft Edge, Opera, Mozilla Firefox, and Safari (iOS) browsers.
+- The website was viewed on a variety of devices such as:
+   - Windows Desktop 
+   - Windows Laptop  
+   - Tablets: iPad Mini 2 and iPad 2018
+   - Mobile: iPhone7, iPhone 8, iPhone 12 Mini, Asus Zenfone Max Pro M2, and LG G5  
+- Friends and family members were asked to review the site and to point out any bugs and/or user experience issues.
+
+<br />
+
+[Back to top](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#trivia-world---testing)  
