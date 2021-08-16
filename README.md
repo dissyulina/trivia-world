@@ -262,7 +262,7 @@ High fidelity mock-up for desktops:
 <br/>   
 
 #### **Page Design Features**     
-1. **Landing Page/ Main Menu Page**   
+1. [**Landing Page/ Main Menu Page**](assets/readme/feat-landing.png)   
    - There’s a conditional system that a user gets when they are entering the Landing Page.
       * **Modal to input username** - If the user has never played the game on that device before (no data in the local storage is detected), the user will see a modal pop-up that welcomes the user to the game and prompts the user to input their username.   
       * **Welcome greetings to last player** - If the user has played the game on that particular device before, on the landing page there’s a welcome greeting with the last username that played on that device before.   
@@ -270,7 +270,7 @@ High fidelity mock-up for desktops:
    -  On the landing page, there are 3 main buttons: Play button, How To Play button, and Contact button, which all will lead to other pages. As the users click the Play button, they will be brought to the Wheel page, the How To Play button will bring users to the How To Play page and the Contact button to the Contact page.  
    - Footer is placed at the bottom of the page.   
 
-2. **Wheel Page**   
+2. [**Wheel Page**](assets/readme/feat-wheel.png)   
    - **Easy accessibility of playing the game** - To ensure easy accessibility of the game playing from wherever page the users are currently at, there are Play buttons placed on all pages across the website. The users will be brought to this Wheel page when:   
       * The users click the Play button on the Landing page, How to Play page, Contact page, and Achievement page.   
       * The users click the Play Again button on the modal pop-up on the Question page, after 10 questions are up or after the users get a star.   
@@ -279,7 +279,7 @@ High fidelity mock-up for desktops:
    - **Modal pop-up to display the topic result** - When the users click the Spin The Wheel button, the wheel spins. After the spinning ends a modal pops up that displays the topic that the user gets from spinning the wheel. In the modal, there’s also a short explanation of the rules of the game. From this modal, the user can choose to proceed to the questions by clicking the Bring It On button, or the user can choose to spin the wheel again by clicking the Let Me Spin That Wheel Again button.   
    - Footer is placed at the bottom of the page.   
 
-3. **Question Page**   
+3. [**Question Page**](assets/readme/feat-question.png)   
    - After the users click the Bring It On button from the modal in the Wheel page, the game will take the users to the Question page.   
    - **Spinning page loader** - As the questions are being fetched, there’s a spinning loader icon displayed until the questions are loaded to the page. This ensures the user to know that the game is in the middle of loading something, instead of it’s not working.   
    - **Progress bar and stars** -  On top of the page, there’s a progress bar that will be filled with accumulative points that the users get when their answer is right. On the top right of the page, there’s a gray star. When the progress bar is full, which means the user gets 1000 points, the star image turns yellow, and a modal pops up. 
@@ -294,19 +294,19 @@ High fidelity mock-up for desktops:
       The text inside the modal differs according to which of those three conditions above made the modal appear.  From this modal the users can navigate to other pages using three buttons: Play Again button, Go To Achievement Page button, and Quit button.   
    - Footer is placed at the bottom of the page.   
 
-4. **Achievement Page**  
+4. [**Achievement Page**](assets/readme/feat-achievements.png)  
    - **The display of all stars** - All of the stars that the user got for each topic are displayed on the Achievement page.   
    - **Complete achievement sign** - When a user has a maximum number of stars for a topic (3 stars), there’s a complete sign with a check-list icon below that topic, which indicates that the achievement for that topic has been completed.   
    - There are two buttons on this page: the Play Again button and the Quit button.   
    - Footer is placed at the bottom of the page.   
 
-5. **How To Play Page**  
+5. [**How To Play Page**](assets/readme/feat-howtoplay.png)  
    - **Instructions of the game** - How To Play page can be accessed via the Landing page. How To Play page consists of rules and instructions of the game.   
    - There are two buttons on this page, which are: Play button, so the users can immediately play the game without going back to the Landing Page first, and Back To Main Manu button that will bring the user to the Landing page.   
    - Footer is placed at the bottom of the page.  
 
 
-6. **Contact Page**  
+6. [**Contact Page**](assets/readme/feat-contact.png)  
    - **Contact form** - Contact page can be accessed via the Landing page. The contact page consists of a contact form where the users can send a message to the developer.  
    - **Confirmation response** - After the form is submitted, the text on Send Message button turns to “Sent”, as a response confirmation to the user that the form has been successfully sent. The user will also get a thank you email in their inbox (given the user provided a working email address), and the developer will also get the message in the inbox. This feature was made using EmailJS' service.   
 
