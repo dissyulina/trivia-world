@@ -2,19 +2,19 @@
 
 // Variables for quiz data
 const choices = Array.from(document.getElementsByClassName("choice-text"));
-let quizDatas = []; // an array of objects of the quiz data
+let quizDatas = []; // An array of objects of the quiz data
 let currentQuestion = {};
-let acceptingAnswers = false; //let the user submitting answer
+let acceptingAnswers = false; // Let the user submitting answer
 let questionCounter = 0; //what number of question are the user on
-let availableQuestions =[]; // an array of our question set
+let availableQuestions =[]; // An array of our question set
 
 // Variables for points and stars system
 const correctPoints = [100, 150, 200, 250];
 const fullPoints = 1000;
 const maxStars = 3;
 let points;
-let score = 0; //score starts from 0
-let stars = 0; //stars starts from 0
+let score; 
+let stars; 
 let savedScore;
 let difficultyLevel;
 
@@ -224,7 +224,7 @@ choices.forEach(choice => {
 	});
 });
 
-//Function to get difficulty level of question
+// Function to get difficulty level of question
 function questionLevel() {
 	if (difficultyLevel === 0) {
 		return "Easy";
@@ -242,17 +242,17 @@ function countdown() {
 	function timer() {
 		count--;
 		if (count === 0) {
-			//counter ended, stop timer and move on to the next question
+			// Counter ended, stop timer and move on to the next question
 			clearInterval(counter);
 			getNewQuestion();
 			return;
 		}
-		// dispay the number of seconds	
+		// Dispay the number of seconds	
 		$("#timer").text(count);
 	}
 }
 
-//Function to stop the timer
+// Function to stop the timer
 function stopTimer() {
 	clearInterval(counter);
 	$("#timer").text(count);
@@ -276,7 +276,7 @@ function progressBar(progressBefore, scoreAfter) {
 	}
 }
 
-//Function to display progress bar full achievement
+// Function to display progress bar full achievement
 function progressBarFull() {
 	$("#progress-bar-yellow").css("width","100%");
 	progressBarPoint = 100;
@@ -302,7 +302,6 @@ function progressStars(st) {
 
 // Function to show modal after the user get an additional star
 function showModalStars(e) {
-	//e.preventDefault();
 	$("#modal-stars").modal("show");
 	$("#getstar-sound")[0].play();
 	$("#stars-title").text("Woohooo! You’ve made it to " + savedScore + " points in " + topic + ". You get " + stars + " star!");
