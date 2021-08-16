@@ -476,6 +476,21 @@ form {
     color: #01a74b;
 }
 
+/* 404 page */
+#error-container {
+    background-color: #EAF3FA;
+    height: 100vh;
+}
+
+#error-container .container{
+    height: 100%;
+}
+
+#error-container img{
+    height: 5rem;
+    width: auto;
+}
+
 /* Media Queries */
 
 /* Special queries for the small screens */
