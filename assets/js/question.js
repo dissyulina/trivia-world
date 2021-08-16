@@ -13,8 +13,8 @@ const correctPoints = [100, 150, 200, 250];
 const fullPoints = 1000;
 const maxStars = 3;
 let points;
-let score; 
-let stars; 
+let score = 0; 
+let stars = 0; 
 let savedScore;
 let difficultyLevel;
 
