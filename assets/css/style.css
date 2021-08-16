@@ -369,6 +369,11 @@ form {
     font-weight: 600;
 }
 
+#question-text {
+    margin-right: 0.6rem;
+    margin-left: 0.6rem;
+}
+
 .choice-container {
     width: 100%;
 }
