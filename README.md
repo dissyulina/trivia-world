@@ -142,6 +142,9 @@ The chart below is the mapping of all of the opportunities. The yellow circle si
 
 <br />  
 
+[Back to top](https://github.com/dissyulina/trivia-world#trivia-world)  
+<br />  
+
 ### 2. Scope Plane  
 Based on the mapping in the Strategy Plane, I decided to include these features below in the game.
 1.	A spinning wheel   
@@ -187,7 +190,11 @@ There are 6 pages in planning:
 5. How to Play page, where the user can find the instructions or rules for the game.   
 6. Contact page, where the user can send a message to the developer via a contact form.   
 
-<br/>   
+<br />  
+
+[Back to top](https://github.com/dissyulina/trivia-world#trivia-world)  
+<br />  
+  
 
 ### 4. Skeleton Plane  
 Wireframes were created using Figma to design the navigation and interface of the website. One wireframe was created for mobile devices, according to the mobile-first design approach. The wireframe was only a rough sketch design of each page plus modal pop-ups.    
@@ -229,7 +236,11 @@ High fidelity mock-up for desktops:
    - Icons in the achievement page were chosen to keep the blue color theme aligned with other images.   
    - Star image was the only one that differs from the entire theme, as it has a fun and cartoonish feel to it. It was chosen so that it stands out within the game so that the player can differentiate it from the other background images.
 
-<br />   
+<br />  
+
+[Back to top](https://github.com/dissyulina/trivia-world#trivia-world)  
+<br />  
+  
 
 ## **Features**  
 ### **Existing Features**  
@@ -239,13 +250,14 @@ High fidelity mock-up for desktops:
       * Toggle sound on and off, to allow users to mute or to play the sound no matter on which page the user is currently at.   
       * Access button to the achievement page, to allow users to go straight to their achievement page.  
       *  Copyright remarks and links to the developer’s GitHub and LinkedIn.   
-   - **Quit (and save) button** - Quit button functions to quit the game, save the users’ achievements, and bring the users back to the Landing Page. This button is placed on all the pages, except in the middle of the 10 questions on the Question page. However, after the 10 questions are finished, a modal pops up, and the users can click the Quit button to quit the game.   
+   - **Quit button** - Quit button functions to quit the game and bring the users back to the Landing Page. This button is placed on all the pages, except in the middle of the 10 questions on the Question page. However, after the 10 questions are finished, a modal pops up, and the users can click the Quit button to quit the game.   
    - **Sound effects** - Sound effects were added across the game to enhance user experience in playing the game:   
       * On the wheel when it’s spinning   
       * On modal pop-up after the wheel spun (topic result from the spinning wheel)   
       * On the answer choice if it’s clicked as an auditory feedback, if the answer is correct or wrong   
       * On modal pop-up, after 10 questions are up   
       * On modal pop-up when the user reaches a star   
+   - **Error 404 page** - The 404 page was created to navigate the user back to the main page if the user accidentally typing a wrong url.
 
 <br/>   
 
@@ -254,7 +266,7 @@ High fidelity mock-up for desktops:
    - There’s a conditional system that a user gets when they are entering the Landing Page.
       * **Modal to input username** - If the user has never played the game on that device before (no data in the local storage is detected), the user will see a modal pop-up that welcomes the user to the game and prompts the user to input their username.   
       * **Welcome greetings to last player** - If the user has played the game on that particular device before, on the landing page there’s a welcome greeting with the last username that played on that device before.   
-   - **Change Players Button** - Still related to the username, the change player button is available at the top left of the landing page, to allow the users to change players even if they are using the same device. If the users input an existing username, the game will load all the username’s previous data and achievements. All of the users’ achievements will be saved on the local storage so that the user can conveniently resume their playing.  
+   - **Change Players Button** - Still related to the username, the Change Player button is available at the top left of the landing page, to allow the users to change username even if they are using the same device. When the user clicks the Change Player button, it will automatically save the current player's achievement on the local storage. A modal will show up to prompt the user to input a username. If the users input an existing username, the game will load all the username’s previous data and achievements. 
    -  On the landing page, there are 3 main buttons: Play button, How To Play button, and Contact button, which all will lead to other pages. As the users click the Play button, they will be brought to the Wheel page, the How To Play button will bring users to the How To Play page and the Contact button to the Contact page.  
    - Footer is placed at the bottom of the page.   
 
@@ -308,7 +320,11 @@ Due to limited resources (time constraint, skill of the developer at the moment,
 - In addition to building a back-end database of the game, an online high scoreboard can be implemented as well, allowing users to see high scores of other players.   
 - Adjust the stars system so that it doesn’t have a maximum cap, allowing the users to continue playing and still get rewards.   
 
-<br/>   
+<br />  
+
+[Back to top](https://github.com/dissyulina/trivia-world#trivia-world)  
+<br />  
+ 
 
 ## **Technology Used**  
 ### **Main Languages Used**
@@ -340,9 +356,11 @@ Due to limited resources (time constraint, skill of the developer at the moment,
    11. [Coolors](https://coolors.co)  
    Coolors was used to create a cohesive color scheme for the website.
    12. [Vecteezy vector editor](https://www.vecteezy.com/editor)  
-   Vecteezy vector editor was used to edit the sections of the wheel image.   
+   Vecteezy vector editor was used to edit the topic names inside the spinning wheel image.   
    13. [ScreenToGif](https://www.screentogif.com)   
    ScreenToGif editor was used to record computer screen, convert to gif and resize it, to be added to Responsiveness testing.   
+   14. [Favicon.io](https://favicon.io/)   
+   Favicon was used to generate favicon for the site.  
 
    <br/>   
 
@@ -352,7 +370,7 @@ Due to limited resources (time constraint, skill of the developer at the moment,
 
 I ran into several issues and bugs while developing the website. Some of the tough ones are listed below, along with the solutions that successfully solved them.  
 
-1. **Issue**: During the coding process I made one aggregate JS file for spinning the wheel, for fetching API, and for displaying the questions. I made the logic separately at first and had difficulty connecting the topic result from the wheel and then fetch API according to that topic (I tried to pass the topic as a parameter for fetch function but it didn’t work). It took me 1 full day to search and try and I was still stuck. I contacted tutor support, and Sean from Code Institute helped me to solve the problem. The problem was the code for fetching already worked before the wheel spun, so the topic parameter could not be passed.   
+1. **Issue**: During the developing process I made one aggregate JS file for spinning the wheel, for fetching API, and for displaying the questions. I made the logic separately at first and had difficulty connecting the topic result from the wheel and then fetch API according to that topic (I tried to pass the topic as a parameter for fetch function but it didn’t work). It took me 1 full day to search and try and I was still stuck. I contacted tutor support, and Sean from Code Institute helped me to solve the problem. The problem was the code for fetching already worked before the wheel spun, so the topic parameter could not be passed.   
 
    **Solution**: The solution was to separate the JS file between the code to make the wheel spin (and linked it to the Wheel page), and the code for fetch request (and linked it to the Question page). The topic result from the wheel’s JS file is saved into the local storage, and then on the other JS file, get the topic result back, to then be passed to the fetch function. This solution made me learn about using local and session storage which then become a key knowledge throughout the project, especially in storing and getting achievements.  
 
@@ -372,8 +390,8 @@ I ran into several issues and bugs while developing the website. Some of the tou
 
    **Solution**: After discussing it with my mentor, I decided to create a Change Player button on the Landing page. When the user plays the game for the first time on that device (there’s no data detected in the local storage), a modal pops up to prompt the user to input a username. While when there’s already data in the local storage, the landing page will display a welcome greeting to the last username that played the game. If new players want to play, they can click the Change Player button at the top right of the landing page.  
 
-5. **Issue**: When the questions from Open Trivia DB were displayed, I encountered unfamiliar strings such as “&#039;”. I didn’t know what it was and had some difficulty searching it on google.  
-   **Solution**: After searching on Slack, there was a thread with the same problem, and one of the replies informed that it was HTML entities. I searched again on the internet with the HTML entities as keyword and found a very simple solution [here on Stack Overflow](https://stackoverflow.com/questions/5796718/html-entity-decode).
+5. **Issue**: When the questions from Open Trivia DB were displayed, I encountered unfamiliar strings such as ```&#039;```. I didn’t know what it was and had some difficulty searching it on google.  
+   **Solution**: After searching on Slack, there was a thread with the same problem, and one of the replies informed that it was HTML entity. I searched again on the internet with the HTML entities as keyword and found a very simple solution [here on Stack Overflow](https://stackoverflow.com/questions/5796718/html-entity-decode).
  
 
 ### **Known Issues & Unsolved Bugs**  
@@ -388,7 +406,11 @@ I ran into several issues and bugs while developing the website. Some of the tou
 2. In the console, there’s a warning: “Error with Permissions-Policy header: Unrecognized feature: 'interest cohort.”   
 This is a Github issue, as a part of an effort from Github to ensure the privacy of the users when browsing GitHub Pages sites. This topic can be found on [this link](https://github.community/t/i-have-no-idea-what-the-interest-cohort-is/179780/2), and we can’t do anything to make it disappear.   
 
-<br/>   
+<br />  
+
+[Back to top](https://github.com/dissyulina/trivia-world#trivia-world)  
+<br />  
+  
 
 
 ## **Deployment**  
@@ -446,24 +468,34 @@ The testing documentation can be found [here]().
 
 <br />  
 
+[Back to top](https://github.com/dissyulina/trivia-world#trivia-world)  
+<br />  
+ 
+
 
 ## **Credits**  
 
 ### **Code**
 1. Bootstrap 5.0: Bootstrap Library was used throughout the project, including these Bootstrap components below: 
-- Bootstrap Modal
-- Bootstrap Grid System
-- Bootstrap Form
+   - Bootstrap Modal  
+   - Bootstrap Grid System  
+   - Bootstrap Form  
+
 2. Youtube videos series titled Build A Quiz App , by James Q Quick: https://www.youtube.com/watch?v=rFWbAj40JrQ.
 The code in these videos was sourced to fetch API for the questions and to display the questions and the answers to the HTML page.   
+
 3. Youtube videos series titled Vanilla Javascript - Wheel of Fortune mini game, by Weibenfalk: https://www.youtube.com/watch?v=KdFp12QX-Io&t=793s.
-The code in these videos was sourced to spin a spinning wheel and to get the result.   
+The code in these videos was sourced to spin the spinning wheel and to get the result.   
 
 4. Stackoverflow
-- To decode HTML Entities: https://stackoverflow.com/questions/5796718/html-entity-decode   
-- 
+   - To decode HTML Entity: https://stackoverflow.com/questions/5796718/html-entity-decode   
+   - Footer stays at the bottom without using position absolute: https://stackoverflow.com/questions/44572226/fix-elements-to-the-bottom-of-a-flex-container
 
-5. Autoprefixer CSS  
+5. Learning material about the local storage and session storage
+   -  Storing and Retrieving Objects in Local Storage Using JavaScript: https://attacomsian.com/blog/javascript-local-storage-store-retrieve-objects  
+   -  How to Store Login Sessions with Local Storage and Session Storage: https://javascript.plainenglish.io/implementing-login-case-using-localstorage-and-sessionstorage-bfddce5d2198  
+
+6. Autoprefixer CSS  
    Add different vendor prefixer to CSS. Input all the CSS code here: https://autoprefixer.github.io  
 
 
@@ -491,6 +523,7 @@ The images were sourced from this page:
 3. [Flaticon](https://www.flaticon.com)
    - By Smashicon: The topic icons used on the Achievement page
    - By Vectors Market: Numbers icons used on the How To Play page
+   - By Catkuro: 404 icon on the 404 page
 4. [Pngtree](https://pngtree.com) - Star image
 5. [Nicepng](https://www.nicepng.com) - The picker above the wheel 
 6. [Font Awesome](https://fontawesome.com)   
