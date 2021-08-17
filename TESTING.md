@@ -32,8 +32,8 @@
     As a first time visitor, I want to:  
     - Easily navigate throughout the site between pages, to play or to quit the game.   
        * To play the game, the user can click the Play buttons which are available throughout the website, so that the user doesn’t have to go back to the main menu first. As explained in the Features section of the Readme, the Play Button is available on the Landing Page, How To Play Page, Contact Page, on modal pop up after the questions are done, and on the Achievement Page.  
-       * To quit the game, the user can simply click the Quit button on the Wheel page and the Achievement page. However, the user can not quit the game in the middle of answering the 10 questions, as that is one of the rules of the game. After answering 10 questions or after getting a star, a modal will pop up, and only then the Quit button is made available to the user.  
-       * The Footer is displayed at the bottom of every page. In the footer, the user can navigate easily to the Achievement Page and can toggle the sound on/ off as well.  
+       * To quit the game, the user can simply click the Quit button on the Wheel page and the Achievement page, or the home button inside the Footer. 
+       * The Footer is displayed at the bottom of every page. In the footer, the user can navigate easily to the Main Menu and the Achievement Page, and can toggle the sound on/ off as well.  
 
     - Play the game intuitively without first reading the instruction.  
        * Icons were used conventionally for buttons to allow the user to click intuitively.  
