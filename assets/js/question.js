@@ -63,7 +63,7 @@ if (getStars >= 3) {
 	difficultyLevel = getStars;
 }
 
-// Fetch API for quiz data, get the url as parameter from the nested data above (code until line 121 was sourced from youtube video: James Q Quick - Build A Quiz App. Added comments as the developer understands the process)
+// Fetch API for quiz data, get the url as parameter from the nested data above (code until line 122 was sourced from youtube video: James Q Quick - Build A Quiz App. Added comments as the developer understands the process)
 fetch(getUrl[topic][difficultyLevel])
 	.then(res => {
 		return res.json();
@@ -259,7 +259,7 @@ function stopTimer() {
 	return;
 }
 
-// Function display progress bar
+// Function to display progress bar
 function progressBar(progressBefore, scoreAfter) {
 	progressBarPoint = Math.floor((scoreAfter / fullPoints * 100) % 100);
 	if (progressBarPoint < progressBefore) {
@@ -282,7 +282,7 @@ function progressBarFull() {
 	progressBarPoint = 100;
 }
 
-// Function display stars next to progress bar
+// Function to display stars next to progress bar
 function progressStars(st) {
 	$("#progress-bar-stars").empty();
 	if(st <= 2) {

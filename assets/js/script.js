@@ -40,6 +40,14 @@ $('#submit-username').on('click', function(e) {
 	}
 });
 
+// Event listener if the user clicks the Change Player button, but then close it again
+$('.btn-close').on('click', function(e) {
+    $("#last-player").text(lastPlayer);
+	inputName = lastPlayer;
+	retrieveData();
+});
+
+// Function to retrieve data
 function retrieveData() {
 	// Retrieve the JSON string, parse it to object
 	localStorage.setItem('player',inputName);
@@ -62,6 +70,7 @@ function retrieveData() {
     }
 }
 
+// Function to save data
 function saveData() {
     // All the quiz's datas are put into a new object
     let datas = {};

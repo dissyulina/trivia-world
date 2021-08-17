@@ -24,6 +24,7 @@ for (let i in achievementDatas) {
             let image = document.createElement("img");
             image.src = "assets/images/star.png";
             image.className = "stars-achievement";
+            image.alt = "star";
             achievementDatas[i][0].appendChild(image);
             j++;
         }
