@@ -269,6 +269,7 @@ High fidelity mock-up for desktops:
    - **Change Players Button** - Still related to the username, the Change Player button is available at the top left of the landing page, to allow the users to change username even if they are using the same device. When the user clicks the Change Player button, it will automatically save the current player's achievement on the local storage. A modal will show up to prompt the user to input a username. If the users input an existing username, the game will load all the username’s previous data and achievements. 
    -  On the landing page, there are 3 main buttons: Play button, How To Play button, and Contact button, which all will lead to other pages. As the users click the Play button, they will be brought to the Wheel page, the How To Play button will bring users to the How To Play page and the Contact button to the Contact page.  
    - Footer is placed at the bottom of the page.   
+<br/>  
 
 2. **Wheel Page** [click to see the page](assets/readme/feat-wheel.png)   
    - **Easy accessibility of playing the game** - To ensure easy accessibility of the game playing from wherever page the users are currently at, there are Play buttons placed on all pages across the website. The users will be brought to this Wheel page when:   
@@ -278,6 +279,7 @@ High fidelity mock-up for desktops:
    - There are two buttons on the Wheel page:  Spin The Wheel button, which functions as an action button to spin the wheel and the Quit button, which will take the user back to the Landing page.   
    - **Modal pop-up to display the topic result** - When the users click the Spin The Wheel button, the wheel spins. After the spinning ends a modal pops up that displays the topic that the user gets from spinning the wheel. In the modal, there’s also a short explanation of the rules of the game. From this modal, the user can choose to proceed to the questions by clicking the Bring It On button, or the user can choose to spin the wheel again by clicking the Let Me Spin That Wheel Again button.   
    - Footer is placed at the bottom of the page.   
+<br/>  
 
 3. **Question Page** [click to see the page](assets/readme/feat-question.png)   
    - After the users click the Bring It On button from the modal in the Wheel page, the game will take the users to the Question page.   
@@ -293,17 +295,20 @@ High fidelity mock-up for desktops:
 
       The text inside the modal differs according to which of those three conditions above made the modal appear.  From this modal the users can navigate to other pages using three buttons: Play Again button, Go To Achievement Page button, and Quit button.   
    - Footer is placed at the bottom of the page.   
+<br/>  
 
 4. **Achievement Page** [click to see the page](assets/readme/feat-achievements.png)  
    - **The display of all stars** - All of the stars that the user got for each topic are displayed on the Achievement page.   
    - **Complete achievement sign** - When a user has a maximum number of stars for a topic (3 stars), there’s a complete sign with a check-list icon below that topic, which indicates that the achievement for that topic has been completed.   
    - There are two buttons on this page: the Play Again button and the Quit button.   
    - Footer is placed at the bottom of the page.   
+<br/>  
 
 5. **How To Play Page** [click to see the page](assets/readme/feat-howtoplay.png)  
    - **Instructions of the game** - How To Play page can be accessed via the Landing page. How To Play page consists of rules and instructions of the game.   
    - There are two buttons on this page, which are: Play button, so the users can immediately play the game without going back to the Landing Page first, and Back To Main Manu button that will bring the user to the Landing page.   
    - Footer is placed at the bottom of the page.  
+<br/>  
 
 
 6. **Contact Page** [click to see the page](assets/readme/feat-contact.png)  
@@ -380,7 +385,7 @@ I ran into several issues and bugs while developing the website. Some of the tou
     {sport: 250, music: 1200, science: 2150, etc.. }  // as value    
     ```
 
-   **Solution**: Having learned through [this article](https://attacomsian.com/blog/javascript-local-storage-store-retrieve-objects) on how to store and retrieve an object in the local storage,  I used the JSON.stringify to convert an object to a JSON string and pass it to the local storage when the user decides to quit the game, and JSON.parse to parse a JSON string back into an object when the username is called again on the Landing page.  
+   **Solution**: Having learned through [this article](https://attacomsian.com/blog/javascript-local-storage-store-retrieve-objects) on how to store and retrieve an object in the local storage,  I used the JSON.stringify to convert an object to a JSON string and pass it to the local storage when the user decides to change the player, and JSON.parse to parse a JSON string back into an object when the username is called again in the modal on the Landing page.  
 
 3. **Issue**: Toggle sound on/ off button that available at the footer on all pages. If the toggle sound is clicked on one page, that preference the user set on that page would have to carry through to the next page.   
 
@@ -404,7 +409,7 @@ I ran into several issues and bugs while developing the website. Some of the tou
    Because the sound audio play after the wheel’s transition ends, and not by user action, unfortunately, it can’t be played.   
 
 2. In the console, there’s a warning: “Error with Permissions-Policy header: Unrecognized feature: 'interest cohort.”   
-This is a Github issue, as a part of an effort from Github to ensure the privacy of the users when browsing GitHub Pages sites. This topic can be found on [this link](https://github.community/t/i-have-no-idea-what-the-interest-cohort-is/179780/2), and we can’t do anything to make it disappear.   
+There is a new header from Github as part of an effort to ensure the privacy of the users when browsing GitHub pages (through disabling the interest-cohort feature). Unfortunately the ```interest-cohort``` can be unrecognized in Chrome or other browsers. However, it's just a warning and doesn't affect anything. This topic can be found on [this link](https://github.community/t/i-have-no-idea-what-the-interest-cohort-is/179780/2).
 
 <br />  
 
