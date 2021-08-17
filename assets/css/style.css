@@ -68,6 +68,7 @@ li {
 }
 
 .icon-login {
+    font-size: 2rem;
     position: absolute;
     right: 2rem;
     top: 10px;
@@ -531,15 +532,16 @@ form {
         min-width: 10rem;
     }
 
-    .icon-login {
-        right: 10px;
-    }
-    
     .icon-wrapper {
         font-size: 1rem;
         top: 8px;
     }
 
+    .icon-login {
+        font-size: 1.5rem;
+        right: 10px;
+    }
+    
     .icon-wrapper a,
     #btn-player {
         padding: 0.15rem 0.5rem;
