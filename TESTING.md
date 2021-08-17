@@ -4,7 +4,7 @@
 
 [Back to the Testing section in main README.md file](https://github.com/dissyulina/trivia-world#testing)  
 
-[View live website here](dissyulina.github.io/trivia-world/)  
+[View live website here](https://dissyulina.github.io/trivia-world/index.html)   
 
 <br/>  
 
@@ -87,7 +87,10 @@
    - To be challenged with different difficulty levels.  
       * The difficulty level goes up every time the users get a star in that topic (0 star : medium, 1 star: medium, >=2 stars : hard).  
 
-<br/>  
+<br/>   
+
+[Back to top](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#trivia-world---testing)  
+<br />
 
 ## **Manual Testing**
 ### **Responsiveness Testing**   
@@ -111,7 +114,10 @@ To check the responsiveness of the website across all devices, the developer too
    ![The responsiveness of the Contact Page](assets/testing/responsiveness/contact-resp.gif "The responsiveness of the Contact Page") 
 
 
-<br/>
+<br/>   
+
+[Back to top](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#trivia-world---testing)  
+<br />
 
 ### **Links Testing**
 The links were tested to ensure that:  
@@ -140,7 +146,10 @@ The form was also tested to ensure that:
 
 All of the above are working properly.
 
-<br/>  
+<br/>   
+
+[Back to top](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#trivia-world---testing)  
+<br />
 
 ## **Autoprefixer CSS**
 Autoprefixer CSS was used to add CSS vendor prefixes to the CSS rules after the developing process was done, to ensure that the they work across all browsers.  
@@ -181,6 +190,10 @@ I ran the code through [JSHint](https://jshint.com/), and there were some warnin
 - ``` sound.js ``` : [The screenshot of the final result can be found in this link](assets/testing/jshint/sound-jshint.jpg)  
 - ``` wheel.js ``` : [The screenshot of the final result can be found in this link](assets/testing/jshint/wheel-jshint.jpg)  
 
+<br/>   
+
+[Back to top](https://github.com/dissyulina/trivia-world/blob/main/TESTING.md#trivia-world---testing)  
+<br />  
 
 ## **Lighthouse Testing**  
 The Chrome Lighthouse testing was used to audit the performance, accessibility, best practices, and SEO. Below are the result.
