@@ -28,7 +28,15 @@
 
 
 ## **User Stories Testing**
- - **First Time Visitor Goal**   
+The screenshot of the pages can be found on these links below:
+1. [The landing page](assets/readme/feat-landing.png)   
+2. [The wheel page](assets/readme/feat-wheel.png)   
+3. [The question page](assets/readme/feat-question.png)   
+4. [The achievements page](assets/readme/feat-achievements.png)   
+5. [The how to play page](assets/readme/feat-howtoplay.png)   
+6. [The contact page](assets/readme/feat-contact.png)   
+
+- **First Time Visitor Goal**   
     As a first time visitor, I want to:  
     - Easily navigate throughout the site between pages, to play or to quit the game.   
        * To play the game, the user can click the Play buttons which are available throughout the website, so that the user doesn’t have to go back to the main menu first. As explained in the Features section of the Readme, the Play Button is available on the Landing Page, How To Play Page, Contact Page, on modal pop up after the questions are done, and on the Achievement Page.  
