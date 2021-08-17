@@ -2,21 +2,13 @@
 
 $('#contact-form').on('submit', function (e) {
     e.preventDefault();
-
-    // Display a loader for 1 second
+    // Display a loader
     $("#btn-submit").html(
         `<div id="loader">
             <img src="assets/images/spinner.gif" alt="loading" height="30px">
         </div>`
     );
-    
-    // After 1 second, turn the text inside the button to Sent
-    setTimeout(function() {
-        $("#btn-submit").html('<i class="fas fa-check"></i> Sent');
-        $("#btn-submit i").css("color", "#01a74b");
-        $('#contact-form')[0].reset();
-    }, 1000);
-    
+
     sendMail(this); 
 });
 
@@ -29,8 +21,13 @@ function sendMail(contactForm) {
     })
     .then(function(response) {
         console.log('SUCCESS!', response.status, response.text);
+        // Turn the text inside the button to Sent
+        $("#btn-submit").html('<i class="fas fa-check"></i> Sent');
+        $("#btn-submit i").css("color", "#01a74b");
+        $('#contact-form')[0].reset();
     }, function(error) {
         console.log('FAILED...', error);
+        $("#btn-submit").html('Try again');
     });
     return false;
 }
