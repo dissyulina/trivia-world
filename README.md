@@ -74,8 +74,8 @@ Strategic UX research was done through interviews with a few potential users.
    As a first time visitor, I want to:   
    a. Easily navigate throughout the site between pages, to play or to quit the game.   
    b. Play the game intuitively without first reading the instruction.  
-   c. Finding the instructions on how to play the game if it is needed. 
-   d. Be able to choose different topics. 
+   c. Finding the instructions on how to play the game if it is needed.   
+   d. Be able to choose different topics.   
    e. Play the game with a great user interface visually.  
    f. Have clear information/ heads up display inside the quiz’s questions, i.e. which topic I get, how much point does this question is worth, the progress bar, etc.  
    g. View my achievements.  
@@ -87,9 +87,9 @@ Strategic UX research was done through interviews with a few potential users.
 - **Returning/ Frequent Time Visitor Goal**   
    As a returning / frequent visitor, I want to:  
    a. Resume the playing that I did before, with my achievement still saved in the game.   
-   b. Send suggestions to the developer to improve the game.  
-   c. Know in which topics I have full achievements. 
-   d. To be challenged with different difficulty levels. 
+   b. Send suggestions to the developer to improve the game.   
+   c. Know in which topics I have full achievements.  
+   d. To be challenged with different difficulty levels.  
 
 <br/>
 
