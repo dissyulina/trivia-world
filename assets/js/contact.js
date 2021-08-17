@@ -19,15 +19,21 @@ function sendMail(contactForm) {
         "from_email": contactForm.email.value,
         "message": contactForm.message.value,
     })
+
     .then(function(response) {
         console.log('SUCCESS!', response.status, response.text);
         // Turn the text inside the button to Sent
         $("#btn-submit").html('<i class="fas fa-check"></i> Sent');
         $("#btn-submit i").css("color", "#01a74b");
         $('#contact-form')[0].reset();
+        // After 3 seconds turn it back to Send Message
+        setTimeout(function(){
+            $("#btn-submit").html('Send Message');
+        }, 3000);
+
     }, function(error) {
         console.log('FAILED...', error);
-        $("#btn-submit").html('Try again');
+        $("#btn-submit").html('Send Message');
     });
     return false;
 }
