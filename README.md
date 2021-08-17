@@ -429,7 +429,7 @@ The project was deployed to GitHub Pages using the following steps:
 4. Inside the Settings, on the left side of the page, there’s a list of tab menu. Locate the “Pages” tab, and click it.  
 5. Under "Source", click the dropdown called "None", select "Master", and then click the “Save” button.  
 6. The page will automatically refresh.  
-7. There’s a notification message that provides the now published site link: “Your site is ready to be published at https://dissyulina.github.io/the-little-pantry/”.  
+7. There’s a notification message that provides the now published site link: “Your site is ready to be published at https://dissyulina.github.io/trivia-world/”.  
 
 
 ### **Forking the GitHub Repository**  
@@ -439,7 +439,7 @@ The project was deployed to GitHub Pages using the following steps:
 4. Inside the Settings, on the left side of the page, there’s a list of tab menu. Locate the “Pages” tab, and click it.  
 5. Under "Source", click the dropdown called "None", select "Master", and then click the “Save” button.  
 6. The page will automatically refresh.  
-7. There’s a notification message that provides the now published site link: “Your site is ready to be published at https://dissyulina.github.io/the-little-pantry/”.  
+7. There’s a notification message that provides the now published site link: “Your site is ready to be published at https://dissyulina.github.io/trivia-world/”.  
  
 
 ### **Making a Local Clone** 
@@ -560,12 +560,15 @@ The images were sourced from this page:
 <br/>
 
 ## **Acknowledgements**
-   * My mentor, Oluwaseun Owonikoko, for the helpful feedback on every detail of the website.
-   * Code Institute's Tutor Support, for the quick response and helfpful solutions.
-   * My husband Sandi, for his daily continuous support and for testing the website across our mobile devices.
-   * Slack community, as the first help to ask when I encountered a problem.
+   * My mentor, Oluwaseun Owonikoko, for the helpful feedback on every detail of the website.  
+   * Code Institute's Tutor Support, for the quick response and helfpful solutions.  
+   * My husband Sandi, for his daily continuous support and for testing the website across our mobile devices.  
+   * Slack community, as the first help to ask when I encountered a problem.  
 
-[Back to top]()  
+<br/>  
+
+[Back to top](https://github.com/dissyulina/trivia-world#trivia-world)  
+<br />   
 
 
 
