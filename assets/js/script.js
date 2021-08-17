@@ -22,7 +22,7 @@ $('#btn-player').on('click', function(e) {
 	saveData();
 	$("#username-modal").modal('show');
     $("#username-modal h5").text("Change Player");
-    $("#username-modal p").text("Add a new player or input your saved username");
+    $("#username-modal p").text("Add a new player or input your saved username:");
 });
 
 // Event listener as the username has been filled and the submit button is clicked

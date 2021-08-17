@@ -209,6 +209,13 @@ li {
     border: none;
 }
 
+.modal-header .btn-close {
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+}
+
 /* How To Play Page */
   
 .full-container {
@@ -408,8 +415,9 @@ form {
 }
 
 #timer {
-    color:lightgray;
+    color:#acbcca;
     font-size: 10vh;
+    font-weight: 600;
     text-align: center;
 }
 
