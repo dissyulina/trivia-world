@@ -135,6 +135,10 @@ li {
     color: #4a7bd4;
 }
 
+.footer-copyright {
+    font-size: 14px;
+}
+
 /* Buttons */
 
 .btn {
@@ -559,6 +563,10 @@ form {
         height: 4rem;
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    .footer-copyright {
+        font-size: 12px;
     }
 }
 
