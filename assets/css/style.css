@@ -74,6 +74,7 @@ li {
     top: 10px;
 }
 
+/* Hover style was sourced from youtube James Q Quick: Bulid a Quiz App, and being applied to all buttons' hover state */
 .icon-wrapper:hover {
     -webkit-box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 216, 42, 0.5);
             box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 216, 42, 0.5);
@@ -170,6 +171,7 @@ li {
     letter-spacing: 5px;
 }
 
+/* Hover style was sourced from youtube James Q Quick: Bulid a Quiz App, and being applied to all buttons' hover state */
 .btn:hover {
     -webkit-box-shadow: 0 0.4rem 1.4rem 0 rgba(224, 41, 93, 0.5);
             box-shadow: 0 0.4rem 1.4rem 0 rgba(224, 41, 93, 0.5);
@@ -397,6 +399,7 @@ form {
     padding: 1rem;
 }
 
+/* Hover style was sourced from youtube James Q Quick: Bulid a Quiz App, and being applied to all buttons' hover state */
 .choice-text:hover {
     -webkit-box-shadow: 0 0.4rem 1.4rem rgba(118, 150, 243, 0.5);
             box-shadow: 0 0.4rem 1.4rem rgba(118, 150, 243, 0.5);
